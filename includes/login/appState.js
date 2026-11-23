@@ -163,7 +163,7 @@ function saveAppState(filePath, appState, options = {}) {
   if (!check.valid) {
     logger(`Refusing to save invalid AppState (${check.reason}).`, "warn");
     return false;
-  }
+  }//সিয়াম হাসান 
 
   const resolved = resolve(filePath);
   const { backup = true } = options;
