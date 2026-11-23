@@ -1,17 +1,3 @@
-/**
- * Credit: 乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐
- * Team  : বিডি বট টিম (BD Bot Team)
- *
- * BDBotTeam.js — মেমোরি ম্যানেজমেন্ট (রুট ফোল্ডারে JuwelKeepalive.js-এর পাশে)
- *
- * ঐচ্ছিক env:
- *   BOT_MEMORY_LIMIT_MB       হোস্টের RAM নিজে বলে দিন
- *   JUWEL_HEAP_PERCENT        heap সীমা % (ডিফল্ট 65)
- *   JUWEL_MEM_SOFT / JUWEL_MEM_HARD   সফট/হার্ড % (ডিফল্ট 70 / 88)
- *   JUWEL_MEM_MAX_RESTARTS    ৬ ঘণ্টায় সর্বোচ্চ কতবার রিস্টার্ট (ডিফল্ট 0 = রিস্টার্ট বন্ধ)
- *   JUWEL_OPTIMIZE_FOR_SIZE=0 ছোট RAM-এ --optimize-for-size বন্ধ করতে
- *   JUWEL_MEMGUARD=off        পুরো গার্ড বন্ধ
- */
 "use strict";
 
 const fs = require("fs");
@@ -27,13 +13,14 @@ const num = (v, d) => {
   const n = Number(v);
   return Number.isFinite(n) && n > 0 ? n : d;
 };
+
 const numZ = (v, d) => {
   const n = Number(v);
   return v !== undefined && v !== "" && Number.isFinite(n) && n >= 0 ? n : d;
 };
+
 const round = (n) => Math.round(n * 10) / 10;
 
-/* ---------- হোস্টের RAM সীমা ---------- */
 function readLimit(p) {
   try {
     const s = fs.readFileSync(p, "utf8").trim();
@@ -48,49 +35,63 @@ function readLimit(p) {
 function detectLimit() {
   const forced = num(process.env.BOT_MEMORY_LIMIT_MB, 0);
   if (forced) return { mb: forced, source: "env BOT_MEMORY_LIMIT_MB" };
+
   const total = os.totalmem() / MB;
   const cg = readLimit("/sys/fs/cgroup/memory.max") || readLimit("/sys/fs/cgroup/memory/memory.limit_in_bytes");
-  if (cg && cg / MB < total * 0.98) return { mb: Math.floor(cg / MB), source: "container limit" };
+
+  if (cg && cg / MB < total * 0.98) {
+    return { mb: Math.floor(cg / MB), source: "container limit" };
+  }
+
   return { mb: Math.floor(total), source: "system RAM" };
 }
 
-/* ---------- লঞ্চারের জন্য Node আর্গুমেন্ট ---------- */
 function launcherArgs() {
-  if (String(process.env.JUWEL_MEMGUARD).toLowerCase() === "off") return [];
+  if (String(process.env.SIYAM_MEMGUARD).toLowerCase() === "off") return [];
+
   const { mb } = detectLimit();
-  const pct = Math.min(Math.max(num(process.env.JUWEL_HEAP_PERCENT, 65), 30), 90);
+  const pct = Math.min(Math.max(num(process.env.SIYAM_HEAP_PERCENT, 65), 30), 90);
   const heap = Math.max(128, Math.floor((mb * pct) / 100));
   const args = ["--expose-gc", "--max-old-space-size=" + heap];
-  if (mb <= 768 && process.env.JUWEL_OPTIMIZE_FOR_SIZE !== "0") args.push("--optimize-for-size");
+
+  if (mb <= 768 && process.env.SIYAM_OPTIMIZE_FOR_SIZE !== "0") {
+    args.push("--optimize-for-size");
+  }
+
   return args;
 }
 
-/* ---------- বটের ভেতরের গার্ড ---------- */
 function start() {
   if (global.__bdBotTeamGuard) return;
-  if (String(process.env.JUWEL_MEMGUARD).toLowerCase() === "off") return;
+  if (String(process.env.SIYAM_MEMGUARD).toLowerCase() === "off") return;
+
   global.__bdBotTeamGuard = true;
 
   const limit = detectLimit();
   const limitMB = limit.mb;
   const heapLimitMB = v8.getHeapStatistics().heap_size_limit / MB;
 
-  const SOFT = num(process.env.JUWEL_MEM_SOFT, 70) / 100;
-  const HARD = num(process.env.JUWEL_MEM_HARD, 88) / 100;
-  const INTERVAL = num(process.env.JUWEL_MEM_INTERVAL_MS, 30 * 1000);
-  const MIN_UPTIME_RESTART = numZ(process.env.JUWEL_MEM_MIN_UPTIME_MS, 10 * 60 * 1000);
+  const SOFT = num(process.env.SIYAM_MEM_SOFT, 70) / 100;
+  const HARD = num(process.env.SIYAM_MEM_HARD, 88) / 100;
+  const INTERVAL = num(process.env.SIYAM_MEM_INTERVAL_MS, 30 * 1000);
+  const MIN_UPTIME_RESTART = numZ(process.env.SIYAM_MEM_MIN_UPTIME_MS, 10 * 60 * 1000);
   const CACHE_MAX_AGE = 30 * 60 * 1000;
   const SUMMARY_EVERY = 30 * 60 * 1000;
   const LEAK_EVERY = 10 * 60 * 1000;
+
   const MEDIA = /\.(mp3|mp4|m4a|wav|ogg|webm|mov|mkv|png|jpe?g|gif|webp|bmp|tmp)$/i;
-  const CACHE_DIRS = [path.join(ROOT, "Script", "commands", "cache"), path.join(ROOT, "Script", "events", "cache")];
+
+  const CACHE_DIRS = [
+    path.join(ROOT, "Script", "commands", "cache"),
+    path.join(ROOT, "Script", "events", "cache")
+  ];
 
   const log = (m) => console.log("[BD Bot Team] " + m);
 
-  // [FIX] ডিফল্ট 0 = মেমোরির কারণে নীরব রিস্টার্ট বন্ধ
   const RESTART_FILE = path.join(ROOT, ".bdbotteam-restarts.json");
-  const MAX_RESTARTS = numZ(process.env.JUWEL_MEM_MAX_RESTARTS, 0);
+  const MAX_RESTARTS = numZ(process.env.SIYAM_MEM_MAX_RESTARTS, 0);
   const RESTART_WINDOW = 6 * 60 * 60 * 1000;
+
   function recentRestarts() {
     try {
       const arr = JSON.parse(fs.readFileSync(RESTART_FILE, "utf8"));
@@ -99,6 +100,7 @@ function start() {
       return [];
     }
   }
+
   function noteRestart() {
     try {
       fs.writeFileSync(RESTART_FILE, JSON.stringify([...recentRestarts(), Date.now()]));
@@ -107,6 +109,7 @@ function start() {
 
   function stats() {
     const m = process.memoryUsage();
+
     const s = {
       rssMB: round(m.rss / MB),
       heapUsedMB: round(m.heapUsed / MB),
@@ -117,13 +120,16 @@ function start() {
       heapLimitMB: Math.round(heapLimitMB),
       source: limit.source
     };
+
     s.pressure = Math.max(s.rssMB / limitMB, s.heapUsedMB / heapLimitMB);
     s.percent = Math.round(s.pressure * 100);
+
     return s;
   }
 
   function format() {
     const s = stats();
+
     return (
       `RAM ${s.rssMB}MB / ${s.limitMB}MB (${Math.round((s.rssMB / s.limitMB) * 100)}%) | ` +
       `Heap ${s.heapUsedMB}/${s.heapLimitMB}MB (${Math.round((s.heapUsedMB / s.heapLimitMB) * 100)}%) | ` +
@@ -131,35 +137,41 @@ function start() {
     );
   }
 
-  /* পুরনো/অপ্রয়োজনীয় ডাটা সাফ */
   function cleanup(reason) {
     const before = process.memoryUsage().rss / MB;
     const done = [];
 
     try {
       const c = global.client;
+
       if (c) {
         for (const key of ["handleReply", "handleReaction"]) {
           const arr = c[key];
+
           if (Array.isArray(arr) && arr.length > 200) {
             const removed = arr.length - 100;
             arr.splice(0, removed);
             done.push(`${key} -${removed}`);
           }
         }
+
         if (c.cooldowns instanceof Map) {
           let removed = 0;
           const now = Date.now();
+
           for (const [cmd, users] of c.cooldowns) {
             if (!(users instanceof Map)) continue;
+
             for (const [uid, ts] of users) {
               if (typeof ts === "number" && now - ts > 60 * 60 * 1000) {
                 users.delete(uid);
                 removed++;
               }
             }
+
             if (users.size === 0) c.cooldowns.delete(cmd);
           }
+
           if (removed) done.push(`cooldown -${removed}`);
         }
       }
@@ -169,13 +181,18 @@ function start() {
       let files = 0;
       let bytes = 0;
       const now = Date.now();
+
       for (const dir of CACHE_DIRS) {
         if (!fs.existsSync(dir)) continue;
+
         for (const f of fs.readdirSync(dir)) {
           if (!MEDIA.test(f)) continue;
+
           const p = path.join(dir, f);
+
           try {
             const st = fs.statSync(p);
+
             if (st.isFile() && now - st.mtimeMs > CACHE_MAX_AGE) {
               fs.unlinkSync(p);
               files++;
@@ -184,6 +201,7 @@ function start() {
           } catch (_) {}
         }
       }
+
       if (files) done.push(`cache ফাইল -${files} (${round(bytes / MB)}MB ডিস্ক)`);
     } catch (_) {}
 
@@ -195,18 +213,25 @@ function start() {
     } catch (_) {}
 
     const after = process.memoryUsage().rss / MB;
+
     log(`ক্লিনআপ (${reason}): ${done.join(", ") || "কিছু পাওয়া যায়নি"} | RSS ${round(before)} → ${round(after)}MB`);
-    return { before: round(before), after: round(after), done };
+
+    return {
+      before: round(before),
+      after: round(after),
+      done
+    };
   }
 
-  /* ---------- মনিটর ---------- */
   const startedAt = Date.now();
+
   let lastCleanup = 0;
   let hardStrikes = 0;
   let restarting = false;
   let restartBlockedLogged = false;
   let lastSummary = Date.now();
   let lastLeakCheck = Date.now();
+
   const leakSamples = [];
 
   function check() {
@@ -221,9 +246,11 @@ function start() {
 
     if (s.pressure >= HARD) {
       hardStrikes++;
+
       if (hardStrikes === 1 || hardStrikes % 20 === 0) {
         log(`⚠️ মেমোরি খুব বেশি: ${s.percent}% (${format()})`);
       }
+
       if (hardStrikes >= 2 && !restarting) {
         if (now - startedAt >= MIN_UPTIME_RESTART && recentRestarts().length >= MAX_RESTARTS) {
           if (!restartBlockedLogged) {
@@ -248,11 +275,15 @@ function start() {
     if (now - lastLeakCheck >= LEAK_EVERY && typeof global.gc === "function") {
       lastLeakCheck = now;
       global.gc();
+
       leakSamples.push(process.memoryUsage().heapUsed / MB);
+
       if (leakSamples.length > 6) leakSamples.shift();
+
       if (leakSamples.length >= 4) {
         const rising = leakSamples.every((v, i) => i === 0 || v >= leakSamples[i - 1] - 1);
         const growth = leakSamples[leakSamples.length - 1] - leakSamples[0];
+
         if (rising && growth > 40) {
           log(`🔍 সম্ভাব্য মেমোরি লিক: GC-র পরেও heap ${round(growth)}MB বেড়েছে (${leakSamples.map(round).join(" → ")})`);
         }
@@ -265,30 +296,49 @@ function start() {
     }
   }
 
-  // [FIX] রাত ১২টার ভারী কাজের আগে (ঢাকা 23:55) ও পরে (00:10) আগেভাগে ক্লিনআপ
   let lastPreClean = "";
+
   const nightTimer = setInterval(() => {
     try {
-      const t = new Date().toLocaleTimeString("en-GB", { timeZone: "Asia/Dhaka", hour12: false }).slice(0, 5);
-      const day = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Dhaka" });
+      const t = new Date().toLocaleTimeString("en-GB", {
+        timeZone: "Asia/Dhaka",
+        hour12: false
+      }).slice(0, 5);
+
+      const day = new Date().toLocaleDateString("en-CA", {
+        timeZone: "Asia/Dhaka"
+      });
+
       if ((t === "23:55" || t === "00:10") && lastPreClean !== day + t) {
         lastPreClean = day + t;
         cleanup("রাতের আগাম ক্লিনআপ " + t);
       }
     } catch (_) {}
   }, 20 * 1000);
+
   if (nightTimer.unref) nightTimer.unref();
 
   const timer = setInterval(check, INTERVAL);
+
   if (timer.unref) timer.unref();
 
-  global.juwelMemory = { stats, format, cleanup: () => cleanup("ম্যানুয়াল"), limitMB, heapLimitMB };
+  global.siyamMemory = {
+    stats,
+    format,
+    cleanup: () => cleanup("ম্যানুয়াল"),
+    limitMB,
+    heapLimitMB
+  };
 
-  log(`চালু ✅ | Credit: 乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐ | বিডি বট টিম\n[BD Bot Team] ${format()} | সফট ${Math.round(SOFT * 100)}% / হার্ড ${Math.round(HARD * 100)}%` +
-      (typeof global.gc === "function" ? "" : " | ⚠️ --expose-gc নেই (GC ক্লিন সীমিত)"));
+  log(`চালু ✅ | Credit: Siyam Hasan | Nijhum Chat Bot | বিডি বট টিম\n[BD Bot Team] ${format()} | সফট ${Math.round(SOFT * 100)}% / হার্ড ${Math.round(HARD * 100)}%` +
+    (typeof global.gc === "function" ? "" : " | ⚠️ --expose-gc নেই (GC ক্লিন সীমিত)"));
 }
 
-// বটের প্রসেসে preload হিসেবে লোড হলে নিজে থেকেই চালু হয়
-if (process.env.JUWEL_MEMGUARD_CHILD === "1") start();
+if (process.env.SIYAM_MEMGUARD_CHILD === "1") start();
 
-module.exports = { FILE, launcherArgs, detectLimit, start };
+module.exports = {
+  FILE,
+  launcherArgs,
+  detectLimit,
+  start
+};
