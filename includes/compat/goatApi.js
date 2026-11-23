@@ -1,5 +1,5 @@
 // 🔧 includes/compat/goatApi.js
-//
+//সিয়াম হাসান 
 // GoatBot স্টাইলের কমান্ড/ইভেন্ট ফাইল (onStart, onChat, onReply, onReaction, onEvent ...) মিরাই
 // রানটাইমে চালানোর জন্য অবজেক্ট বিল্ডার:
 //   • message     — message.reply / send / unsend / reaction / err  (Promise + callback দুটোই)
