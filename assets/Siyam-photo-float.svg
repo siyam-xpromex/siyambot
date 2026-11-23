@@ -1,315 +1,507 @@
 
 <svg xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="https://files.catbox.moe/8r9jdr.jpg"
-     viewBox="0 0 960 1200"
-     width="960" height="1200"
-     role="img"
-     aria-label="SIYAM HASAN Premium Animated Profile">
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     viewBox="0 0 960 1400" width="960" height="1400">
 
-<title>SIYAM HASAN — Premium Profile</title>
+<title>SIYAM HASAN — WELCOME TO REALITY</title>
 
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#061c25"/>
-    <stop offset=".48" stop-color="#071018"/>
-    <stop offset="1" stop-color="#020609"/>
+  <linearGradient id="bg" x2="1" y2="1">
+    <stop stop-color="#08051c"/>
+    <stop offset=".48" stop-color="#10112d"/>
+    <stop offset="1" stop-color="#02040d"/>
   </linearGradient>
 
-  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#eaffff"/>
-    <stop offset=".25" stop-color="#7cf7ed"/>
-    <stop offset=".55" stop-color="#16b9ad"/>
-    <stop offset=".8" stop-color="#d9ffff"/>
-    <stop offset="1" stop-color="#438d91"/>
+  <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#00f5ff"/>
+    <stop offset=".32" stop-color="#8c52ff"/>
+    <stop offset=".65" stop-color="#ff38b8"/>
+    <stop offset="1" stop-color="#ffe66d"/>
+    <animate attributeName="x1" values="0;1;0" dur="6s" repeatCount="indefinite"/>
   </linearGradient>
 
-  <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#ffffff"/>
-    <stop offset=".35" stop-color="#8ffcf2"/>
-    <stop offset=".7" stop-color="#31d6c4"/>
-    <stop offset="1" stop-color="#eaffff"/>
-    <animate attributeName="x1" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+  <linearGradient id="silver" x2="0" y2="1">
+    <stop stop-color="#ffffff"/>
+    <stop offset=".5" stop-color="#8cf9ff"/>
+    <stop offset="1" stop-color="#4c91d9"/>
   </linearGradient>
 
-  <linearGradient id="photoShade" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#001b20" stop-opacity=".05"/>
-    <stop offset=".65" stop-color="#001216" stop-opacity=".08"/>
-    <stop offset="1" stop-color="#001014" stop-opacity=".7"/>
-  </linearGradient>
-
-  <radialGradient id="aura">
-    <stop offset="0" stop-color="#25e9d4" stop-opacity=".3"/>
-    <stop offset=".55" stop-color="#0bb7b0" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#0bb7b0" stop-opacity="0"/>
+  <radialGradient id="glow">
+    <stop stop-color="#00eaff" stop-opacity=".35"/>
+    <stop offset="1" stop-color="#00eaff" stop-opacity="0"/>
   </radialGradient>
 
-  <radialGradient id="darkGlow">
-    <stop offset="0" stop-color="#0b9e98" stop-opacity=".22"/>
-    <stop offset="1" stop-color="#0b9e98" stop-opacity="0"/>
-  </radialGradient>
-
-  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
-    <feGaussianBlur stdDeviation="7" result="blur"/>
+  <filter id="shine" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="8" result="b"/>
     <feMerge>
-      <feMergeNode in="blur"/>
+      <feMergeNode in="b"/>
       <feMergeNode in="SourceGraphic"/>
     </feMerge>
   </filter>
 
-  <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
-    <feGaussianBlur stdDeviation="18"/>
+  <filter id="shadow">
+    <feGaussianBlur stdDeviation="16"/>
   </filter>
 
-  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
-    <feOffset dy="12" result="offset"/>
-    <feComponentTransfer>
-      <feFuncA type="linear" slope=".5"/>
-    </feComponentTransfer>
-    <feMerge>
-      <feMergeNode/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
-  </filter>
-
-  <clipPath id="photoClip">
-    <rect x="220" y="245" width="520" height="625" rx="42"/>
+  <clipPath id="listClip">
+    <rect x="105" y="525" width="750" height="690" rx="28"/>
   </clipPath>
 
-  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-    <path d="M48 0H0V48" fill="none" stroke="#8afff4" stroke-opacity=".055" stroke-width="1"/>
-    <circle cx="1" cy="1" r="1.5" fill="#8afff4" opacity=".18"/>
-  </pattern>
-
-  <pattern id="microDots" width="22" height="22" patternUnits="userSpaceOnUse">
-    <circle cx="3" cy="3" r="1" fill="#a5fff8" opacity=".16"/>
+  <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+    <path d="M42 0H0V42" fill="none" stroke="#8bfaff" stroke-opacity=".07"/>
+    <circle cx="1" cy="1" r="1.5" fill="#8bfaff" opacity=".2"/>
   </pattern>
 </defs>
 
 <!-- BACKGROUND -->
-<rect width="960" height="1200" rx="42" fill="url(#bg)"/>
-<rect width="960" height="1200" rx="42" fill="url(#grid)"/>
-<rect width="960" height="1200" rx="42" fill="url(#microDots)"/>
+<rect width="960" height="1400" rx="40" fill="url(#bg)"/>
+<rect width="960" height="1400" rx="40" fill="url(#grid)"/>
 
-<circle cx="480" cy="520" r="440" fill="url(#aura)">
-  <animate attributeName="r" values="380;470;380" dur="7s" repeatCount="indefinite"/>
-  <animate attributeName="opacity" values=".5;1;.5" dur="5s" repeatCount="indefinite"/>
+<circle cx="120" cy="250" r="300" fill="url(#glow)">
+  <animate attributeName="r" values="240;340;240" dur="7s" repeatCount="indefinite"/>
+</circle>
+<circle cx="850" cy="1000" r="360" fill="url(#glow)">
+  <animate attributeName="r" values="300;400;300" dur="8s" repeatCount="indefinite"/>
 </circle>
 
-<circle cx="90" cy="210" r="220" fill="url(#darkGlow)"/>
-<circle cx="880" cy="970" r="260" fill="url(#darkGlow)"/>
-
-<!-- OUTER FRAME -->
-<rect x="18" y="18" width="924" height="1164" rx="38"
-      fill="none" stroke="#5ff9e9" stroke-opacity=".35" stroke-width="2"/>
-
-<rect x="27" y="27" width="906" height="1146" rx="32"
-      fill="none" stroke="#d6fffb" stroke-opacity=".12" stroke-width="1"/>
-
-<rect x="38" y="38" width="884" height="1124" rx="28"
-      fill="none" stroke="url(#metal)" stroke-opacity=".24" stroke-width="1.5"/>
+<!-- FRAME -->
+<rect x="20" y="20" width="920" height="1360" rx="38"
+      fill="none" stroke="url(#neon)" stroke-width="3" filter="url(#shine)"/>
+<rect x="34" y="34" width="892" height="1332" rx="30"
+      fill="none" stroke="#ffffff" stroke-opacity=".16"/>
 
 <!-- CORNER LIGHTS -->
-<g fill="#8ffff5" filter="url(#glow)">
-  <circle cx="52" cy="52" r="4">
-    <animate attributeName="opacity" values=".2;1;.2" dur="1.5s" repeatCount="indefinite"/>
+<g fill="#ffffff" filter="url(#shine)">
+  <circle cx="48" cy="48" r="5">
+    <animate attributeName="opacity" values=".1;1;.1" dur="1.4s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="908" cy="52" r="4">
-    <animate attributeName="opacity" values="1;.2;1" dur="1.7s" repeatCount="indefinite"/>
+  <circle cx="912" cy="48" r="5">
+    <animate attributeName="opacity" values="1;.1;1" dur="1.7s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="52" cy="1148" r="4">
-    <animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/>
+  <circle cx="48" cy="1352" r="5">
+    <animate attributeName="opacity" values=".1;1;.1" dur="1.9s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="908" cy="1148" r="4">
-    <animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/>
+  <circle cx="912" cy="1352" r="5">
+    <animate attributeName="opacity" values="1;.1;1" dur="1.5s" repeatCount="indefinite"/>
   </circle>
 </g>
 
-<!-- TOP BRAND -->
+<!-- HEADER -->
 <g text-anchor="middle">
-  <text x="480" y="112" font-family="Arial, sans-serif"
-        font-size="19" letter-spacing="8"
-        fill="#8dfcf2" opacity=".85">THE PERSONAL PROFILE</text>
+  <text x="480" y="105" font-family="Arial" font-size="20"
+        letter-spacing="9" fill="#8cfaff">THE DIGITAL UNIVERSE</text>
 
-  <path d="M220 139H740" stroke="url(#metal)" stroke-width="1.5" opacity=".6"/>
-  <path d="M390 139H570" stroke="#bafff9" stroke-width="3"
-        filter="url(#glow)">
-    <animate attributeName="opacity" values=".25;1;.25" dur="2.5s" repeatCount="indefinite"/>
+  <text x="480" y="205" font-family="Arial" font-size="66"
+        font-weight="900" letter-spacing="3"
+        fill="url(#silver)" filter="url(#shine)">WELCOME TO</text>
+
+  <text x="480" y="292" font-family="Arial" font-size="82"
+        font-weight="900" letter-spacing="3"
+        fill="url(#neon)" filter="url(#shine)">REALITY</text>
+
+  <path d="M170 330H790" stroke="url(#neon)" stroke-width="3" opacity=".8"/>
+  <path d="M350 330H610" stroke="#ffffff" stroke-width="5" filter="url(#shine)">
+    <animate attributeName="opacity" values=".1;1;.1" dur="2s" repeatCount="indefinite"/>
   </path>
+
+  <text x="480" y="395" font-family="Arial" font-size="34"
+        font-weight="900" letter-spacing="5" fill="#ffffff">SIYAM HASAN</text>
+
+  <text x="480" y="433" font-family="Arial" font-size="17"
+        letter-spacing="5" fill="#75eaf5">OWNER • CREATOR • DEVELOPER</text>
 </g>
 
-<!-- ORBIT DECORATION -->
-<g transform="translate(480 550)" fill="none">
-  <ellipse rx="360" ry="420" stroke="#36dcd0" stroke-opacity=".12"
-           stroke-width="2" stroke-dasharray="5 15">
-    <animateTransform attributeName="transform" type="rotate"
-                      from="0" to="360" dur="65s" repeatCount="indefinite"/>
-  </ellipse>
-  <ellipse rx="390" ry="450" stroke="#a5fff8" stroke-opacity=".1"
-           stroke-width="1.5" stroke-dasharray="2 20">
-    <animateTransform attributeName="transform" type="rotate"
-                      from="360" to="0" dur="85s" repeatCount="indefinite"/>
-  </ellipse>
+<!-- STATUS PANEL -->
+<rect x="125" y="465" width="710" height="42" rx="21"
+      fill="#071d2a" stroke="#38e8ed" stroke-opacity=".6"/>
+
+<g text-anchor="middle" font-family="Arial">
+  <text x="480" y="492" font-size="17" font-weight="bold"
+        fill="#b9ffff">SIYAMBOT REPOSITORY • LIVE FILE SHOWCASE</text>
 </g>
 
-<!-- PHOTO AURA -->
-<rect x="195" y="220" width="570" height="675" rx="58"
-      fill="#17cfc0" opacity=".18" filter="url(#softGlow)">
-  <animate attributeName="opacity" values=".1;.28;.1" dur="4s" repeatCount="indefinite"/>
-</rect>
+<!-- FILE SHOWCASE FRAME -->
+<rect x="95" y="515" width="770" height="720" rx="32"
+      fill="#030b18" fill-opacity=".96"
+      stroke="url(#neon)" stroke-width="2.5"/>
 
-<!-- PHOTO FRAME -->
-<rect x="202" y="227" width="556" height="661" rx="52"
-      fill="#061419" stroke="url(#metal)" stroke-width="4"
-      filter="url(#shadow)"/>
+<rect x="107" y="527" width="746" height="696" rx="25"
+      fill="none" stroke="#ffffff" stroke-opacity=".13"/>
 
-<rect x="211" y="236" width="538" height="643" rx="46"
-      fill="none" stroke="#d5fffa" stroke-opacity=".5" stroke-width="1.5"/>
-
-<!-- USER PHOTO -->
-<g clip-path="url(#photoClip)">
-  <image x="220" y="245" width="520" height="625"
-         xlink:href="https://files.catbox.moe/8r9jdr.jpg"
-         href="https://files.catbox.moe/8r9jdr.jpg"
-         preserveAspectRatio="xMidYMid slice"/>
-  <rect x="220" y="245" width="520" height="625" fill="url(#photoShade)"/>
-  <rect x="220" y="245" width="520" height="625"
-        fill="#20cfc3" opacity=".07"/>
+<!-- LIST HEADER -->
+<g font-family="Arial" text-anchor="middle">
+  <text x="480" y="570" font-size="23" font-weight="bold"
+        fill="#b6ffff" letter-spacing="4">BOT FILE DIRECTORY</text>
+  <text x="480" y="600" font-size="14"
+        fill="#819eae" letter-spacing="3">COMMANDS • EVENTS • CORE FILES</text>
 </g>
 
-<!-- PHOTO SCANNING LIGHT -->
-<rect x="220" y="245" width="520" height="5" rx="3"
-      fill="#c8fff9" opacity=".9" filter="url(#glow)">
-  <animate attributeName="y" values="245;865;245" dur="6s" repeatCount="indefinite"/>
-  <animate attributeName="opacity" values=".1;1;.1" dur="6s" repeatCount="indefinite"/>
-</rect>
+<!-- SCROLLING FILE LIST -->
+<g clip-path="url(#listClip)">
+  <foreignObject x="125" y="620" width="710" height="590">
+    <html:div xmlns="http://www.w3.org/1999/xhtml"
+      style="width:710px;height:590px;overflow:hidden;
+             font-family:Arial,sans-serif;text-align:center;">
+      <html:style>
+        .roll {
+          animation: fileScroll 150s linear infinite;
+          font-family:Arial,sans-serif;
+          font-size:23px;
+          font-weight:700;
+          line-height:39px;
+          letter-spacing:1px;
+          text-shadow:0 0 9px currentColor;
+        }
+        .roll div:nth-child(4n+1) {color:#51f5ff;}
+        .roll div:nth-child(4n+2) {color:#d18aff;}
+        .roll div:nth-child(4n+3) {color:#ff83d2;}
+        .roll div:nth-child(4n) {color:#ffe58b;}
+        .roll .section {
+          color:#ffffff;
+          font-size:18px;
+          letter-spacing:4px;
+          padding:15px 0;
+          text-shadow:0 0 12px #00eaff;
+        }
+        @keyframes fileScroll {
+          from {transform:translateY(590px);}
+          to {transform:translateY(-100%);}
+        }
+      </html:style>
 
-<!-- PHOTO FRAME ANIMATED OUTLINE -->
-<rect x="202" y="227" width="556" height="661" rx="52"
-      fill="none" stroke="#aafff7" stroke-width="3"
-      stroke-dasharray="90 55 30 55"
-      stroke-linecap="round" filter="url(#glow)">
-  <animate attributeName="stroke-dashoffset" values="0;460" dur="12s" repeatCount="indefinite"/>
-  <animate attributeName="opacity" values=".35;1;.35" dur="3s" repeatCount="indefinite"/>
-</rect>
+      <html:div class="roll">
+        <html:div class="section">✦ MAIN BOT FILES ✦</html:div>
+        <html:div>Siyam.js</html:div>
+        <html:div>Main.js</html:div>
+        <html:div>SiyamKeepalive.js</html:div>
+        <html:div>package.json</html:div>
+        <html:div>config.json</html:div>
+        <html:div>railway.json</html:div>
+        <html:div>index.html</html:div>
+        <html:div>README.md</html:div>
+        <html:div>COMMANDS.md</html:div>
+        <html:div>GOAT_COMPAT.md</html:div>
 
-<!-- FLOATING LIGHT PARTICLES -->
-<g fill="#aafff7" filter="url(#glow)">
-  <circle cx="135" cy="310" r="3">
-    <animate attributeName="cy" values="310;270;310" dur="3s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="825" cy="380" r="4">
-    <animate attributeName="cy" values="380;335;380" dur="4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="120" cy="760" r="3">
-    <animate attributeName="cy" values="760;720;760" dur="3.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values=".1;1;.1" dur="2.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="840" cy="810" r="3">
-    <animate attributeName="cy" values="810;765;810" dur="4.2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="155" cy="540" r="2.5">
-    <animate attributeName="opacity" values=".1;1;.1" dur="1.8s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="805" cy="590" r="2.5">
-    <animate attributeName="opacity" values="1;.1;1" dur="2.1s" repeatCount="indefinite"/>
-  </circle>
+        <html:div class="section">✦ COMMAND FILES ✦</html:div>
+        <html:div>0admin.js</html:div>
+        <html:div>4k.js</html:div>
+        <html:div>Admin.js</html:div>
+        <html:div>BestFriend.js</html:div>
+        <html:div>Bot.js</html:div>
+        <html:div>Gan.js</html:div>
+        <html:div>Info.js</html:div>
+        <html:div>Islam.js</html:div>
+        <html:div>Nokia.js</html:div>
+        <html:div>Offbot.js</html:div>
+        <html:div>Owner.js</html:div>
+        <html:div>Pat.js</html:div>
+        <html:div>Prefix.js</html:div>
+        <html:div>Ramadanauto.js</html:div>
+        <html:div>Rushia.js</html:div>
+        <html:div>Shoti.js</html:div>
+        <html:div>acp.js</html:div>
+        <html:div>adbot.js</html:div>
+        <html:div>add.js</html:div>
+        <html:div>addadmin.js</html:div>
+        <html:div>adduser.js</html:div>
+        <html:div>adminadd.js</html:div>
+        <html:div>adminlist.js</html:div>
+        <html:div>adminonly.js</html:div>
+        <html:div>adminupdate.js</html:div>
+        <html:div>age.js</html:div>
+        <html:div>ai.js</html:div>
+        <html:div>alert.js</html:div>
+        <html:div>allah.js</html:div>
+        <html:div>allbox.js</html:div>
+        <html:div>allvideo.js</html:div>
+        <html:div>ang-bn.js</html:div>
+        <html:div>ang-en.js</html:div>
+        <html:div>animate.js</html:div>
+        <html:div>anime.js</html:div>
+        <html:div>animedp.js</html:div>
+        <html:div>animegarl.js</html:div>
+        <html:div>animegilr.js</html:div>
+        <html:div>antiflood.js</html:div>
+        <html:div>antijoin.js</html:div>
+        <html:div>antilink2.js</html:div>
+        <html:div>antiout.js</html:div>
+        <html:div>approve.js</html:div>
+        <html:div>arrest.js</html:div>
+        <html:div>art.js</html:div>
+        <html:div>attitudevideo.js</html:div>
+        <html:div>autobirthday.js</html:div>
+        <html:div>autodl.js</html:div>
+        <html:div>autoseen.js</html:div>
+        <html:div>baby.js</html:div>
+        <html:div>ban.js</html:div>
+        <html:div>batslap.js</html:div>
+        <html:div>bc.js</html:div>
+        <html:div>bday.js</html:div>
+        <html:div>bestie.js</html:div>
+        <html:div>bestu.js</html:div>
+        <html:div>bf.js</html:div>
+        <html:div>bigtext.js</html:div>
+        <html:div>bijiboy.js</html:div>
+        <html:div>bijigirl.js</html:div>
+        <html:div>bikashf.js</html:div>
+        <html:div>birthday.js</html:div>
+        <html:div>bondu.js</html:div>
+        <html:div>bonk.js</html:div>
+        <html:div>botautoban.js</html:div>
+        <html:div>box.js</html:div>
+        <html:div>boxadmin.js</html:div>
+        <html:div>boxinfo.js</html:div>
+        <html:div>boypp.js</html:div>
+        <html:div>bro.js</html:div>
+        <html:div>broken.js</html:div>
+        <html:div>call.js</html:div>
+        <html:div>caption.js</html:div>
+        <html:div>car.js</html:div>
+        <html:div>catbox.js</html:div>
+        <html:div>chipa.js</html:div>
+        <html:div>chor.js</html:div>
+        <html:div>ckbot.js</html:div>
+        <html:div>ckuaer.js</html:div>
+        <html:div>config.js</html:div>
+        <html:div>cot.js</html:div>
+        <html:div>couple.js</html:div>
+        <html:div>coupledp.js</html:div>
+        <html:div>cpt.js</html:div>
+        <html:div>cricket.js</html:div>
+        <html:div>crush.js</html:div>
+        <html:div>crush1.js</html:div>
+        <html:div>csino.js</html:div>
+        <html:div>daily.js</html:div>
+        <html:div>deletemsg.js</html:div>
+        <html:div>dim.js</html:div>
+        <html:div>dirthdayAuto.js</html:div>
+        <html:div>dog.js</html:div>
+        <html:div>doya.js</html:div>
+        <html:div>edit.js</html:div>
+        <html:div>edit2.js</html:div>
+        <html:div>editpic.js</html:div>
+        <html:div>emojimix.js</html:div>
+        <html:div>extaprefix.js</html:div>
+        <html:div>family.js</html:div>
+        <html:div>fbcover.js</html:div>
+        <html:div>fbkick.js</html:div>
+        <html:div>fblink.js</html:div>
+        <html:div>fbpost.js</html:div>
+        <html:div>file.js</html:div>
+        <html:div>fire.js</html:div>
+        <html:div>fixspam.js</html:div>
+        <html:div>flux.js</html:div>
+        <html:div>fokir.js</html:div>
+        <html:div>font.js</html:div>
+        <html:div>fork.js</html:div>
+        <html:div>fp.js</html:div>
+        <html:div>friends.js</html:div>
+        <html:div>garl.js</html:div>
+        <html:div>garl2.js</html:div>
+        <html:div>getlink.js</html:div>
+        <html:div>gf.js</html:div>
+        <html:div>girlpp.js</html:div>
+        <html:div>gitHub.js</html:div>
+        <html:div>give.js</html:div>
+        <html:div>google.js</html:div>
+        <html:div>goru.js</html:div>
+        <html:div>gptgen.js</html:div>
+        <html:div>group.js</html:div>
+        <html:div>groupemoji.js</html:div>
+        <html:div>groupimage.js</html:div>
+        <html:div>groupname.js</html:div>
+        <html:div>hack.js</html:div>
+        <html:div>help.js</html:div>
+        <html:div>hi.js</html:div>
+        <html:div>hug.js</html:div>
+        <html:div>hug2.js</html:div>
+        <html:div>imgur.js</html:div>
+        <html:div>in.js</html:div>
+        <html:div>inbox.js</html:div>
+        <html:div>install.js</html:div>
+        <html:div>islamic.js</html:div>
+        <html:div>jail.js</html:div>
+        <html:div>join.js</html:div>
+        <html:div>juti.js</html:div>
+        <html:div>juwelalert.js</html:div>
+        <html:div>juwelvai.js</html:div>
+        <html:div>jwl.js</html:div>
+        <html:div>kick.js</html:div>
+        <html:div>kickall.js</html:div>
+        <html:div>kiss.js</html:div>
+        <html:div>kiss1.js</html:div>
+        <html:div>kiss2.js</html:div>
+        <html:div>kiss3.js</html:div>
+        <html:div>listadmin.js</html:div>
+        <html:div>listbox.js</html:div>
+        <html:div>listfriend.js</html:div>
+        <html:div>load.js</html:div>
+        <html:div>lock.js</html:div>
+        <html:div>love.js</html:div>
+        <html:div>love1.js</html:div>
+        <html:div>love2.js</html:div>
+        <html:div>love3.js</html:div>
+        <html:div>lv.js</html:div>
+        <html:div>lv2.js</html:div>
+        <html:div>lv3.js</html:div>
+        <html:div>married.js</html:div>
+        <html:div>married2.js</html:div>
+        <html:div>married3.js</html:div>
+        <html:div>mention.js</html:div>
+        <html:div>menu.js</html:div>
+        <html:div>mp3.js</html:div>
+        <html:div>newbox.js</html:div>
+        <html:div>night.js</html:div>
+        <html:div>noti.js</html:div>
+        <html:div>notice.js</html:div>
+        <html:div>numinfo.js</html:div>
+        <html:div>out.js</html:div>
+        <html:div>outall.js</html:div>
+        <html:div>pabna.js</html:div>
+        <html:div>pair.js</html:div>
+        <html:div>pair1.js</html:div>
+        <html:div>pair2.js</html:div>
+        <html:div>pairing.js</html:div>
+        <html:div>pending.js</html:div>
+        <html:div>pet.js</html:div>
+        <html:div>pic.js</html:div>
+        <html:div>poli.js</html:div>
+        <html:div>post.js</html:div>
+        <html:div>pp.js</html:div>
+        <html:div>profile.js</html:div>
+        <html:div>prompt.js</html:div>
+        <html:div>protect.js</html:div>
+        <html:div>qr.js</html:div>
+        <html:div>quiz.js</html:div>
+        <html:div>random.js</html:div>
+        <html:div>rank.js</html:div>
+        <html:div>rasian.js</html:div>
+        <html:div>reaction-px.js</html:div>
+        <html:div>restrat.js</html:div>
+        <html:div>rip.js</html:div>
+        <html:div>rip1.js</html:div>
+        <html:div>rules.js</html:div>
+        <html:div>sadvide.js</html:div>
+        <html:div>sala.js</html:div>
+        <html:div>say.js</html:div>
+        <html:div>scan.js</html:div>
+        <html:div>search.js</html:div>
+        <html:div>selfadmin.js</html:div>
+        <html:div>sendmsg.js</html:div>
+        <html:div>sendsms.js</html:div>
+        <html:div>setbot.js</html:div>
+        <html:div>setemoji.js</html:div>
+        <html:div>setexp.js</html:div>
+        <html:div>setjoin.js</html:div>
+        <html:div>setname.js</html:div>
+        <html:div>setpp.js</html:div>
+        <html:div>setprefix.js</html:div>
+        <html:div>setprofile.js</html:div>
+        <html:div>settings.js</html:div>
+        <html:div>setupbot.js</html:div>
+        <html:div>shayri.js</html:div>
+        <html:div>shortcut.js</html:div>
+        <html:div>sigma.js</html:div>
+        <html:div>sigmaboy.js</html:div>
+        <html:div>silent.js</html:div>
+        <html:div>sing.js</html:div>
+        <html:div>sing2.js</html:div>
+        <html:div>single.js</html:div>
+        <html:div>slap.js</html:div>
+        <html:div>slap1.js</html:div>
+        <html:div>slap2.js</html:div>
+        <html:div>sms.js</html:div>
+        <html:div>song.js</html:div>
+        <html:div>spam.js</html:div>
+        <html:div>spamban.js</html:div>
+        <html:div>ss.js</html:div>
+        <html:div>stalk.js</html:div>
+        <html:div>status.js</html:div>
+        <html:div>supportgc.js</html:div>
+        <html:div>sura.js</html:div>
+        <html:div>suspend.js</html:div>
+        <html:div>system.js</html:div>
+        <html:div>tag.js</html:div>
+        <html:div>text.js</html:div>
+        <html:div>textoff.js</html:div>
+        <html:div>textpro.js</html:div>
+        <html:div>theme.js</html:div>
+        <html:div>thread.js</html:div>
+        <html:div>tid.js</html:div>
+        <html:div>toilet.js</html:div>
+        <html:div>tokai.js</html:div>
+        <html:div>top.js</html:div>
+        <html:div>translated.js</html:div>
+        <html:div>uid.js</html:div>
+        <html:div>umma.js</html:div>
+        <html:div>unsend.js</html:div>
+        <html:div>up2.js</html:div>
+        <html:div>upt.js</html:div>
+        <html:div>uptime.js</html:div>
+        <html:div>video.js</html:div>
+        <html:div>vip.js</html:div>
+        <html:div>wallpaper.js</html:div>
+        <html:div>weather.js</html:div>
+        <html:div>wish.js</html:div>
+        <html:div>women.js</html:div>
+        <html:div>x.js</html:div>
+        <html:div>youtube.js</html:div>
+        <html:div>zip.js</html:div>
+        <html:div>zuck.js</html:div>
+
+        <html:div class="section">✦ EVENT FILES ✦</html:div>
+        <html:div>adminupdate.js</html:div>
+        <html:div>antijoin.js</html:div>
+        <html:div>antiout.js</html:div>
+        <html:div>autosetname.js</html:div>
+        <html:div>god.js</html:div>
+        <html:div>joinNoti.js</html:div>
+        <html:div>juwelGuard.js</html:div>
+        <html:div>leavenoti.js</html:div>
+
+        <html:div class="section">✦ CORE SYSTEM ✦</html:div>
+        <html:div>guardian/AUTO_COOKIE.js</html:div>
+        <html:div>guardian/cli.js</html:div>
+        <html:div>guardian/core.js</html:div>
+        <html:div>guardian/start.js</html:div>
+        <html:div>guardian/totp.js</html:div>
+        <html:div>includes/listen.js</html:div>
+        <html:div>includes/power.js</html:div>
+        <html:div>includes/silent.js</html:div>
+        <html:div>includes/solo.js</html:div>
+        <html:div>utils/console.js</html:div>
+        <html:div>utils/index.js</html:div>
+        <html:div>utils/log.js</html:div>
+        <html:div>languages/en.lang</html:div>
+        <html:div>config.json</html:div>
+        <html:div>package.json</html:div>
+        <html:div>railway.json</html:div>
+
+        <html:div class="section">✦ SIYAM HASAN ✦</html:div>
+        <html:div>BUILT WITH PASSION</html:div>
+        <html:div>WELCOME TO REALITY</html:div>
+      </html:div>
+    </html:div>
+  </foreignObject>
 </g>
 
-<!-- SIDE LIGHT BARS -->
-<g stroke="#5df5e8" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
-  <path d="M105 410V520" opacity=".4">
-    <animate attributeName="opacity" values=".1;.9;.1" dur="2.8s" repeatCount="indefinite"/>
-  </path>
-  <path d="M855 650V760" opacity=".4">
-    <animate attributeName="opacity" values=".9;.1;.9" dur="3.2s" repeatCount="indefinite"/>
-  </path>
+<!-- LIST FOOTER -->
+<rect x="125" y="1248" width="710" height="50" rx="25"
+      fill="#071c2a" stroke="url(#neon)" stroke-width="1.5"/>
+
+<g text-anchor="middle" font-family="Arial">
+  <text x="480" y="1280" font-size="18"
+        fill="#c8ffff" letter-spacing="3">268 COMMANDS • 8 EVENTS</text>
+
+  <text x="480" y="1335" font-size="22"
+        font-weight="bold" letter-spacing="6"
+        fill="url(#neon)" filter="url(#shine)">SIYAM HASAN</text>
 </g>
 
-<!-- NAME PLATE -->
-<g text-anchor="middle">
-  <rect x="110" y="930" width="740" height="128" rx="28"
-        fill="#071b20" fill-opacity=".92"
-        stroke="url(#metal)" stroke-width="2"/>
-
-  <rect x="122" y="942" width="716" height="104" rx="20"
-        fill="none" stroke="#b4fff8" stroke-opacity=".15"/>
-
-  <text x="480" y="1000"
-        font-family="Arial, Helvetica, sans-serif"
-        font-size="66" font-weight="900"
-        letter-spacing="3"
-        fill="url(#nameGrad)" filter="url(#glow)">SIYAM HASAN</text>
-
-  <path d="M250 1018H710" stroke="#6ff9ed" stroke-width="1.5" opacity=".65">
-    <animate attributeName="stroke-dasharray"
-             values="0 460;460 0;0 460" dur="5s" repeatCount="indefinite"/>
-  </path>
-</g>
-
-<!-- SUBTITLE -->
-<g text-anchor="middle">
-  <text x="480" y="1100"
-        font-family="Arial, sans-serif"
-        font-size="22" font-weight="700"
-        letter-spacing="7" fill="#b8fff8">CREATOR • DEVELOPER</text>
-
-  <text x="480" y="1138"
-        font-family="Arial, sans-serif"
-        font-size="13" letter-spacing="5"
-        fill="#69bdb8" opacity=".85">DREAM  •  CREATE  •  INNOVATE</text>
-</g>
-
-<!-- BOTTOM LIGHT STRIP -->
-<path d="M185 1160H775" stroke="#46dace" stroke-width="2" opacity=".3"/>
-<path d="M420 1160H540" stroke="#d4fffb" stroke-width="4"
-      filter="url(#glow)">
-  <animate attributeName="opacity" values=".1;1;.1" dur="2s" repeatCount="indefinite"/>
+<!-- FINAL LIGHT -->
+<path d="M160 1360H800" stroke="url(#neon)" stroke-width="2">
+  <animate attributeName="opacity" values=".2;1;.2" dur="2.5s" repeatCount="indefinite"/>
 </path>
-
-<!-- ANIMATED SPARKLES -->
-<g fill="#e2fffc" filter="url(#glow)">
-  <path d="M90 170l5 14 14 5-14 5-5 14-5-14-14-5 14-5z">
-    <animateTransform attributeName="transform" type="rotate"
-                      from="0 90 189" to="360 90 189" dur="9s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
-  </path>
-  <path d="M865 180l4 12 12 4-12 4-4 12-4-12-12-4 12-4z">
-    <animateTransform attributeName="transform" type="rotate"
-                      from="360 865 196" to="0 865 196" dur="8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;.2;1" dur="2.4s" repeatCount="indefinite"/>
-  </path>
-  <path d="M120 1000l4 10 10 4-10 4-4 10-4-10-10-4 10-4z">
-    <animate attributeName="opacity" values=".1;1;.1" dur="2.6s" repeatCount="indefinite"/>
-  </path>
-  <path d="M840 1020l4 10 10 4-10 4-4 10-4-10-10-4 10-4z">
-    <animate attributeName="opacity" values="1;.1;1" dur="2.2s" repeatCount="indefinite"/>
-  </path>
-</g>
-
-<!-- FLOATING ORBITING DOT -->
-<circle cx="480" cy="550" r="5" fill="#c9fffa" filter="url(#glow)">
-  <animateMotion dur="12s" repeatCount="indefinite">
-    <mpath xlink:href="#orbitPath"/>
-  </animateMotion>
-</circle>
-
-<path id="orbitPath"
-      d="M480 120 C820 120 900 400 850 600
-         C800 900 600 1080 480 1080
-         C200 1080 80 800 110 550
-         C130 300 260 120 480 120"
-      fill="none" stroke="none"/>
-
-<!-- FINAL BORDER SHINE -->
-<rect x="18" y="18" width="924" height="1164" rx="38"
-      fill="none" stroke="#d9fffb" stroke-width="1.5"
-      stroke-dasharray="180 900" opacity=".7">
-  <animate attributeName="stroke-dashoffset"
-           values="0;-1080" dur="8s" repeatCount="indefinite"/>
-</rect>
 
 </svg>
