@@ -4,7 +4,7 @@ module.exports = function({ sequelize, Sequelize }) {
 			type: Sequelize.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
-		},
+		},//।      সিয়াম।      %
 		userID: {
 			type: Sequelize.BIGINT,
 			unique: true
