@@ -1,20 +1,20 @@
 
 {
-  "name": "mirai-goat-mix-mix",
+  "name": "nijhum-chat-bot",
   "version": "3.0.0",
-  "description": "Nijum - MIRAI + GoatBot hybrid Messenger bot - runs Mirai AND GoatBot commands/events side by side. Based on Mirai (𝗦𝗶𝘆𝗮𝗺 𝗛𝗮𝘀𝗮𝗻).",
-  "main": "Juwel.js",
+  "description": "Nijhum Chat Bot - MIRAI + GoatBot hybrid Messenger bot. Runs Mirai and GoatBot commands/events side by side. Based on Mirai (Siyam Hasan).",
+  "main": "Siyam.js",
   "engines": {
     "node": "22.x",
     "npm": ">=10.0.0 <13.0.0"
   },
   "scripts": {
-    "start": "node Juwel.js",
+    "start": "node Siyam.js",
     "login": "node login"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL.git"
+    "url": "https://github.com/mrsiyam404/siyam-w.git"
   },
   "keywords": [
     "bot",
@@ -23,16 +23,17 @@
     "messenger",
     "javascript",
     "siyamhasan",
+    "nijhum-chat-bot",
     "mirai",
     "goat",
-    "goat mirai mix bot"
+    "goat-mirai-mix"
   ],
-  "author": "𝗦𝗶𝘆𝗮𝗺 𝗛𝗮𝘀𝗮𝗻",
+  "author": "Siyam Hasan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/issues"
+    "url": "https://github.com/mrsiyam404/siyam-w/issues"
   },
-  "homepage": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL#readme",
+  "homepage": "https://github.com/mrsiyam404/siyam-w#readme",
   "dependencies": {
     "@miraipr0ject/assets": "^1.0.9",
     "axios": "^1.6.0",
