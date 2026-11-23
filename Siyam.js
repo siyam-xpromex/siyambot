@@ -1,4 +1,5 @@
-require("./JuwelKeepalive"); // <-- Keep-alive (Render ঘুমিয়ে যাওয়া ঠেকায়)
+
+require("./SiyamKeepalive");
 const { spawn } = require("child_process");
 const path = require("path");
 const BDBotTeam = (() => { try { return require("./BDBotTeam"); } catch (e) { return null; } })();
@@ -16,9 +17,6 @@ let bot = null;
 let shuttingDown = false;
 let consecutiveFails = 0;
 
-/* ============================================================
-   ===== নতুন যোগ করা অংশ (ADDED FEATURES) - শুরু ==============
-   ============================================================ */
 const fs = require("fs");
 const { spawnSync } = require("child_process");
 
@@ -34,7 +32,7 @@ let restartCount = 0;
 let lastCookieStatus = "Not checked yet";
 let lastCodeStatus = "Not checked yet";
 
-const BANNER_INTERVAL_MS = 5 * 60 * 1000; // প্রতি ৫ মিনিটে ব্যানার + স্ট্যাটাস আবার দেখাবে
+const BANNER_INTERVAL_MS = 5 * 60 * 1000;
 const COOKIE_FILES = ["appstate.json", "cookie.json", "cookies.json", "fbstate.json"];
 
 const ok = (m) => console.log(`${C.green}${C.bold}[ OK ]${C.reset} ${C.green}${m}${C.reset}`);
@@ -67,7 +65,7 @@ function showBanner() {
   console.log("");
   console.log(`${C.magenta}${C.bold}╔${line}╗${C.reset}`);
   console.log(`${C.magenta}${C.bold}║${C.cyan}${center("")}${C.magenta}║${C.reset}`);
-  console.log(`${C.magenta}${C.bold}║${C.cyan}${center("𝗠𝗥 𝗝𝗨𝗪𝗘𝗟 𝗖𝗛𝗔𝗧 𝗕𝗢𝗧")}${C.magenta}║${C.reset}`);
+  console.log(`${C.magenta}${C.bold}║${C.cyan}${center("𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧 𝗕𝗢𝗧")}${C.magenta}║${C.reset}`);
   console.log(`${C.magenta}${C.bold}║${C.yellow}${center("~ Smart • Fast • Reliable ~")}${C.magenta}║${C.reset}`);
   console.log(`${C.magenta}${C.bold}║${C.cyan}${center("")}${C.magenta}║${C.reset}`);
   console.log(`${C.magenta}${C.bold}╠${line}╣${C.reset}`);
@@ -87,7 +85,6 @@ function showBanner() {
   console.log("");
 }
 
-/* ---------- কুকি চেক ---------- */
 function checkCookie() {
   console.log(`${C.blue}${C.bold}── Cookie Check ──${C.reset}`);
   let file = null;
@@ -148,7 +145,6 @@ function checkCookie() {
     return false;
   }
 
-  // মেয়াদ চেক
   let expired = [];
   let soonest = null;
   for (const n of required) {
@@ -160,7 +156,7 @@ function checkCookie() {
       exp = isNaN(t) ? null : t;
     } else {
       exp = Number(exp);
-      if (exp < 1e12) exp *= 1000; // সেকেন্ড → মিলিসেকেন্ড
+      if (exp < 1e12) exp *= 1000;
     }
     if (!exp || exp <= 0) continue;
     if (exp <= Date.now()) expired.push(n);
@@ -185,7 +181,6 @@ function checkCookie() {
   return true;
 }
 
-/* ---------- কোড/ফাইল লোড চেক ---------- */
 function walkJs(dir, out = []) {
   let items = [];
   try { items = fs.readdirSync(dir, { withFileTypes: true }); } catch (_) { return out; }
@@ -216,7 +211,6 @@ function checkCode() {
   }
   ok("Main.js found");
 
-  // dependency চেক
   const deps = Object.keys(packageInfo.dependencies || {});
   const missingDeps = deps.filter((d) => !fs.existsSync(path.join(__dirname, "node_modules", d)));
   if (missingDeps.length) {
@@ -226,7 +220,6 @@ function checkCode() {
     ok(`All ${deps.length} dependencies are installed`);
   }
 
-  // সিনট্যাক্স + require চেক
   const files = walkJs(__dirname).filter((f) => f !== __filename);
   let syntaxErrors = 0;
   let loadErrors = 0;
@@ -321,7 +314,7 @@ function startMonitorTimer() {
     checkCookie();
     showBanner();
   }, BANNER_INTERVAL_MS);
-  t.unref(); // বট বন্ধ হলে টাইমার প্রসেস ধরে রাখবে না
+  t.unref();
 }
 
 process.on("uncaughtException", (err) => {
@@ -330,13 +323,8 @@ process.on("uncaughtException", (err) => {
 process.on("unhandledRejection", (err) => {
   fail(`Launcher unhandled rejection: ${err && err.message ? err.message : err}`);
 });
-/* ============================================================
-   ===== নতুন যোগ করা অংশ (ADDED FEATURES) - শেষ ===============
-   ============================================================ */
 
 function startBot() {
-  // Mirai + GoatBot হাইব্রিড লেয়ার: Main.js চালুর আগেই preload.js লোড হয়, যাতে
-  // Script/commands ও Script/events-এ GoatBot স্টাইলের ফাইলও (onStart/onChat/onReply...) চলে।
   const nodeArgs = ["--trace-warnings", "--async-stack-traces"];
   if (BDBotTeam) nodeArgs.push(...BDBotTeam.launcherArgs(), "--require", BDBotTeam.FILE);
   if (fs.existsSync(COMPAT_PRELOAD)) nodeArgs.push("--require", COMPAT_PRELOAD);
@@ -345,11 +333,11 @@ function startBot() {
     stdio: "inherit",
     env: {
       ...process.env,
-      JUWEL_MEMGUARD_CHILD: "1"
+      SIYAM_MEMGUARD_CHILD: "1"
     }
   });
 
-  attachMonitor(bot); // <-- নতুন যোগ
+  attachMonitor(bot);
 
   bot.on("error", (error) => {
     console.error("Main.js Error:", error.message);
@@ -368,18 +356,15 @@ function startBot() {
     console.log("Main.js stopped.");
     console.log("Exit Code:", code, "Signal:", signal || "none");
 
-    // কোড 0 = ইচ্ছাকৃত বন্ধ (যেমন Offbot কমান্ড), তাই রিস্টার্ট হবে না
     if (code === 0) {
       console.log("Normal exit (code 0). Not restarting.");
       process.exit(0);
       return;
     }
 
-    // ১ মিনিটের বেশি চলে থাকলে ব্যর্থতার গণনা শূন্য, না হলে বাড়বে
     if (Date.now() - spawnedAt > 60000) consecutiveFails = 0;
     else consecutiveFails++;
 
-    // 5s, 10s, 20s, 40s, সর্বোচ্চ 60s অপেক্ষা
     const delay = Math.min(5000 * Math.pow(2, Math.max(0, consecutiveFails - 1)), 60000);
     console.log(`Auto-restart in ${Math.round(delay / 1000)}s (consecutive fails: ${consecutiveFails})`);
     setTimeout(() => {
@@ -425,7 +410,7 @@ process.on("exit", () => {
   }
 });
 
-runPreflight();     // <-- নতুন যোগ: কুকি + কোড চেক
+runPreflight();
 startBot();
-showBanner();       // <-- নতুন যোগ: Jewel Chat Bot ব্যানার
-startMonitorTimer(); // <-- নতুন যোগ: বারবার স্ট্যাটাস দেখাবে
+showBanner();
+startMonitorTimer();
