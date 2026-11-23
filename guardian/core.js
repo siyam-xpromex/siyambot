@@ -1,5 +1,5 @@
 /**
- * Cookie Guardian — Credit: 乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐
+ * Cookie Guardian — Credit: Siyam Hasan
  */
 'use strict';
 /**
