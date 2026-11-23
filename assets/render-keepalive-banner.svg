@@ -1,60 +1,452 @@
 
-<!-- RENDER + RAILWAY HOSTING PLATFORMS -->
-<g transform="translate(0 0)">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 960 420"
+     width="960" height="420"
+     role="img"
+     aria-label="SIYAM HASAN Cyber Keep Alive Dashboard with Render and Railway">
+
+<title>SIYAM HASAN • CYBER KEEP-ALIVE • RENDER + RAILWAY</title>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#090d27"/>
+    <stop offset=".48" stop-color="#11102f"/>
+    <stop offset="1" stop-color="#030916"/>
+  </linearGradient>
+
+  <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#00f5ff"/>
+    <stop offset=".48" stop-color="#8765ff"/>
+    <stop offset="1" stop-color="#ff4fd8"/>
+  </linearGradient>
+
+  <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff4bd"/>
+    <stop offset=".45" stop-color="#ffc857"/>
+    <stop offset="1" stop-color="#d87922"/>
+  </linearGradient>
+
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#a7ffdf"/>
+    <stop offset="1" stop-color="#00bd82"/>
+  </linearGradient>
+
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#19274a" stop-opacity=".95"/>
+    <stop offset="1" stop-color="#10132e" stop-opacity=".95"/>
+  </linearGradient>
+
+  <linearGradient id="pink" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ff4fd8"/>
+    <stop offset="1" stop-color="#8b5cff"/>
+  </linearGradient>
+
+  <radialGradient id="core">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset=".15" stop-color="#00f5ff"/>
+    <stop offset=".55" stop-color="#4b66ff" stop-opacity=".45"/>
+    <stop offset="1" stop-color="#4b66ff" stop-opacity="0"/>
+  </radialGradient>
+
+  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="5" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="18"/>
+  </filter>
+
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M28 0H0V28" fill="none"
+          stroke="#83aaff" stroke-opacity=".075" stroke-width="1"/>
+  </pattern>
+
+  <clipPath id="screen">
+    <path d="M22 18H938V402H22Z"/>
+  </clipPath>
+
+  <clipPath id="leftPanel">
+    <path d="M38 91L315 91L340 116V339L315 365H38Z"/>
+  </clipPath>
+
+  <clipPath id="rightPanel">
+    <path d="M367 91H899L922 114V342L899 365H367L345 343V114Z"/>
+  </clipPath>
+</defs>
+
+<!-- BACKGROUND -->
+<rect width="960" height="420" rx="22" fill="url(#bg)"/>
+<rect width="960" height="420" fill="url(#grid)"/>
+
+<g clip-path="url(#screen)">
+  <circle cx="115" cy="110" r="170" fill="#00eaff" opacity=".12" filter="url(#soft)">
+    <animate attributeName="opacity" values=".06;.2;.06" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="840" cy="330" r="190" fill="#b04dff" opacity=".18" filter="url(#soft)">
+    <animate attributeName="opacity" values=".18;.07;.18" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="520" cy="40" r="100" fill="#ff4fd8" opacity=".09" filter="url(#soft)"/>
+
+  <g fill="none" stroke="url(#neon)" opacity=".25">
+    <path d="M-30 330L280 20" stroke-width="2"/>
+    <path d="M20 420L420 20" stroke-width="1"/>
+    <path d="M680 430L1040 70" stroke-width="2"/>
+    <path d="M760 430L1080 110" stroke-width="1"/>
+  </g>
+</g>
+
+<!-- OUTER EDGE -->
+<path d="M42 12H918L948 42V378L918 408H42L12 378V42Z"
+      fill="none" stroke="url(#neon)" stroke-width="2.2"
+      opacity=".85" filter="url(#glow)"/>
+
+<path d="M58 21H902L938 57V363L902 399H58L22 363V57Z"
+      fill="none" stroke="#a4c7ff"
+      stroke-opacity=".17" stroke-width="1"/>
+
+<!-- HEADER + RENDER + RAILWAY -->
+<g>
+  <path d="M54 38H410L428 56L410 74H54Z"
+        fill="#111b3b" stroke="#3b7dff" stroke-opacity=".5"/>
+
+  <circle cx="74" cy="56" r="6" fill="#00f5ff" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;.35;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="91" y="61" fill="#d9eaff"
+        font-family="Arial,sans-serif" font-size="13"
+        font-weight="bold" letter-spacing="2">
+    CYBER KEEP-ALIVE
+  </text>
 
   <!-- RENDER CARD -->
-  <path d="M58 105L77 87H286L305 106V137H58Z"
-        fill="#17152e" stroke="#8a05ff" stroke-width="1.5"/>
+  <path d="M454 39H624L636 51V73H454Z"
+        fill="#17152e" stroke="#8a05ff" stroke-width="1.3"/>
 
-  <circle cx="91" cy="111" r="17"
-          fill="#8a05ff" opacity=".2"/>
+  <circle cx="474" cy="56" r="12"
+          fill="#8a05ff" opacity=".25"/>
 
-  <!-- Render-inspired vector mark -->
-  <g transform="translate(91 111)" fill="none"
-     stroke="#ffffff" stroke-width="3.2"
+  <g transform="translate(474 56)" fill="none"
+     stroke="#ffffff" stroke-width="2.5"
      stroke-linecap="round" stroke-linejoin="round">
-    <path d="M-9 -8H8L-3 0H9L-5 9"/>
-    <path d="M-12 0H-4" stroke="#c58aff"/>
+    <path d="M-7 -6H7L-2 0H7L-4 7"/>
+    <path d="M-9 0H-3" stroke="#c58aff"/>
   </g>
 
-  <text x="119" y="107" fill="#ffffff"
+  <text x="493" y="54" fill="#ffffff"
         font-family="Arial,sans-serif"
-        font-size="13" font-weight="bold"
-        letter-spacing="1.5">RENDER</text>
+        font-size="11" font-weight="bold"
+        letter-spacing="1">RENDER</text>
 
-  <text x="119" y="122" fill="#b7a2d8"
+  <text x="493" y="66" fill="#b7a2d8"
         font-family="Arial,sans-serif"
-        font-size="8" letter-spacing="1.2">CLOUD HOSTING</text>
+        font-size="7" letter-spacing=".8">
+    CLOUD HOSTING
+  </text>
 
-  <circle cx="281" cy="111" r="4" fill="#00ffad"
-          filter="url(#glow)"/>
+  <circle cx="616" cy="56" r="3.5"
+          fill="#00ffad" filter="url(#glow)"/>
 
   <!-- RAILWAY CARD -->
-  <path d="M655 106L674 87H883L902 105V137H655Z"
-        fill="#17152e" stroke="#8d75bb" stroke-width="1.5"/>
+  <path d="M650 39H820L832 51V73H650Z"
+        fill="#17152e" stroke="#8d75bb" stroke-width="1.3"/>
 
-  <circle cx="689" cy="111" r="17"
-          fill="#8d75bb" opacity=".22"/>
+  <circle cx="670" cy="56" r="12"
+          fill="#8d75bb" opacity=".25"/>
 
-  <!-- Railway-inspired vector mark -->
-  <g transform="translate(689 111)" fill="none"
-     stroke="#ffffff" stroke-width="2.7"
+  <g transform="translate(670 56)" fill="none"
+     stroke="#ffffff" stroke-width="2.2"
      stroke-linecap="round" stroke-linejoin="round">
-    <path d="M-12 -5H7Q13 -5 13 1Q13 6 7 6H-12"/>
-    <path d="M-12 -11V11"/>
-    <path d="M-5 6L2 12"/>
+    <path d="M-8 -4H5Q10 -4 10 1Q10 5 5 5H-8"/>
+    <path d="M-8 -9V9"/>
+    <path d="M-3 5L3 10"/>
   </g>
 
-  <text x="717" y="107" fill="#ffffff"
+  <text x="689" y="54" fill="#ffffff"
         font-family="Arial,sans-serif"
-        font-size="13" font-weight="bold"
-        letter-spacing="1.5">RAILWAY</text>
+        font-size="11" font-weight="bold"
+        letter-spacing="1">RAILWAY</text>
 
-  <text x="717" y="122" fill="#b8a9d5"
+  <text x="689" y="66" fill="#b8a9d5"
         font-family="Arial,sans-serif"
-        font-size="8" letter-spacing="1.2">CLOUD DEPLOYMENT</text>
+        font-size="7" letter-spacing=".8">
+    CLOUD DEPLOYMENT
+  </text>
 
-  <circle cx="878" cy="111" r="4" fill="#00ffad"
-          filter="url(#glow)"/>
+  <circle cx="812" cy="56" r="3.5"
+          fill="#00ffad" filter="url(#glow)"/>
 
+  <text x="900" y="58" text-anchor="end"
+        fill="#9db5dd" font-family="Arial,sans-serif"
+        font-size="9" letter-spacing="1">
+    SYSTEM / 01
+  </text>
 </g>
+
+<!-- LEFT: LIVE SERVER PANEL -->
+<path d="M38 91H315L340 116V339L315 365H38Z"
+      fill="url(#panel)" stroke="#3b8cff"
+      stroke-opacity=".65" stroke-width="1.5"/>
+
+<g clip-path="url(#leftPanel)">
+  <path d="M38 91H340V130H38Z" fill="#24345c" opacity=".5"/>
+  <path d="M40 92H315L340 117" fill="none" stroke="#00eaff" stroke-width="2"/>
+  <path d="M40 364H315L340 339" fill="none" stroke="#8765ff" stroke-width="2"/>
+</g>
+
+<text x="59" y="116" fill="#9dbbff"
+      font-family="Arial,sans-serif" font-size="10"
+      letter-spacing="2">PRIMARY SERVER</text>
+
+<!-- SERVER SYMBOL -->
+<g transform="translate(185 218)">
+  <circle r="100" fill="#00cfff" opacity=".09" filter="url(#soft)">
+    <animate attributeName="opacity" values=".04;.17;.04" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="78" fill="none" stroke="#4b8bff"
+          stroke-width="1.4" stroke-dasharray="3 8" opacity=".7">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0" to="360" dur="24s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="65" fill="none" stroke="url(#neon)"
+          stroke-width="2.5" stroke-dasharray="65 15 12 15">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="360" to="0" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="54" fill="#0d2043" stroke="#5e9dff" stroke-width="1.5"/>
+
+  <g filter="url(#glow)">
+    <rect x="-29" y="-34" width="58" height="23" rx="6"
+          fill="#172f58" stroke="#00eaff" stroke-width="1.6"/>
+    <rect x="-29" y="-9" width="58" height="23" rx="6"
+          fill="#172f58" stroke="#718cff" stroke-width="1.6"/>
+    <rect x="-29" y="16" width="58" height="23" rx="6"
+          fill="#172f58" stroke="#00eaff" stroke-width="1.6"/>
+
+    <g fill="#a9edff">
+      <circle cx="-18" cy="-22" r="3"/>
+      <circle cx="-18" cy="3" r="3"/>
+      <circle cx="-18" cy="28" r="3"/>
+    </g>
+
+    <g fill="#00ffb3">
+      <circle cx="17" cy="-22" r="3"/>
+      <circle cx="17" cy="3" r="3"/>
+      <circle cx="17" cy="28" r="3"/>
+    </g>
+  </g>
+
+  <circle r="91" fill="none" stroke="#00f5ff"
+          stroke-width="2" opacity="0">
+    <animate attributeName="r" values="65;100;65" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".5;0;.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</g>
+
+<text x="185" y="318" text-anchor="middle"
+      fill="#d9eaff" font-family="Arial,sans-serif"
+      font-size="13" font-weight="bold" letter-spacing="2">
+  SERVER ACTIVE
+</text>
+
+<circle cx="91" cy="343" r="4" fill="#00ffad" filter="url(#glow)"/>
+
+<text x="104" y="347" fill="#9debd3"
+      font-family="Arial,sans-serif" font-size="9"
+      letter-spacing="1.5">
+  CONNECTION STABLE
+</text>
+
+<!-- CENTER CONNECTION BRIDGE -->
+<g>
+  <path d="M340 215H365" stroke="#00eaff"
+        stroke-width="2" stroke-dasharray="4 4"
+        filter="url(#glow)">
+    <animate attributeName="stroke-dashoffset"
+             values="0;-32" dur="1s"
+             repeatCount="indefinite"/>
+  </path>
+
+  <circle cx="352" cy="215" r="13"
+          fill="#0b1837" stroke="#00eaff" stroke-width="1.5"/>
+
+  <circle cx="352" cy="215" r="4"
+          fill="#ffffff" filter="url(#glow)">
+    <animate attributeName="r" values="3;6;3" dur="1.4s" repeatCount="indefinite"/>
+  </circle>
+</g>
+
+<!-- RIGHT: CONTROL DASHBOARD -->
+<path d="M367 91H899L922 114V342L899 365H367L345 343V114Z"
+      fill="url(#panel)" stroke="#906aff"
+      stroke-opacity=".75" stroke-width="1.5"/>
+
+<g clip-path="url(#rightPanel)">
+  <path d="M345 91H922V131H345Z" fill="#30255b" opacity=".4"/>
+  <path d="M367 92H899L922 115" fill="none" stroke="#bb6cff" stroke-width="2"/>
+</g>
+
+<text x="385" y="116" fill="#c8b9ff"
+      font-family="Arial,sans-serif" font-size="10"
+      letter-spacing="2">KEEP-ALIVE CONTROL CENTER</text>
+
+<text x="891" y="116" text-anchor="end"
+      fill="#879bc8" font-family="Arial,sans-serif"
+      font-size="9" letter-spacing="1">LIVE DATA</text>
+
+<!-- ONLINE STATUS CARD -->
+<path d="M384 143H875L890 158V222H384Z"
+      fill="#102d3b" stroke="#00dca5"
+      stroke-opacity=".75" stroke-width="1.3"/>
+
+<path d="M384 143H875" stroke="#00ffb3"
+      stroke-width="2" filter="url(#glow)"/>
+
+<circle cx="420" cy="182" r="23"
+        fill="#00dca5" opacity=".12"/>
+
+<circle cx="420" cy="182" r="11"
+        fill="#00e6a7" filter="url(#glow)">
+  <animate attributeName="opacity" values="1;.35;1" dur="1.2s" repeatCount="indefinite"/>
+</circle>
+
+<path d="M414 182L419 187L428 176" fill="none"
+      stroke="#ffffff" stroke-width="2.6"
+      stroke-linecap="round" stroke-linejoin="round"/>
+
+<text x="457" y="171" fill="#85ffe0"
+      font-family="Arial,sans-serif" font-size="10"
+      letter-spacing="2">CURRENT SYSTEM STATUS</text>
+
+<text x="457" y="199" fill="#ffffff"
+      font-family="Arial,sans-serif" font-size="24"
+      font-weight="bold" letter-spacing="2">
+  BOT ONLINE
+</text>
+
+<rect x="784" y="169" width="77" height="25" rx="12"
+      fill="#00dca5" opacity=".17" stroke="#00e6a7"/>
+
+<text x="822" y="186" text-anchor="middle"
+      fill="#7affd4" font-family="Arial,sans-serif"
+      font-size="9" font-weight="bold" letter-spacing="1">
+  ACTIVE
+</text>
+
+<!-- UPTIME / PING METRICS -->
+<g>
+  <path d="M384 239H535L547 251V309H384Z"
+        fill="#172343" stroke="#4b83ff" stroke-opacity=".65"/>
+
+  <text x="401" y="261" fill="#8ea9df"
+        font-family="Arial,sans-serif" font-size="9"
+        letter-spacing="1.5">UPTIME STATUS</text>
+
+  <text x="401" y="289" fill="#ffffff"
+        font-family="Arial,sans-serif" font-size="20"
+        font-weight="bold">24/7</text>
+
+  <text x="401" y="301" fill="#00eaff"
+        font-family="Arial,sans-serif" font-size="8"
+        letter-spacing="1">KEEP ALIVE</text>
+
+  <path d="M565 239H716L728 251V309H565Z"
+        fill="#211d43" stroke="#9c6bff" stroke-opacity=".65"/>
+
+  <text x="582" y="261" fill="#bba7ff"
+        font-family="Arial,sans-serif" font-size="9"
+        letter-spacing="1.5">PING MONITOR</text>
+
+  <text x="582" y="289" fill="#ffffff"
+        font-family="Arial,sans-serif" font-size="20"
+        font-weight="bold">STABLE</text>
+
+  <text x="582" y="301" fill="#c5a8ff"
+        font-family="Arial,sans-serif" font-size="8"
+        letter-spacing="1">CONNECTION OK</text>
+
+  <path d="M746 239H875L890 254V309H746Z"
+        fill="#291d3e" stroke="#ff70d7" stroke-opacity=".65"/>
+
+  <text x="762" y="261" fill="#ff9de8"
+        font-family="Arial,sans-serif" font-size="9"
+        letter-spacing="1.5">MONITOR</text>
+
+  <text x="762" y="289" fill="#ffffff"
+        font-family="Arial,sans-serif" font-size="20"
+        font-weight="bold">ACTIVE</text>
+
+  <text x="762" y="301" fill="#ff9de8"
+        font-family="Arial,sans-serif" font-size="8"
+        letter-spacing="1">AUTO CHECK</text>
+</g>
+
+<!-- ACTIVITY WAVE -->
+<g transform="translate(387 330)" fill="none" stroke-width="2">
+  <path d="M0 0H15L21 -8L28 9L37 -16L46 8L54 -4L62 0H95L103 -7L111 7L119 -13L127 6L135 -3L144 0H180"
+        stroke="#00eaff" filter="url(#glow)">
+    <animate attributeName="stroke-dasharray"
+             values="0 360;180 180;360 0"
+             dur="3s" repeatCount="indefinite"/>
+  </path>
+</g>
+
+<text x="587" y="334" fill="#9cb5e9"
+      font-family="Arial,sans-serif" font-size="9"
+      letter-spacing="1.5">LIVE ACTIVITY SIGNAL</text>
+
+<circle cx="862" cy="330" r="4"
+        fill="#00ffb3" filter="url(#glow)">
+  <animate attributeName="opacity" values="1;.2;1" dur="1s" repeatCount="indefinite"/>
+</circle>
+
+<!-- BOTTOM BRAND SIGNATURE -->
+<path d="M58 382H350L362 394H58Z"
+      fill="#182344" opacity=".9"/>
+
+<text x="74" y="397" fill="url(#gold)"
+      font-family="Arial,sans-serif" font-size="12"
+      font-weight="bold" letter-spacing="2">
+  SIYAM HASAN
+</text>
+
+<text x="902" y="396" text-anchor="end"
+      fill="#8299c5" font-family="Arial,sans-serif"
+      font-size="9" letter-spacing="1.5">
+  POWERED BY SIYAM • KEEP-ALIVE ENGINE
+</text>
+
+<!-- FLOATING PARTICLES -->
+<g fill="#b9edff">
+  <circle cx="460" cy="31" r="1.5">
+    <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="700" cy="71" r="1.4">
+    <animate attributeName="opacity" values="1;.2;1" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="320" cy="380" r="1.6">
+    <animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="910" cy="190" r="1.5">
+    <animate attributeName="opacity" values="1;.2;1" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="55" cy="200" r="1.5">
+    <animate attributeName="opacity" values=".2;1;.2" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+</g>
+
+</svg>
