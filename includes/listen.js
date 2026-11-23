@@ -1,92 +1,64 @@
-// ══════════════════════════════════════════════
-// Credit : 乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐
-// ══════════════════════════════════════════════
-module.exports = function ({
-  api,
-  models,
-  logAnthorName
-}) {
+
+module.exports = function ({ api, models, logAnthorName }) {
   const fs = require("fs");
+  const axios = require("axios");
+  const moment = require("moment-timezone");
 
-  const Users = require("./controllers/users")({
-    models,
-    api
-  });
-
-  const Threads = require("./controllers/threads")({
-    models,
-    api
-  });
-
-  const Currencies = require("./controllers/currencies")({
-    models
-  });
+  const Users = require("./controllers/users")({ models, api });
+  const Threads = require("./controllers/threads")({ models, api });
+  const Currencies = require("./controllers/currencies")({ models });
 
   const log = require("../utils/log.js");
-  const silent = require("./silent"); // ★ SILENT (১/৩)
-  silent.guardApi(api); // ★ SILENT (১/৩)
-  const power = require("./power"); // ★ POWER (বট অন/অফ)
-  power.guardApi(api); // ★ POWER
-  const solo = require("./solo"); // ★ ALLBOT STOP/ON
-  solo.guardApi(api); // ★ ALLBOT
-  const moment = require("moment-timezone");
-  const axios = require("axios");
+  const silent = require("./silent");
+  const power = require("./power");
+  const solo = require("./solo");
+
+  silent.guardApi(api);
+  power.guardApi(api);
+  solo.guardApi(api);
 
   var lastDay = moment.tz("Asia/Dhaka").day();
 
   const handleMention = async (api, event) => {
     try {
-      const {
-        threadID,
-        body
-      } = event;
+      const { threadID, body } = event;
 
-      if (event.mentions && Object.keys(event.mentions).length > 0) {
-        return;
-      }
+      if (event.mentions && Object.keys(event.mentions).length > 0) return;
 
       if (event.messageReply && event.messageReply.senderID) {
         event.mentions = {
-          [event.messageReply.senderID]: ''
+          [event.messageReply.senderID]: ""
         };
         return;
       }
 
-      if (!body) {
-        return;
-      }
+      if (!body) return;
 
       const mentionMatch = body.match(/@([^\s]+)/);
-
-      if (!mentionMatch) {
-        return;
-      }
+      if (!mentionMatch) return;
 
       const searchName = mentionMatch[1].toLowerCase().trim();
 
       const threadInfo = await Promise.race([
         api.getThreadInfo(threadID),
-        new Promise((_, rej) => setTimeout(() => rej(new Error('mention lookup timeout')), 3000))
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("mention lookup timeout")), 3000)
+        )
       ]);
+
       const userInfo = threadInfo.userInfo || [];
       const nicknames = threadInfo.nicknames || {};
 
       let matchedUserID = null;
 
       for (let userID in nicknames) {
-        if (!nicknames[userID]) {
-          continue;
-        }
+        if (!nicknames[userID]) continue;
 
         if (
-          (nicknames[userID] || '')
+          nicknames[userID]
             .toLowerCase()
-            .replace(/\s+/g, '')
-            .includes(
-              (searchName || '')
-                .toLowerCase()
-                .replace(/\s+/g, '')
-            )
+            .replace(/\s+/g, "")
+            .includes(searchName.replace(/\s+/g, ""))
         ) {
           matchedUserID = userID;
           break;
@@ -95,19 +67,13 @@ module.exports = function ({
 
       if (!matchedUserID) {
         for (let user of userInfo) {
-          if (!user.name) {
-            continue;
-          }
+          if (!user.name) continue;
 
           if (
-            (user.name || '')
+            user.name
               .toLowerCase()
-              .replace(/\s+/g, '')
-              .includes(
-                (searchName || '')
-                  .toLowerCase()
-                  .replace(/\s+/g, '')
-              )
+              .replace(/\s+/g, "")
+              .includes(searchName.replace(/\s+/g, ""))
           ) {
             matchedUserID = user.id;
             break;
@@ -117,19 +83,11 @@ module.exports = function ({
 
       if (!matchedUserID) {
         for (let user of userInfo) {
-          if (!user.name) {
-            continue;
-          }
+          if (!user.name) continue;
 
-          const nameParts = user.name
-            .toLowerCase()
-            .split(/[\s._-]+/);
+          const nameParts = user.name.toLowerCase().split(/[\s._-]+/);
 
-          if (
-            nameParts.some(part =>
-              part.startsWith(searchName)
-            )
-          ) {
+          if (nameParts.some(part => part.startsWith(searchName))) {
             matchedUserID = user.id;
             break;
           }
@@ -138,19 +96,13 @@ module.exports = function ({
 
       if (!matchedUserID && searchName.length >= 2) {
         for (let user of userInfo) {
-          if (!user.name) {
-            continue;
-          }
+          if (!user.name) continue;
 
           if (
-            (user.name || '')
+            user.name
               .toLowerCase()
-              .replace(/\s+/g, '')
-              .startsWith(
-                (searchName || '')
-                  .toLowerCase()
-                  .replace(/\s+/g, '')
-              )
+              .replace(/\s+/g, "")
+              .startsWith(searchName.replace(/\s+/g, ""))
           ) {
             matchedUserID = user.id;
             break;
@@ -160,49 +112,96 @@ module.exports = function ({
 
       if (matchedUserID) {
         event.mentions = {
-          [matchedUserID]: ''
+          [matchedUserID]: ""
         };
       }
     } catch (error) {}
   };
 
-  // ── 🦵 রিয়েক্ট (কিক/লিভ): এখন সব কাজ includes/handle/handleReaction.js-এ ──
-  // মেসেজের মালিক চেনার জন্য ক্যাশ: কে কোন মেসেজ পাঠিয়েছে + বট নিজে কোন মেসেজ পাঠিয়েছে
   const msgOwner = global.__msgOwner = global.__msgOwner || new Map();
   const botMsgs = global.__botMsgs = global.__botMsgs || new Map();
-  const remember = (map, k, v, max) => {
-    if (!k) return;
-    map.delete(k);
-    map.set(k, v);
-    while (map.size > max) map.delete(map.keys().next().value);
+
+  const remember = (map, key, value, max) => {
+    if (!key) return;
+
+    map.delete(key);
+    map.set(key, value);
+
+    while (map.size > max) {
+      map.delete(map.keys().next().value);
+    }
   };
+
   if (typeof api.sendMessage === "function" && !api.__sentTracked) {
-    const _send = api.sendMessage;
+    const send = api.sendMessage;
+
     api.sendMessage = function (...args) {
-      const ci = args.findIndex((a, i) => i >= 2 && typeof a === "function");
-      if (ci >= 0) {
-        const cb = args[ci];
-        args[ci] = function (err, info) {
-          try { if (info && info.messageID) remember(botMsgs, String(info.messageID), 1, 3000); } catch (_) {}
-          return cb.apply(this, arguments);
+      const callbackIndex = args.findIndex(
+        (arg, index) => index >= 2 && typeof arg === "function"
+      );
+
+      if (callbackIndex >= 0) {
+        const callback = args[callbackIndex];
+
+        args[callbackIndex] = function (error, info) {
+          try {
+            if (info && info.messageID) {
+              remember(botMsgs, String(info.messageID), 1, 3000);
+            }
+          } catch (error) {}
+
+          return callback.apply(this, arguments);
         };
       }
-      const r = _send.apply(this, args);
-      if (r && typeof r.then === "function") {
-        r.then(info => { if (info && info.messageID) remember(botMsgs, String(info.messageID), 1, 3000); }).catch(() => {});
+
+      const result = send.apply(this, args);
+
+      if (result && typeof result.then === "function") {
+        result
+          .then(info => {
+            if (info && info.messageID) {
+              remember(botMsgs, String(info.messageID), 1, 3000);
+            }
+          })
+          .catch(() => {});
       }
-      return r;
+
+      return result;
     };
-    Object.defineProperty(api, "__sentTracked", { value: true, enumerable: false });
+
+    Object.defineProperty(api, "__sentTracked", {
+      value: true,
+      enumerable: false
+    });
   }
 
   const interactionDirectory =
-    __dirname +
-    "/../Script/commands/checktuongtac/";
+    __dirname + "/../Script/commands/checktuongtac/";
+
+  const makeFrame = (title, rows) => {
+    return [
+      "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑",
+      "───────────────",
+      "» " + title,
+      "───────────────",
+      ...rows,
+      "───────────────",
+      "» 🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧"
+    ].join("\n");
+  };
+
+  const toBold = value => {
+    const normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const bold = "𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵";
+
+    return String(value).split("").map(char => {
+      const index = normal.indexOf(char);
+      return index === -1 ? char : bold[index];
+    }).join("");
+  };
 
   setInterval(async () => {
-    const currentDay =
-      moment.tz("Asia/Dhaka").day();
+    const currentDay = moment.tz("Asia/Dhaka").day();
 
     const allowedIDs = [
       ...(global.config.DEVELOPER || []),
@@ -214,158 +213,116 @@ module.exports = function ({
       if (lastDay != currentDay) {
         lastDay = currentDay;
 
-        const files = fs
-          .readdirSync(interactionDirectory)
-          .filter(file => {
-            const id = file.replace(".json", '');
+        const files = fs.readdirSync(interactionDirectory).filter(file => {
+          const id = file.replace(".json", "");
 
-            return (
-              allowedIDs.includes(id) ||
-              global.data.allThreadID.includes(id)
-            );
-          });
+          return (
+            allowedIDs.includes(id) ||
+            global.data.allThreadID.includes(id)
+          );
+        });
 
         console.log(logAnthorName + " ");
 
-        await new Promise(async resolve => {
+        for (const file of files) {
+          const data = JSON.parse(
+            fs.readFileSync(interactionDirectory + file)
+          );
+
+          let dailyData = [];
+          let rank = 1;
+
+          for (const user of data.day) {
+            const name =
+              (await Users.getNameUser(user.id)) ||
+              logAnthorName + " ";
+
+            user.name = name;
+            dailyData.push(user);
+          }
+
+          dailyData.sort((a, b) => {
+            if (a.count > b.count) return -1;
+            if (a.count < b.count) return 1;
+            return a.name.localeCompare(b.name);
+          });
+
+          const rows = dailyData.slice(0, 10).map(user => {
+            return "» " + toBold(rank++) +
+              ". " + toBold(user.name) +
+              " — " + toBold(user.count) + " 𝗺𝗲𝘀𝘀𝗮𝗴𝗲";
+          });
+
+          const message = makeFrame("📊 𝗗𝗔𝗜𝗟𝗬 𝗧𝗢𝗣 𝟭𝟬", rows);
+
+          api.sendMessage(
+            message,
+            file.replace(".json", ""),
+            error => error ? console.log(error) : ""
+          );
+
+          data.day.forEach(user => {
+            user.count = 0;
+          });
+
+          data.time = currentDay;
+
+          fs.writeFileSync(
+            interactionDirectory + file,
+            JSON.stringify(data, null, 4)
+          );
+        }
+
+        if (currentDay == 1) {
+          console.log(logAnthorName + " ");
+
           for (const file of files) {
             const data = JSON.parse(
-              fs.readFileSync(
-                interactionDirectory + file
-              )
+              fs.readFileSync(interactionDirectory + file)
             );
 
-            let dailyData = [];
+            let weeklyData = [];
             let rank = 1;
 
-            for (const user of data.day) {
+            for (const user of data.week) {
               const name =
                 (await Users.getNameUser(user.id)) ||
-                logAnthorName + " ";
+                "Sahu Hun Yar";
 
               user.name = name;
-              dailyData.push(user);
+              weeklyData.push(user);
             }
 
-            dailyData.sort((a, b) => {
-              if (a.count > b.count) {
-                return -1;
-              } else {
-                return a.count < b.count
-                  ? 1
-                  : a.name.localeCompare(b.name);
-              }
+            weeklyData.sort((a, b) => {
+              if (a.count > b.count) return -1;
+              if (a.count < b.count) return 1;
+              return a.name.localeCompare(b.name);
             });
 
-            let message =
-              "==" + logAnthorName + "  ❤️==\n\n";
+            const rows = weeklyData.slice(0, 10).map(user => {
+              return "» " + toBold(rank++) +
+                ". " + toBold(user.name) +
+                " — " + toBold(user.count) + " 𝗺𝗲𝘀𝘀𝗮𝗴𝗲";
+            });
 
-            message += dailyData
-              .slice(0, 10)
-              .map(user => {
-                return (
-                  rank++ +
-                  ". " +
-                  user.name +
-                  " with " +
-                  user.count +
-                  " message"
-                );
-              })
-              .join("\n");
+            const message = makeFrame("🏆 𝗪𝗘𝗘𝗞𝗟𝗬 𝗧𝗢𝗣 𝟭𝟬", rows);
 
             api.sendMessage(
               message,
-              file.replace(".json", ''),
-              error =>
-                error ? console.log(error) : ''
+              file.replace(".json", ""),
+              error => error ? console.log(error) : ""
             );
 
-            data.day.forEach(user => {
+            data.week.forEach(user => {
               user.count = 0;
             });
-
-            data.time = currentDay;
 
             fs.writeFileSync(
               interactionDirectory + file,
               JSON.stringify(data, null, 4)
             );
           }
-
-          resolve();
-        });
-
-        await new Promise(async resolve => {
-          if (currentDay == 1) {
-            console.log(logAnthorName + " ");
-
-            for (const file of files) {
-              const data = JSON.parse(
-                fs.readFileSync(
-                  interactionDirectory + file
-                )
-              );
-
-              let weeklyData = [];
-              let rank = 1;
-
-              for (const user of data.week) {
-                const name =
-                  (await Users.getNameUser(user.id)) ||
-                  "Sahu Hun Yar";
-
-                user.name = name;
-                weeklyData.push(user);
-              }
-
-              weeklyData.sort((a, b) => {
-                if (a.count > b.count) {
-                  return -1;
-                } else {
-                  return a.count < b.count
-                    ? 1
-                    : a.name.localeCompare(b.name);
-                }
-              });
-
-              let message =
-                "==" + logAnthorName + " ❤️==\n\n";
-
-              message += weeklyData
-                .slice(0, 10)
-                .map(user => {
-                  return (
-                    rank++ +
-                    ". " +
-                    user.name +
-                    " with " +
-                    user.count +
-                    " message"
-                  );
-                })
-                .join("\n");
-
-              api.sendMessage(
-                message,
-                file.replace(".json", ''),
-                error =>
-                  error ? console.log(error) : ''
-              );
-
-              data.week.forEach(user => {
-                user.count = 0;
-              });
-
-              fs.writeFileSync(
-                interactionDirectory + file,
-                JSON.stringify(data, null, 4)
-              );
-            }
-          }
-
-          resolve();
-        });
+        }
 
         global.client.sending_top = false;
       }
@@ -377,22 +334,19 @@ module.exports = function ({
   (async function () {
     try {
       log(
-        global.getText(
-          "listen",
-          "startLoadEnvironment"
-        ),
-        "[ " + logAnthorName + "  ]"
+        global.getText("listen", "startLoadEnvironment"),
+        "[ " + logAnthorName + " ]"
       );
 
-      let threadList = await Threads.getAll();
+      const threadList = await Threads.getAll();
 
-      let userList = await Users.getAll([
+      const userList = await Users.getAll([
         "userID",
         "name",
         "data"
       ]);
 
-      let currencyList = await Currencies.getAll([
+      const currencyList = await Currencies.getAll([
         "userID"
       ]);
 
@@ -411,19 +365,11 @@ module.exports = function ({
           thread.threadInfo || {}
         );
 
-        if (
-          thread.data &&
-          thread.data.banned == true
-        ) {
-          global.data.threadBanned.set(
-            threadID,
-            {
-              reason:
-                thread.data.reason || '',
-              dateAdded:
-                thread.data.dateAdded || ''
-            }
-          );
+        if (thread.data && thread.data.banned == true) {
+          global.data.threadBanned.set(threadID, {
+            reason: thread.data.reason || "",
+            dateAdded: thread.data.dateAdded || ""
+          });
         }
 
         if (
@@ -437,21 +383,13 @@ module.exports = function ({
           );
         }
 
-        if (
-          thread.data &&
-          thread.data.NSFW
-        ) {
-          global.data.threadAllowNSFW.push(
-            threadID
-          );
+        if (thread.data && thread.data.NSFW) {
+          global.data.threadAllowNSFW.push(threadID);
         }
       }
 
       log.loader(
-        global.getText(
-          "listen",
-          "loadedEnvironmentThread"
-        )
+        global.getText("listen", "loadedEnvironmentThread")
       );
 
       for (const user of userList) {
@@ -459,29 +397,15 @@ module.exports = function ({
 
         global.data.allUserID.push(userID);
 
-        if (
-          user.name &&
-          user.name.length != 0
-        ) {
-          global.data.userName.set(
-            userID,
-            user.name
-          );
+        if (user.name && user.name.length != 0) {
+          global.data.userName.set(userID, user.name);
         }
 
-        if (
-          user.data &&
-          user.data.banned == 1
-        ) {
-          global.data.userBanned.set(
-            userID,
-            {
-              reason:
-                user.data.reason || '',
-              dateAdded:
-                user.data.dateAdded || ''
-            }
-          );
+        if (user.data && user.data.banned == 1) {
+          global.data.userBanned.set(userID, {
+            reason: user.data.reason || "",
+            dateAdded: user.data.dateAdded || ""
+          });
         }
 
         if (
@@ -503,26 +427,16 @@ module.exports = function ({
       }
 
       log.loader(
-        global.getText(
-          "listen",
-          "loadedEnvironmentUser"
-        )
+        global.getText("listen", "loadedEnvironmentUser")
       );
 
       log(
-        global.getText(
-          "listen",
-          "successLoadEnvironment"
-        ),
+        global.getText("listen", "successLoadEnvironment"),
         "[ Script ]"
       );
     } catch (error) {
       return log.loader(
-        global.getText(
-          "listen",
-          "failLoadEnvironment",
-          error
-        ),
+        global.getText("listen", "failLoadEnvironment", error),
         "error"
       );
     }
@@ -532,20 +446,16 @@ module.exports = function ({
     "[ " +
       global.config.PREFIX +
       " ] • " +
-      (!global.config.BOTNAME
-        ? ''
-        : global.config.BOTNAME),
-    "[ " + logAnthorName + "  ]"
+      (!global.config.BOTNAME ? "" : global.config.BOTNAME),
+    "[ " + logAnthorName + " ]"
   );
 
-  // ── Credit (বট চালু হলে কনসোলে দেখাবে) ──
   console.log("══════════════════════════════════════════════");
-  console.log(" Credit : 乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐");
+  console.log("» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑");
+  console.log("» 🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧");
   console.log("══════════════════════════════════════════════");
 
-  const handleCommand = require(
-    "./handle/handleCommand"
-  )({
+  const handleCommand = require("./handle/handleCommand")({
     api,
     models,
     Users,
@@ -553,9 +463,7 @@ module.exports = function ({
     Currencies
   });
 
-  const handleCommandEvent = require(
-    "./handle/handleCommandEvent"
-  )({
+  const handleCommandEvent = require("./handle/handleCommandEvent")({
     api,
     models,
     Users,
@@ -563,9 +471,7 @@ module.exports = function ({
     Currencies
   });
 
-  const handleReply = require(
-    "./handle/handleReply"
-  )({
+  const handleReply = require("./handle/handleReply")({
     api,
     models,
     Users,
@@ -573,9 +479,7 @@ module.exports = function ({
     Currencies
   });
 
-  const handleReactionEvent = require(
-    "./handle/handleReaction"
-  )({
+  const handleReactionEvent = require("./handle/handleReaction")({
     api,
     models,
     Users,
@@ -583,9 +487,7 @@ module.exports = function ({
     Currencies
   });
 
-  const handleEvent = require(
-    "./handle/handleEvent"
-  )({
+  const handleEvent = require("./handle/handleEvent")({
     api,
     models,
     Users,
@@ -593,9 +495,7 @@ module.exports = function ({
     Currencies
   });
 
-  const handleCreateDatabase = require(
-    "./handle/handleCreateDatabase"
-  )({
+  const handleCreateDatabase = require("./handle/handleCreateDatabase")({
     api,
     Threads,
     Users,
@@ -604,8 +504,7 @@ module.exports = function ({
   });
 
   const scheduleFile =
-    __dirname +
-    "/../Script/commands/cache/datlich.json";
+    __dirname + "/../Script/commands/cache/datlich.json";
 
   const monthMilliseconds = {
     1: 2678400000,
@@ -624,120 +523,68 @@ module.exports = function ({
 
   const convertDateToMilliseconds = dateArray =>
     new Promise(resolve => {
-      dateArray.forEach(
-        (value, index) =>
-          (dateArray[index] = parseInt(
-            String(value).trim()
-          ))
-      );
+      dateArray.forEach((value, index) => {
+        dateArray[index] = parseInt(String(value).trim());
+      });
 
-      if (
-        dateArray[1] > 12 ||
-        dateArray[1] < 1
-      ) {
-        resolve("Your month seems invalid");
+      if (dateArray[1] > 12 || dateArray[1] < 1) {
+        return resolve("Your month seems invalid");
       }
 
       if (
         dateArray[0] >
-          (dateArray[1] == 0
-            ? 0
-            : dateArray[1] == 2
-              ? dateArray[2] % 4 == 0
-                ? 29
-                : 28
-              : [1, 3, 5, 7, 8, 10, 12].includes(
-                  dateArray[1]
-                )
-                ? 31
-                : 30) ||
+          (dateArray[1] == 2
+            ? dateArray[2] % 4 == 0 ? 29 : 28
+            : [1, 3, 5, 7, 8, 10, 12].includes(dateArray[1])
+              ? 31
+              : 30) ||
         dateArray[0] < 1
       ) {
-        resolve("Your date seems invalid");
+        return resolve("Your date seems invalid");
       }
 
       if (dateArray[2] < 2022) {
-        resolve("What era do you live in?");
+        return resolve("What era do you live in?");
       }
 
-      if (
-        dateArray[3] > 23 ||
-        dateArray[3] < 0
-      ) {
-        resolve("Your time seems to be invalid");
+      if (dateArray[3] > 23 || dateArray[3] < 0) {
+        return resolve("Your time seems to be invalid");
       }
 
-      if (
-        dateArray[4] > 59 ||
-        dateArray[3] < 0
-      ) {
-        resolve("Your minute seems invalid");
+      if (dateArray[4] > 59 || dateArray[4] < 0) {
+        return resolve("Your minute seems invalid");
       }
 
-      if (
-        dateArray[5] > 59 ||
-        dateArray[3] < 0
-      ) {
-        resolve("Your seconds seem invalid");
+      if (dateArray[5] > 59 || dateArray[5] < 0) {
+        return resolve("Your seconds seem invalid");
       }
 
-      yr = dateArray[2] - 1970;
+      const year = dateArray[2] - 1970;
 
-      yearToMS =
-        yr *
-        365 *
-        24 *
-        60 *
-        60 *
-        1000;
+      let yearToMS =
+        year * 365 * 24 * 60 * 60 * 1000;
 
       yearToMS +=
-        ((yr - 2) / 4).toFixed(0) *
-        24 *
-        60 *
-        60 *
-        1000;
+        Math.round((year - 2) / 4) *
+        24 * 60 * 60 * 1000;
 
-      monthToMS = 0;
+      let monthToMS = 0;
 
-      for (
-        let month = 1;
-        month < dateArray[1];
-        month++
-      ) {
-        monthToMS +=
-          monthMilliseconds[month];
+      for (let month = 1; month < dateArray[1]; month++) {
+        monthToMS += monthMilliseconds[month];
       }
 
-      if (dateArray[2] % 4 == 0) {
+      if (dateArray[2] % 4 == 0 && dateArray[1] > 2) {
         monthToMS += 86400000;
       }
 
-      dayToMS =
-        dateArray[0] *
-        24 *
-        60 *
-        60 *
-        1000;
+      const dayToMS = dateArray[0] * 24 * 60 * 60 * 1000;
+      const hourToMS = dateArray[3] * 60 * 60 * 1000;
+      const minuteToMS = dateArray[4] * 60 * 1000;
+      const secondToMS = dateArray[5] * 1000;
+      const oneDayToMS = 86400000;
 
-      hourToMS =
-        dateArray[3] *
-        60 *
-        60 *
-        1000;
-
-      minuteToMS =
-        dateArray[4] *
-        60 *
-        1000;
-
-      secondToMS =
-        dateArray[5] *
-        1000;
-
-      oneDayToMS = 86400000;
-
-      timeMs =
+      const timeMs =
         yearToMS +
         monthToMS +
         dayToMS +
@@ -751,112 +598,76 @@ module.exports = function ({
 
   const processScheduledMessages = async () => {
     if (!fs.existsSync(scheduleFile)) {
-      fs.writeFileSync(
-        scheduleFile,
-        JSON.stringify({}, null, 4)
-      );
+      fs.writeFileSync(scheduleFile, JSON.stringify({}, null, 4));
     }
 
-    var schedules = JSON.parse(
-      fs.readFileSync(scheduleFile)
-    );
+    const schedules = JSON.parse(fs.readFileSync(scheduleFile));
 
-    var currentDateTime =
-      moment()
-        .tz("Asia/Dhaka")
-        .format("DD/MM/YYYY_HH:mm:ss");
+    let currentDateTime = moment()
+      .tz("Asia/Dhaka")
+      .format("DD/MM/YYYY_HH:mm:ss");
 
-    currentDateTime =
-      currentDateTime.split('_');
+    currentDateTime = currentDateTime.split("_");
 
     currentDateTime = [
-      ...currentDateTime[0].split('/'),
-      ...currentDateTime[1].split(':')
+      ...currentDateTime[0].split("/"),
+      ...currentDateTime[1].split(":")
     ];
 
-    let pendingMessages = [];
+    const pendingMessages = [];
 
-    let currentTime =
-      await convertDateToMilliseconds(
-        currentDateTime
-      );
+    const currentTime = await convertDateToMilliseconds(currentDateTime);
 
     const processSchedule = scheduleTime =>
       new Promise(async resolve => {
-        let scheduleTimestamp =
-          await convertDateToMilliseconds(
-            scheduleTime.split('_')
-          );
+        const scheduleTimestamp = await convertDateToMilliseconds(
+          scheduleTime.split("_")
+        );
+
+        if (typeof scheduleTimestamp !== "number") {
+          delete schedules[boxID][scheduleTime];
+          return resolve();
+        }
 
         if (scheduleTimestamp < currentTime) {
-          if (
-            currentTime - scheduleTimestamp <
-            600000
-          ) {
-            schedules[boxID][scheduleTime].TID =
-              boxID;
-
-            pendingMessages.push(
-              schedules[boxID][scheduleTime]
-            );
-
-            delete schedules[boxID][scheduleTime];
-          } else {
-            delete schedules[boxID][scheduleTime];
+          if (currentTime - scheduleTimestamp < 600000) {
+            schedules[boxID][scheduleTime].TID = boxID;
+            pendingMessages.push(schedules[boxID][scheduleTime]);
           }
+
+          delete schedules[boxID][scheduleTime];
 
           fs.writeFileSync(
             scheduleFile,
-            JSON.stringify(
-              schedules,
-              null,
-              4
-            )
+            JSON.stringify(schedules, null, 4)
           );
         }
 
         resolve();
       });
 
-    await new Promise(async resolve => {
-      for (boxID in schedules) {
-        for (
-          e of Object.keys(schedules[boxID])
-        ) {
-          await processSchedule(e);
-        }
+    for (const boxID of Object.keys(schedules)) {
+      for (const scheduleTime of Object.keys(schedules[boxID])) {
+        await processSchedule(scheduleTime);
       }
+    }
 
-      resolve();
-    });
-
-    for (el of pendingMessages) {
+    for (const el of pendingMessages) {
       try {
-        var participantIDs =
-          (
-            await Threads.getInfo(el.TID)
-          ).participantIDs;
+        const participantIDs = (
+          await Threads.getInfo(el.TID)
+        ).participantIDs;
 
         participantIDs.splice(
-          participantIDs.indexOf(
-            api.getCurrentUserID()
-          ),
+          participantIDs.indexOf(api.getCurrentUserID()),
           1
         );
 
-        var reason =
-          el.REASON || "🥰🥰🥰";
+        let reason = el.REASON || "🥰🥰🥰";
+        const mentions = [];
 
-        var mentions = [];
-
-        for (
-          let index = 0;
-          index < participantIDs.length;
-          index++
-        ) {
-          if (
-            index == reason.length
-          ) {
+        for (let index = 0; index < participantIDs.length; index++) {
+          if (index == reason.length) {
             reason += " \u200D ";
           }
 
@@ -866,81 +677,65 @@ module.exports = function ({
             fromIndex: index - 1
           });
         }
-      } catch (error) {
-        return console.log(error);
-      }
 
-      var message = {
-        body: reason,
-        mentions
-      };
+        const message = {
+          body: reason,
+          mentions
+        };
 
-      if ("ATTACHMENT" in el) {
-        message.attachment = [];
+        if ("ATTACHMENT" in el) {
+          message.attachment = [];
 
-        for (a of el.ATTACHMENT) {
-          let attachmentData =
-            (
-              await axios.get(
-                encodeURI(a.url),
-                {
-                  responseType:
-                    "arraybuffer"
-                }
-              )
+          for (const attachment of el.ATTACHMENT) {
+            const attachmentData = (
+              await axios.get(encodeURI(attachment.url), {
+                responseType: "arraybuffer"
+              })
             ).data;
 
-          fs.writeFileSync(
-            __dirname +
-              "/../Script/commands/cache/" +
-              a.fileName,
-            Buffer.from(
-              attachmentData,
-              "utf-8"
-            )
-          );
-
-          message.attachment.push(
-            fs.createReadStream(
+            const cachePath =
               __dirname +
-                "/../Script/commands/cache/" +
-                a.fileName
-            )
-          );
+              "/../Script/commands/cache/" +
+              attachment.fileName;
+
+            fs.writeFileSync(
+              cachePath,
+              Buffer.from(attachmentData)
+            );
+
+            message.attachment.push(
+              fs.createReadStream(cachePath)
+            );
+          }
         }
+
+        console.log(message);
+
+        if ("BOX" in el) {
+          await api.setTitle(el.BOX, el.TID);
+        }
+
+        api.sendMessage(message, el.TID, () => {
+          if ("ATTACHMENT" in el) {
+            el.ATTACHMENT.forEach(attachment => {
+              const cachePath =
+                __dirname +
+                "/../Script/commands/cache/" +
+                attachment.fileName;
+
+              if (fs.existsSync(cachePath)) {
+                fs.unlinkSync(cachePath);
+              }
+            });
+          }
+        });
+      } catch (error) {
+        console.log(error);
       }
-
-      console.log(message);
-
-      if ("BOX" in el) {
-        await api.setTitle(
-          el.BOX,
-          el.TID
-        );
-      }
-
-      api.sendMessage(
-        message,
-        el.TID,
-        () =>
-          "ATTACHMENT" in el
-            ? el.ATTACHMENT.forEach(
-                attachment =>
-                  fs.unlinkSync(
-                    __dirname +
-                      "/../Script/commands/cache/" +
-                      attachment.fileName
-                  )
-              )
-            : ''
-      );
     }
   };
 
-  setInterval(
-    processScheduledMessages,
-    60000
-  );
+  setInterval(processScheduledMessages, 60000);
 
   const processedEventIDs = new Map();
   const EVENT_DEDUPE_TTL = 10 * 60 * 1000;
@@ -958,7 +753,12 @@ module.exports = function ({
 
       case "message_reaction":
         return event.messageID
-          ? [event.type, event.messageID, event.userID, event.reaction].join("|")
+          ? [
+              event.type,
+              event.messageID,
+              event.userID,
+              event.reaction
+            ].join("|")
           : null;
 
       case "event":
@@ -990,60 +790,58 @@ module.exports = function ({
     }
 
     if (now - lastDedupeSweep >= EVENT_DEDUPE_TTL) {
-      for (const [key, seenAt] of processedEventIDs) {
-        if (now - seenAt >= EVENT_DEDUPE_TTL) {
-          processedEventIDs.delete(key);
+      for (const [eventKey, timestamp] of processedEventIDs) {
+        if (now - timestamp >= EVENT_DEDUPE_TTL) {
+          processedEventIDs.delete(eventKey);
         }
       }
+
       lastDedupeSweep = now;
     }
 
     return false;
   };
 
-  // ★ SILENT (২/৩): আগের switch-টা এখন এই ফাংশনের ভেতরে
   const processEvent = async event => {
     switch (event.type) {
       case "message":
       case "message_reply":
       case "message_unsend":
-        if (event.messageID && event.senderID) remember(msgOwner, String(event.messageID), String(event.senderID), 5000);
+        if (event.messageID && event.senderID) {
+          remember(
+            msgOwner,
+            String(event.messageID),
+            String(event.senderID),
+            5000
+          );
+        }
 
-        await handleMention(
-          api,
-          event
+        await handleMention(api, event);
+
+        Promise.resolve(handleCreateDatabase({ event })).catch(error =>
+          console.log("[handleCreateDatabase ERROR]", error)
         );
 
-        Promise.resolve(handleCreateDatabase({
-          event
-        })).catch(e => console.log('[handleCreateDatabase ERROR]', e));
+        Promise.resolve(handleCommand({ event })).catch(error =>
+          console.log("[handleCommand ERROR]", error)
+        );
 
-        Promise.resolve(handleCommand({
-          event
-        })).catch(e => console.log('[handleCommand ERROR]', e));
+        Promise.resolve(handleReply({ event })).catch(error =>
+          console.log("[handleReply ERROR]", error)
+        );
 
-        Promise.resolve(handleReply({
-          event
-        })).catch(e => console.log('[handleReply ERROR]', e));
-
-        Promise.resolve(handleCommandEvent({
-          event
-        })).catch(e => console.log('[handleCommandEvent ERROR]', e));
+        Promise.resolve(handleCommandEvent({ event })).catch(error =>
+          console.log("[handleCommandEvent ERROR]", error)
+        );
 
         break;
 
       case "event":
-        handleEvent({
-          event
-        });
-
+        handleEvent({ event });
         break;
 
       case "message_reaction":
-        handleReactionEvent({
-          event
-        });
-
+        handleReactionEvent({ event });
         break;
 
       default:
@@ -1051,25 +849,19 @@ module.exports = function ({
     }
   };
 
-  // ★ SILENT (৩/৩): silent গেট
   return async event => {
     if (isDuplicateEvent(event)) return;
 
-    // ★ ALLBOT গেট: মাস্টার বটের "allbot stop" থাকলে এই বট ওই গ্রুপে চুপ থাকবে
     if (solo.gate(api, event)) return;
 
-    // ★ POWER গেট: অফ থাকলে শুধু ADMINBOT-এর "bot on" চলবে, বাকি সব বাদ
     if (power.gate(api, event)) return;
 
-    // ── SILENT MODE (প্রতি গ্রুপ) ──
-    // ওই গ্রুপে silent চালু থাকলে সাধারণ ইউজারের সবকিছু বন্ধ;
-    // config.json-এর UID (ADMINBOT + DEVELOPER) এর সবকিছু আগের মতোই চলবে
     if (silent.isActive(event.threadID)) {
       const actor =
         event.type === "message_reaction"
           ? event.userID
           : event.type === "event"
-            ? (event.author || event.senderID)
+            ? event.author || event.senderID
             : event.senderID;
 
       if (!silent.isAdmin(actor)) return;
