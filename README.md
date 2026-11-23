@@ -6,32 +6,26 @@
 </p>
 
 <p align="center">
-  <img src="assets/siyam-logo.svg" alt="SIYAM CHAT BOT Logo" width="620"/>
+  <img src="assets/Siyam-logo.svg" alt="SIYAM CHAT BOT Logo" width="620"/>
 </p>
 
-<h1 align="center">𝚂𝙸𝚈𝙰𝙼 𝙷𝙰𝚂𝙰𝙽</h1>
+<h1 align="center">👑 𝐒𝐈𝐘𝐀𝐌 𝐇𝐀𝐒𝐀𝐍 👑</h1>
 <h3 align="center">⚡ Premium Messenger Automation System</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=25&duration=2500&pause=900&color=00E5FF&center=true&vCenter=true&width=820&lines=Welcome+To+SIYAM+CHAT+BOT;Mirai+%2B+GoatBot+Hybrid+Engine;Commands+%7C+No+Prefix+%7C+Inbox+Ready;Fast+%7C+Smart+%7C+Stable" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=25&duration=2500&pause=900&color=00E5FF&center=true&vCenter=true&width=820&lines=Welcome+To+SIYAM+CHAT+BOT;Mirai+%2B+GoatBot+Hybrid+Engine;Commands+%7C+No+Prefix+%7C+Inbox+Ready;Fast+%7C+Smart+%7C+Stable"/>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/MIRAI-SUPPORTED-ff4d4d?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/GOATBOT-SUPPORTED-ffaa00?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/HYBRID-MODE-a855f7?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/NO_PREFIX-READY-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/INBOX-ENABLED-00b2ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/INBOX-READY-00b2ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/NODE.JS-22.x-339933?style=for-the-badge"/>
 </p>
 
-> **Mirai + GoatBot Hybrid**
->
-> এই বট Mirai ও GoatBot—দুই ধরনের command/event সাপোর্ট করার জন্য তৈরি। `Script/commands` এবং `Script/events`-এ সংশ্লিষ্ট কোড রাখুন।
->
-> বিস্তারিত: [GOAT_COMPAT.md](GOAT_COMPAT.md)
-
 <p align="center">
-  <img src="assets/siyam-photo-float.svg" width="100%" alt="Siyam Chat Bot Banner"/>
+  <img src="assets/Siyam-photo-float.svg" width="100%" alt="Siyam Chat Bot Banner"/>
 </p>
 
 <p align="center">
@@ -40,82 +34,111 @@
 
 ---
 
-<h1 align="center">🍪 AUTO COOKIE & AUTO LOGIN</h1>
+## 🤖 ABOUT THE BOT
 
-<p align="center">
-  <img src="assets/auto-cookie-banner.svg" alt="Auto Cookie and Facebook Login" width="88%"/>
-</p>
+**SIYAM CHAT BOT** is a Facebook Messenger automation project built with a Mirai + GoatBot hybrid compatibility system.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AUTO_COOKIE-ENABLED-ffb300?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/AUTO_LOGIN-READY-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/COOKIE_GUARDIAN-READY-7c4dff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/AUTO_REFRESH-READY-00b2ff?style=for-the-badge"/>
-</p>
+- Mirai command and event support
+- GoatBot compatibility layer
+- Inbox and group command support
+- Automatic reconnect and launcher
+- Cookie Guardian integration
+- Render Keep-Alive integration
 
-| Feature | Description |
-|:---|:---|
-| 🍪 **Auto Cookie** | Facebook session cookie সংগ্রহ ও `appstate.json` আপডেট করার ব্যবস্থা। |
-| 🔐 **Auto Login** | কনফিগার করা লগইন তথ্য দিয়ে সেশন পুনরুদ্ধারের ব্যবস্থা। |
-| 🔑 **2FA Support** | Authenticator secret configure করা থাকলে 2FA কোড ব্যবহারের সুবিধা। |
-| ♻️ **Self Recovery** | সেশন সমস্যায় cookie refresh/recovery চালানোর ব্যবস্থা। |
+📚 Compatibility Guide: [GOAT_COMPAT.md](GOAT_COMPAT.md)
 
-### চালু করার সেটআপ
-
-| ধাপ | কাজ |
-|:---:|:---|
-| 1 | `guardian/` ফোল্ডারের প্রয়োজনীয় ফাইলগুলো রিপোজিটরিতে রাখুন। |
-| 2 | Hosting Environment Variables-এ `FB_EMAIL`, `FB_PASSWORD` এবং প্রয়োজন হলে `FB_TOTP_SECRET` দিন। |
-| 3 | প্রয়োজনীয় browser dependency ইনস্টল করুন: `npm i --no-save playwright && npx playwright install chromium` |
-| 4 | Guardian ব্যবহারের জন্য Start Command দিন: `node guardian/start.js` |
-
-> **Security:** `FB_PASSWORD`, `FB_TOTP_SECRET` বা session cookie কখনো GitHub-এ প্রকাশ করবেন না। Environment Variables ব্যবহার করুন। Facebook CAPTCHA বা identity verification চাইলে নিজে verification সম্পন্ন করতে হবে।
+📜 Command List: [COMMANDS.md](COMMANDS.md)
 
 ---
 
-<h1 align="center">🌐 RENDER AUTO KEEP-ALIVE</h1>
+## 🍪 AUTO COOKIE & AUTO LOGIN
 
 <p align="center">
-  <img src="assets/render-keepalive-banner.svg" alt="Render Auto Keep Alive" width="88%"/>
+  <img src="assets/auto-cookie-banner.svg" alt="Auto Cookie Guardian" width="88%"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AUTO_COOKIE-GUARDIAN-ffb300?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AUTO_LOGIN-OPTIONAL-00e676?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SESSION-RECOVERY-7c4dff?style=for-the-badge"/>
+</p>
+
+Guardian-এর মাধ্যমে Facebook session পরীক্ষা, cookie synchronization এবং recovery চালানোর ব্যবস্থা রয়েছে।
+
+### Setup
+
+1. `guardian/` ফোল্ডারসহ প্রয়োজনীয় ফাইল রাখুন।
+2. Hosting Environment Variables-এ প্রয়োজনীয় তথ্য দিন:
+
+```env
+FB_EMAIL=your_facebook_email
+FB_PASSWORD=your_facebook_password
+FB_TOTP_SECRET=your_totp_secret
+```
+
+3. Playwright প্রয়োজন হলে ইনস্টল করুন:
+
+```bash
+npm install
+npm i --no-save playwright
+npx playwright install chromium
+```
+
+4. Guardian চালাতে:
+
+```bash
+node guardian/start.js
+```
+
+**Security:** Facebook password, TOTP secret ও appstate কখনো Public GitHub-এ রাখবেন না। Facebook CAPTCHA বা identity verification চাইলে নিজে সম্পন্ন করতে হবে।
+
+---
+
+## 🌐 RENDER AUTO KEEP-ALIVE
+
+<p align="center">
+  <img src="assets/render-keepalive-banner.svg" alt="Render Keep Alive" width="88%"/>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/RENDER-KEEP--ALIVE-00e676?style=for-the-badge&logo=render&logoColor=white"/>
   <img src="https://img.shields.io/badge/UPTIMEROBOT-NOT_REQUIRED-ff4d6d?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/SELF--PING-ENABLED-00b2ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SELF--PING-READY-00b2ff?style=for-the-badge"/>
 </p>
 
-Render deployment-এ `RENDER_EXTERNAL_URL` পাওয়া গেলে Keep-Alive script সেটি ব্যবহার করে নির্দিষ্ট বিরতিতে নিজের service-এ request পাঠাতে পারে। এতে আলাদা UptimeRobot monitor configure করার প্রয়োজন নাও হতে পারে। Hosting provider-এর sleep policy ও plan অনুযায়ী uptime পরিবর্তিত হতে পারে।
+এই প্রজেক্টে `SiyamKeepalive.js` রয়েছে।
 
-### Render-এ চালানোর ধাপ
+`Siyam.js`-এর শুরুতেই এটি যুক্ত করা আছে:
 
-| ধাপ | কাজ |
-|:---:|:---|
-| 1 | `JuwelKeepalive.js` ফাইলটি `Juwel.js`-এর পাশে রাখুন। |
-| 2 | Render Dashboard → Service → **Settings** → **Build & Deploy** খুলুন। |
-| 3 | Start Command দিন: `node JuwelKeepalive.js` |
-| 4 | Save করে **Manual Deploy → Deploy latest commit** দিন। |
-| 5 | Logs-এ `[KEEPALIVE]` status দেখুন। |
+```js
+require("./SiyamKeepalive");
+```
 
-Auto Cookie Guardian-ও একই সঙ্গে চালাতে হলে Guardian configuration অনুযায়ী Environment Variables-এ `USE_GUARDIAN=1` দিন।
+Render-এর `RENDER_EXTERNAL_URL` পাওয়া গেলে Keep-Alive নিজের service-এ নির্দিষ্ট সময় পরপর request পাঠায়।
 
-<details>
-<summary><b>Environment Variables</b></summary>
+### Environment Variables
 
 | Variable | কাজ |
-|:---|:---|
-| `KEEPALIVE_URL` | প্রয়োজনে নিজের service URL |
-| `KEEPALIVE_INTERVAL_MS` | Ping interval; default `240000` ms |
-| `USE_GUARDIAN` | `1` দিলে Guardian integration চালু |
+|---|---|
+| `KEEPALIVE_URL` | Custom service URL |
+| `KEEPALIVE_INTERVAL_MS` | Ping interval; default 240000 ms |
 
-</details>
+### Start Command
+
+```bash
+npm start
+```
+
+**নোট:** `SiyamKeepalive.js` আলাদা bot launcher নয়। এটি `Siyam.js` থেকে load হয়। তাই `node JuwelKeepalive.js` বা `node SiyamKeepalive.js` ব্যবহার করবেন না।
+
+Hosting provider-এর sleep policy ও plan অনুযায়ী uptime নির্ভর করে।
 
 ---
 
-<h1 align="center">📡 TELEGRAM START / STOP NOTICE</h1>
+## 📡 TELEGRAM START / STOP NOTICE
 
 <p align="center">
-  <img src="assets/telegram-alert-banner.svg" alt="Telegram Start Stop Alerts" width="88%"/>
+  <img src="assets/telegram-alert-banner.svg" alt="Telegram Alert System" width="88%"/>
 </p>
 
 <p align="center">
@@ -124,107 +147,111 @@ Auto Cookie Guardian-ও একই সঙ্গে চালাতে হলে 
   <img src="https://img.shields.io/badge/SESSION-ALERT-7c4dff?style=for-the-badge"/>
 </p>
 
-বট চালু/বন্ধ হওয়া এবং session-related alert Telegram-এ পাঠানোর notification system।
+Telegram notification-এর জন্য আলাদা alert module রয়েছে।
 
-| Notice | কখন পাঠানো হয় |
-|:---|:---|
-| 🟢 **STARTED** | বট চালু হলে |
-| 🔴 **STOPPED** | বট বন্ধ হলে বা crash শনাক্ত হলে |
-| 🚨 **ALERT** | session বা login সমস্যা শনাক্ত হলে |
-| ✅ **BACK ONLINE** | বট আবার চালু হলে |
+সম্ভাব্য notification:
 
-Telegram BotFather থেকে Bot Token নিয়ে `config.json`-এর alert configuration অথবা hosting Environment Variables-এ `JUWEL_TG_TOKEN` ও `JUWEL_TG_CHAT` configure করুন। Token কখনো public repository-তে রাখবেন না।
+- 🟢 Bot Started
+- 🔴 Bot Stopped
+- 🚨 Session Alert
+- ✅ Back Online
+
+**গুরুত্বপূর্ণ:** বর্তমান alert module-এর configuration key এবং `config.json`-এর `SIYAM_ALERT` key এক নয়। তাই কোডে configuration migration না করা পর্যন্ত এই notification system-কে সম্পূর্ণ configured ধরে নেবেন না।
+
+Telegram Bot Token কখনো README বা Public Repository-তে লিখবেন না।
 
 ---
 
-<h1 align="center">✨ FEATURES</h1>
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=800&color=00FF88&center=true&vCenter=true&width=820&lines=Auto+Reply+System;Quiz+%26+Games;Economy+System;Admin+Tools;Media+Downloader;No+Prefix+Triggers;Inbox+%2B+Group+Control;AI+Image+Tools" />
-</p>
+## ✨ FEATURES
 
 | Feature | Description |
-|:---|:---|
-| 🤖 **Auto Reply** | Auto-response ও AI chat feature |
-| 🎮 **Quiz & Games** | বাংলা Quiz, Casino, Bầu Cua |
-| 💰 **Economy** | Daily coins, streak, rank ও EXP/Level |
-| 👥 **Group Management** | Add, kick, lock, tag, rename, emoji ও image control |
-| 📥 **Media Downloader** | YouTube, Facebook, TikTok media downloader commands |
-| ⚡ **Fast Response** | দ্রুত response ও reconnect support |
-| 🖼️ **Photo Editing** | AI edit, upscale ও art tools |
-| 🎨 **Image Generation** | Flux, Pollinations ও GPT-gen tools |
-| 😂 **Fun Commands** | Meme, slap, hug, pet ও অন্যান্য fun commands |
-| ⚡ **No Prefix** | নির্দিষ্ট trigger-এ prefix ছাড়াই response |
-| 📥 **Inbox Support** | Inbox ও group—দুই জায়গায় command support |
-| 🛡️ **Security** | Anti-flood, anti-spam, anti-join ও protection tools |
-| 🔀 **Hybrid Engine** | Mirai + GoatBot command/event compatibility |
-| 🕌 **Islamic Pack** | Ramadan auto-time, Sura ও Islamic commands |
-| 🌐 **Keep-Alive** | Render self-ping integration |
+|---|---|
+| 🤖 Auto Reply | Auto response system |
+| 🎮 Quiz & Games | Quiz, Casino, Bầu Cua |
+| 💰 Economy | Daily coins, EXP, rank |
+| 👥 Group Management | Add, kick, lock, tag, rename |
+| 📥 Media Downloader | YouTube, Facebook, TikTok |
+| ⚡ Fast Response | Reconnect support |
+| 🖼️ Photo Editing | AI edit and image tools |
+| 🎨 Image Generation | Flux and Pollinations tools |
+| 😂 Fun Commands | Meme, slap, hug, pet |
+| ⚡ No Prefix | Trigger-based response |
+| 📥 Inbox Support | Inbox and group support |
+| 🛡️ Security | Anti-flood and anti-spam tools |
+| 🔀 Hybrid Engine | Mirai + GoatBot compatibility |
+| 🕌 Islamic Pack | Sura and Islamic commands |
+| 🌐 Keep-Alive | Render self-ping integration |
 
 ---
 
-<h1 align="center">⚡ NO PREFIX SYSTEM</h1>
+## ⚡ NO PREFIX SYSTEM
 
-প্রিফিক্স (`/`) ছাড়াই নির্দিষ্ট trigger লিখলে সংশ্লিষ্ট feature কাজ করে।
+নির্দিষ্ট trigger ব্যবহার করে prefix ছাড়াই কিছু response পাওয়া যায়।
 
 | Trigger | কাজ |
-|:---:|:---|
-| `jwl` | নির্দিষ্ট reaction |
+|---|---|
+| `jwl` | Reaction |
 | `autoreplybot` | Auto reply |
-| `autovoice` | Auto voice reply |
-| `baby` | AI auto-teach chat |
+| `autovoice` | Auto voice |
+| `baby` | AI auto chat |
 | `Gan` | Random song |
-| `umma` · `night` · `women` | Fun auto-response |
-| `👀` · `😅` | Emoji response |
-| `salam` | সালামের reply |
+| `umma` | Fun response |
+| `night` | Fun response |
+| `women` | Fun response |
+| `👀` / `😅` | Emoji response |
+| `salam` | Salam reply |
 | `hi` | Sticker reply |
-| `bot` | Random fun reply |
+| `bot` | Random reply |
 | `fixspam` | Spam detection |
 | `autoseen` | Auto seen |
-| `autodl` | Link-based auto download |
-| `shortcut` | Custom shortcut reply |
-| `prefix` | Prefix ও bot information |
+| `autodl` | Auto download |
+| `shortcut` | Custom shortcut |
+| `prefix` | Prefix information |
 
 ---
 
-<h1 align="center">📥 INBOX SUPPORT</h1>
+## 📥 INBOX SUPPORT
 
-- `allowInbox: true` থাকলে inbox-এ command ব্যবহার করা যায়।
-- `notice` দিয়ে একাধিক group-এ notice পাঠানো যায়।
-- `sendsms` ও `outall` দিয়ে নির্দিষ্ট group-এ message পাঠানো যায়।
-- `acp`, `listfriend`, `friends` দিয়ে friend request ও friend list পরিচালনা করা যায়।
-- `pending` ও `join` দিয়ে pending group request পরিচালনা করা যায়।
+`allowInbox: true` থাকলে inbox-এ command ব্যবহারের সুবিধা পাওয়া যায়।
+
+- `notice` — Group notice
+- `sendsms` — Group message
+- `outall` — Multiple group message
+- `acp` — Friend request management
+- `listfriend` — Friend list
+- `pending` — Pending requests
+- `join` — Group join management
 
 ---
 
-<h1 align="center">🐾 ANIMAL POWER SYSTEM</h1>
+## 🐾 ANIMAL POWER SYSTEM
 
 | Mode | Power |
-|:---:|:---|
-| 🦁 **Lion** | Admin power control |
-| 🐺 **Wolf** | Fast auto reply |
-| 🦅 **Eagle** | Smart detection |
-| 🐯 **Tiger** | High-speed execution |
-| 🐉 **Dragon** | AI power |
-| 🦂 **Scorpion** | Security shield |
+|---|---|
+| 🦁 Lion | Admin power control |
+| 🐺 Wolf | Fast auto reply |
+| 🦅 Eagle | Smart detection |
+| 🐯 Tiger | High-speed execution |
+| 🐉 Dragon | AI power |
+| 🦂 Scorpion | Security shield |
 
 ---
 
-<h1 align="center">🛡️ PROTECTION & EVENTS</h1>
+## 🛡️ PROTECTION & EVENTS
 
 | System | কাজ |
-|:---|:---|
+|---|---|
 | `antiflood` | Message flood protection |
 | `spamban` | Repeated spam control |
-| `botautoban` | অন্য bot detection ও autoban |
-| `antigali` | বাংলা Anti-Gali |
-| `anti18` | 18+ শব্দ detection |
+| `botautoban` | Bot detection |
+| `antigali` | Anti-gali |
+| `anti18` | 18+ word detection |
 | `antiout` | Member leave control |
-| `antijoin` | New member join control |
+| `antijoin` | New member control |
 | `antiProtect` / `protect` | Group settings protection |
 | `guardian` | Owner protection |
-| `blacklistuser` | Blacklist user control |
-| `bossleave` | নির্দিষ্ট kick event handling |
+| `blacklistuser` | Blacklist control |
+| `bossleave` | Kick event handling |
 | `joinNoti` | Join notification |
 | `leave` | Leave notification |
 | `adminUpdate` | Group update notification |
@@ -233,116 +260,95 @@ Telegram BotFather থেকে Bot Token নিয়ে `config.json`-এর a
 
 ---
 
-<h1 align="center">🧠 COMMANDS</h1>
+## 🧠 COMMANDS
 
 <p align="center">
-  <img src="https://img.shields.io/badge/PREFIX-%2F-ff00cc?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/HELP-%2Fhelp-00c6ff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/MENU-%2Fmenu-ffd200?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/ALL-%2Fhelpall-00e676?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/PREFIX-.-ff00cc?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/HELP-.help-00c6ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/MENU-.menu-ffd200?style=for-the-badge"/>
 </p>
 
-বটের command list দেখতে `/help`, `/helpall` অথবা `/menu` ব্যবহার করুন।
+বর্তমান `config.json` অনুযায়ী default prefix হলো `.`।
 
-<details>
-<summary><b>🛠️ SYSTEM & ADMIN</b></summary>
+ব্যবহার করুন:
 
-`help` · `helpall` · `menu` · `system` · `uptime` · `upt` · `status` · `restart` · `offbot` · `load` · `config` · `settings` · `setbot` · `adminonly` · `adminupdate` · `self` · `0admin` · `listbox` · `allbox` · `thread` · `pending` · `join` · `vip` · `file` · `give` · `install` · `console` · `setprofile` · `setexp` · `delmsg` · `unsend` · `theme` · `notice` · `sendsms` · `outall` · `out`
+```text
+.help
+.helpall
+.menu
+```
 
-</details>
+### 🛠️ SYSTEM & ADMIN
 
-<details>
-<summary><b>👥 GROUP & BOX CHAT</b></summary>
+`help` · `helpall` · `menu` · `system` · `uptime` · `upt` · `status` · `restart` · `offbot` · `load` · `config` · `settings` · `setbot` · `adminonly` · `adminupdate` · `self` · `listbox` · `allbox` · `pending` · `join` · `vip` · `file` · `give` · `install` · `console` · `setprofile` · `setexp` · `delmsg` · `unsend` · `theme` · `notice` · `sendsms` · `outall` · `out`
+
+### 👥 GROUP & BOX CHAT
 
 `group` · `groupname` · `groupimage` · `groupemoji` · `setemoji` · `setname` · `newbox` · `boxinfo` · `boxadmin` · `listadmin` · `adduser` · `kick` · `kickall` · `ban` · `lock` · `protect` · `tag` · `mention` · `tid` · `rules` · `setjoin` · `setprefix` · `birthday` · `bday` · `top` · `textoff`
 
-</details>
-
-<details>
-<summary><b>🛡️ PROTECTION</b></summary>
+### 🛡️ PROTECTION
 
 `antiflood` · `antigali` · `anti18` · `antijoin` · `antiout` · `botautoban` · `spamban` · `autoban` · `fixspam` · `protect`
 
-</details>
-
-<details>
-<summary><b>🤖 AI & IMAGE TOOLS</b></summary>
+### 🤖 AI & IMAGE TOOLS
 
 `gptgen` · `flux` · `poli` · `edit` · `editpro` · `refine` · `prompt` · `animate` · `art` · `4k` · `ai` · `baby`
 
-</details>
+### 📥 MEDIA & DOWNLOADER
 
-<details>
-<summary><b>📥 MEDIA & DOWNLOADER</b></summary>
+`youtube` · `video` · `song` · `sing` · `sing2` · `mp3` · `allvideo` · `shoti` · `rasian` · `autodl` · `getlink` · `catbox` · `imgur` · `say` · `x` · `sigma` · `sigmaboy` · `attitude` · `sad` · `random`
 
-`youtube` · `video` · `song` · `sing` · `sing2` · `mp3` · `allvideo` · `shoti` · `rasian` · `autodl` · `getlink` · `catbox` · `imgur` · `say` · `x` (text-to-speech) · `sigma` · `sigmaboy` · `attitude` · `sad` · `random` · `anemi`
-
-</details>
-
-<details>
-<summary><b>🎴 BANNER & FRAME MAKERS</b></summary>
+### 🎴 BANNER & FRAME MAKERS
 
 `couple` · `love` · `love1` · `crush` · `crush1` · `bf` · `gf` · `besti` · `bestu` · `bestfriend` · `bro` · `kiss` · `hug` · `hug2` · `married` · `pair` · `pairing` · `bonk` · `sala` · `chipa` · `toilet` · `rip1` · `fbcover` · `fbpost` · `post` · `family`
 
-</details>
-
-<details>
-<summary><b>😂 FUN & MEME</b></summary>
+### 😂 FUN & MEME
 
 `slap` · `slap2` · `batslap` · `pet` · `pat` · `jail` · `goru` · `chor` · `dim` · `arrest` · `bigtext` · `rip` · `tokai` · `pabna` · `fokir` · `pem` · `bijiboy` · `bijigirl` · `doya` · `shayri` · `caption` · `wish` · `war` · `boom` · `nokia` · `mix`
 
-</details>
-
-<details>
-<summary><b>🎮 GAMES & ECONOMY</b></summary>
+### 🎮 GAMES & ECONOMY
 
 `quiz` · `casino` · `bc` · `daily` · `rank`
 
-</details>
-
-<details>
-<summary><b>🧰 UTILITIES & TOOLS</b></summary>
+### 🧰 UTILITIES & TOOLS
 
 `uid` · `profile` · `ckuser` · `ckbot` · `numinfo` · `age` · `weather` · `ss` · `qr` · `font` · `wallpaper` · `google` · `search` · `pic` · `github` · `ar` · `bn` · `en` · `text` · `scan` · `autoseen`
 
-</details>
-
-<details>
-<summary><b>🕌 ISLAMIC</b></summary>
+### 🕌 ISLAMIC
 
 `ramadanauto` · `sura` · `islamick` · `islam` · `allah`
 
-</details>
-
-<details>
-<summary><b>💞 LOVE & COUPLE</b></summary>
+### 💞 LOVE & COUPLE
 
 `lv` · `lv2` · `lv3` · `love2` · `love3` · `kiss1` · `kiss2` · `kiss3` · `married3` · `pair1` · `pair2` · `coupledp` · `animedp` · `boypp` · `girlpp` · `girl`
 
-</details>
+বিস্তারিত তালিকা: [COMMANDS.md](COMMANDS.md)
 
 ---
 
-<h1 align="center">⚙️ CONFIG HIGHLIGHTS</h1>
+## ⚙️ CONFIG HIGHLIGHTS
 
-| Option | মান | কাজ |
-|:---|:---:|:---|
-| `PREFIX` / `usePrefix` | `/` / `true` | Command prefix |
-| `allowInbox` | `true` | Inbox command support |
-| `autoSent` | `true` | Auto message send |
-| `autoCreateDB` | `true` | Group/user database creation |
+| Option | বর্তমান মান | কাজ |
+|---|---|---|
+| `PREFIX` | `.` | Command prefix |
+| `usePrefix` | `true` | Prefix enable |
+| `allowInbox` | `true` | Inbox support |
+| `autoSent` | `true` | Auto message |
+| `autoCreateDB` | `true` | Database creation |
 | `autoClean` | `true` | Auto clean |
-| `reactUnsend` | Configurable | নির্দিষ্ট reaction-এ bot message unsend |
 | `Login.autoRetryLogin` | `true` | Login retry |
-| `FCAOption.autoReconnect` | `true` | Connection reconnect |
-| `DATABASE` | SQLite | `data.sqlite` |
-| `ADMINBOT` / `DEVELOPER` | UID array | Admin ও developer UID |
+| `FCAOption.autoReconnect` | `true` | Reconnect |
+| `DATABASE` | SQLite | Database |
+| `ADMINBOT` | UID array | Bot admin |
+| `DEVELOPER` | UID array | Developer |
 
-> `appstate.json`, password, OTP secret এবং API token private রাখুন। Public repository-তে commit করবেন না।
+নিজের Admin ও Developer UID সঠিকভাবে সেট করুন।
+
+`appstate.json`, password, OTP secret এবং API token private রাখুন।
 
 ---
 
-<h1 align="center">📊 GITHUB STATS</h1>
+## 📊 GITHUB STATS
 
 <p align="center">
   <a href="https://github.com/siyam-xpromex/siyambot">
@@ -351,60 +357,43 @@ Telegram BotFather থেকে Bot Token নিয়ে `config.json`-এর a
 </p>
 
 <p align="center">
-  <a href="https://github.com/siyam-xpromex/siyambot"><img src="https://img.shields.io/github/stars/siyam-xpromex/siyambot?style=for-the-badge" alt="Stars"/></a>
-  <a href="https://github.com/siyam-xpromex/siyambot/network/members"><img src="https://img.shields.io/github/forks/siyam-xpromex/siyambot?style=for-the-badge" alt="Forks"/></a>
-  <a href="https://github.com/siyam-xpromex/siyambot/issues"><img src="https://img.shields.io/github/issues/siyam-xpromex/siyambot?style=for-the-badge" alt="Issues"/></a>
+  <a href="https://github.com/siyam-xpromex/siyambot"><img src="https://img.shields.io/github/stars/siyam-xpromex/siyambot?style=for-the-badge"/></a>
+  <a href="https://github.com/siyam-xpromex/siyambot/network/members"><img src="https://img.shields.io/github/forks/siyam-xpromex/siyambot?style=for-the-badge"/></a>
+  <a href="https://github.com/siyam-xpromex/siyambot/issues"><img src="https://img.shields.io/github/issues/siyam-xpromex/siyambot?style=for-the-badge"/></a>
 </p>
 
 ---
 
-<h1 align="center">🚀 LIVE DEPLOY</h1>
+## 🚀 LIVE DEPLOY
 
 <p align="center">
-  <a href="https://render.com"><img src="https://img.shields.io/badge/Deploy%20On-Render-4353ff?style=for-the-badge&logo=render&logoColor=white" alt="Render"/></a>
-  <a href="https://railway.app"><img src="https://img.shields.io/badge/Deploy%20On-Railway-a855f7?style=for-the-badge&logo=railway&logoColor=white" alt="Railway"/></a>
+  <a href="https://render.com"><img src="https://img.shields.io/badge/Deploy%20On-Render-4353ff?style=for-the-badge&logo=render&logoColor=white"/></a>
+  <a href="https://railway.app"><img src="https://img.shields.io/badge/Deploy%20On-Railway-a855f7?style=for-the-badge&logo=railway&logoColor=white"/></a>
 </p>
 
-<details>
-<summary><b>GitHub Actions Workflow</b> — optional scheduled run</summary>
+### Railway
 
-```yaml
-name: Run Bot
+এই repository-তে `railway.json`-এ `npm start` সেট করা আছে।
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"
+### Render
 
-concurrency:
-  group: run-bot
-  cancel-in-progress: true
+Build Command:
 
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    timeout-minutes: 350
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Start bot
-        run: npm start
+```bash
+npm install
 ```
 
-</details>
+Start Command:
+
+```bash
+npm start
+```
+
+Node.js version: `22.x`
 
 ---
 
-<h1 align="center">🚀 HOW TO RUN</h1>
+## 🚀 HOW TO RUN
 
 ```bash
 git clone https://github.com/siyam-xpromex/siyambot.git
@@ -413,27 +402,29 @@ npm install
 npm start
 ```
 
-Render Keep-Alive ব্যবহার করলে hosting Start Command হিসেবে:
+প্রথমে `config.json`-এ নিজের Admin ও Developer UID দিন।
 
-```bash
-node JuwelKeepalive.js
-```
+তারপর `appstate.json`-এ নিজের বৈধ Facebook session দিন।
 
-আপনার repository-তে যে entry file ও `package.json` start script configured আছে, সেটির সঙ্গে Start Command মিলিয়ে নিন।
+**Launcher:** `Siyam.js`
+
+`Main.js` সরাসরি চালাবেন না।
 
 ---
 
-<h1 align="center">🧰 PLATFORM LINKS</h1>
+## 🧰 PLATFORM LINKS
 
 | Platform | Link |
-|:---|:---|
-| GitHub | [siyam-xpromex/siyambot](https://github.com/siyam-xpromex/siyambot) |
+|---|---|
+| GitHub Repository | [siyam-xpromex/siyambot](https://github.com/siyam-xpromex/siyambot) |
 | Render | [render.com](https://render.com) |
 | Railway | [railway.app](https://railway.app) |
+| GoatBot Guide | [GOAT_COMPAT.md](GOAT_COMPAT.md) |
+| Commands | [COMMANDS.md](COMMANDS.md) |
 
 ---
 
-<h1 align="center">👤 DEVELOPER & SUPPORT</h1>
+## 👤 DEVELOPER & SUPPORT
 
 <p align="center">
   <img src="https://img.shields.io/badge/DEVELOPER-SIYAM%20HASAN-00d9ff?style=for-the-badge"/>
@@ -441,28 +432,40 @@ node JuwelKeepalive.js
 </p>
 
 <p align="center">
-  <a href="https://wa.me/8801789138157"><img src="assets/whatsapp.svg" alt="WhatsApp Developer" width="210"/></a>
-  <a href="https://t.me/ri_siyam"><img src="assets/telegram.svg" alt="Developer Telegram" width="210"/></a>
-  <a href="https://www.facebook.com/profile.php?id=61596102516084"><img src="assets/facebook.svg" alt="Facebook" width="210"/></a>
+  <a href="https://wa.me/8801789138157">
+    <img src="assets/whatsapp.svg" alt="WhatsApp Developer" width="180"/>
+  </a>
+  <a href="https://t.me/ri_siyam">
+    <img src="assets/telegram.svg" alt="Telegram Developer" width="180"/>
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61596102516084">
+    <img src="assets/facebook.svg" alt="Facebook Developer" width="180"/>
+  </a>
 </p>
 
-<h2 align="center">💬 SUPPORT GROUPS</h2>
+### 💬 SUPPORT GROUPS
 
 <p align="center">
-  <a href="https://chat.whatsapp.com/IbxqvkgbySJ10XsL7geN8B?s=cl&p=a&iam=2"><img src="https://img.shields.io/badge/WhatsApp-Support%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
-  <a href="https://t.me/siyam_esb"><img src="https://img.shields.io/badge/Telegram-Support%20Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+  <a href="https://chat.whatsapp.com/IbxqvkgbySJ10XsL7geN8B?s=cl&p=a&iam=2">
+    <img src="assets/whatsappgroup.svg" alt="WhatsApp Support Group" width="220"/>
+  </a>
+  <a href="https://t.me/siyam_esb">
+    <img src="assets/telegramgroup.svg" alt="Telegram Support Group" width="220"/>
+  </a>
 </p>
 
 ---
 
 <p align="center">
-  <img src="assets/thank-you.svg" alt="Thank you for using Siyam Chat Bot" width="100%"/>
+  <img src="assets/thank-you.svg" alt="Thank You" width="100%"/>
 </p>
 
 <h2 align="center">💙 SIYAM CHAT BOT ব্যবহার করার জন্য ধন্যবাদ!</h2>
 
 <p align="center">
-  <a href="https://github.com/siyam-xpromex/siyambot"><img src="https://img.shields.io/badge/GitHub-Visit%20Repository-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
+  <a href="https://github.com/siyam-xpromex/siyambot">
+    <img src="https://img.shields.io/badge/GitHub-Visit%20Repository-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
 </p>
 
 <p align="center">
