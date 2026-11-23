@@ -3,9 +3,8 @@ const moment = require("moment-timezone");
 
 let consoleName = "BOT";
 
-const CREDIT = "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐";
+const CREDIT = "𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑";
 
-// আপনার দেওয়া সব ২৬টা রঙ
 const colors = [
   "FF9900", "FFFF33", "33FFFF", "FF99FF",
   "FF3366", "FFFF66", "FF00FF", "66FF99",
@@ -19,7 +18,6 @@ const colors = [
 const randomColor = () =>
   "#" + colors[Math.floor(Math.random() * colors.length)];
 
-// প্রতিটা অক্ষরে আলাদা রঙ (শুধু সাধারণ লেখার জন্য)
 const rainbow = (text) =>
   Array.from(text)
     .map((ch) => chalk.hex(randomColor()).bold(ch))
@@ -29,22 +27,18 @@ function init(name) {
   consoleName = name || consoleName;
 }
 
-// প্রতিটা লাইনের বাম বর্ডার আলাদা রঙে
-const line = (text) => chalk.hex(randomColor())("│ ") + text;
+const line = (text) =>
+  chalk.hex(randomColor())("» ") + text;
 
 const field = (icon, label, value) =>
   line(
-    chalk.hex(randomColor()).bold(`${icon} ${label.padEnd(11)}`) +
-      chalk.gray("➜ ") +
+    chalk.hex(randomColor()).bold(`${icon} ${label}`) +
+      chalk.gray(" ➜ ") +
       chalk.hex(randomColor())(value)
   );
 
-const border = (l, r) => {
-  const bar = "─".repeat(34);
-  return Array.from(`${l}${bar}${r}`)
-    .map((ch) => chalk.hex(randomColor())(ch))
-    .join("");
-};
+const border = () =>
+  chalk.hex(randomColor())("───────────────");
 
 function log({
   groupName = "Name does not exist",
@@ -59,18 +53,19 @@ function log({
 
   const out = [
     "",
-    border("╭", "╮"),
-    line("✦ " + rainbow(`${consoleName} LOGGER`) + " ✦"),
-    border("├", "┤"),
-    field("💬", "Group", groupName),
+    line(chalk.bold.hex("FFD700")(`👑 ${CREDIT}`)),
+    border(),
+    line(rainbow(`${consoleName} LOGGER`)),
+    border(),
+    field("🔰", "Group", groupName),
     field("🆔", "Group ID", threadID),
     field("👤", "User", userName),
-    field("🔖", "User ID", senderID),
-    field("📩", "Message", content),
-    border("├", "┤"),
+    field("🤗", "User ID", senderID),
+    field("🙄", "Message", content),
+    border(),
     line(chalk.hex(randomColor())(`🕒 ${time}`)),
-    line(chalk.hex(randomColor()).italic(`✨ Credit: ${CREDIT}`)),
-    border("╰", "╯"),
+    border(),
+    line(chalk.hex(randomColor()).italic("🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧")),
     ""
   ];
 
