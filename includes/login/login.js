@@ -1,4 +1,4 @@
-const fca = require("mr-juwel-fca"); //এখানে আপনার FCA নাম দিন।
+const fca = require("mr-juwel-fca"); 
 
 const logger = require("../../utils/log");
 const {
