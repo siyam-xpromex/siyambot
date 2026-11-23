@@ -1,27 +1,27 @@
 {
-    "╔═ 𝙲𝚁𝙴𝙳𝙸𝚃 ═╗": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
-    "Author": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+    "─── 𝙲𝚁𝙴𝙳𝙸𝚃 ───": "👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑",
+    "Author": "Siyam Hasan",
     "version": "3.0.0",
     "language": "en",
-    "╔═ 𝙱𝙾𝚃 ═╗": "",
-    "BOTNAME": "⎯꯭𓆩꯭𝆺𝅥😽ꤪ𝐉⃞𝆠፝֟𝐔⃞𝆠፝֟𝐈ꜛ國࿐",
-    "BOTADMINNAME": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+    "─── 𝙱𝙾𝚃 ───": "",
+    "BOTNAME": "𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧 𝗕𝗢𝗧",
+    "BOTADMINNAME": "Siyam Hasan",
     "PREFIX": ".",
     "usePrefix": true,
     "APPSTATEPATH": "appstate.json",
-    "╔═ 𝙰𝙳𝙼𝙸𝙽 ═╗": "",
+    "─── 𝙰𝙳𝙼𝙸𝙽 ───": "",
     "ADMINBOT": [
         "11111111111111",
         "22222222222222",
         "33333333333333"
     ],
-    "╔═ 𝙳𝙴𝚅 ═╗": "",
+    "─── 𝙳𝙴𝚅 ───": "",
     "DEVELOPER": [
         "44444444444444",
         "55555555555555",
         "66666666666666"
     ],
-    "╔═ 𝚂𝙴𝚃 ═╗": "",
+    "─── 𝚂𝙴𝚃 ───": "",
     "adminOnly": false,
     "allowInbox": true,
     "autoSent": true,
@@ -30,7 +30,7 @@
     "notiGroup": true,
     "NOTIFICATION": true,
     "DeveloperMode": false,
-    "╔═ 𝙵𝙲𝙰 ═╗": "",
+    "─── 𝙵𝙲𝙰 ───": "",
     "FCAOption": {
         "selfListen": false,
         "listenEvents": true,
@@ -41,7 +41,7 @@
         "enableTypingIndicator": true,
         "typingDuration": 100
     },
-    "╔═ 𝙻𝙾𝙶𝙸𝙽 ═╗": "",
+    "─── 𝙻𝙾𝙶𝙸𝙽 ───": "",
     "Login": {
         "autoRetryLogin": true,
         "maxLoginRetries": 100,
@@ -52,18 +52,18 @@
         "persistAppState": true,
         "backupAppState": true
     },
-    "╔═ 𝙳𝙱 ═╗": "",
+    "─── 𝙳𝙱 ───": "",
     "DATABASE": {
         "sqlite": {
             "storage": "../data/data.sqlite"
         }
     },
-    "╔═ 𝙾𝙵𝙵 ═╗": "",
+    "─── 𝙾𝙵𝙵 ───": "",
     "commandDisabled": [],
     "eventDisabled": [],
-    "╚═ 𝙴𝙽𝙳 ═╝": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
-    "JUWEL_ALERT": {
-        "TG_TOKEN": "9139388645:AAFy4UdWylSY9n3dCeiy1OHvAw5i-q9nr1Q",
+    "─── 𝙴𝙽𝙳 ───": "» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑",
+    "SIYAM_ALERT": {
+        "TG_TOKEN": "PASTE_YOUR_NEW_TELEGRAM_BOT_TOKEN_HERE",
         "TG_CHAT": "6901736320"
     }
 }
