@@ -1,5 +1,5 @@
 // 🔧 includes/compat/goatRuntime.js
-//
+//সিয়াম হাসান 
 // GoatBot ↔ Mirai হাইব্রিড রানটাইম।
 //
 //  1) installGlobals()      — global.GoatBot, global.db, global.temp, global.utils (Goat helpers যোগ)
