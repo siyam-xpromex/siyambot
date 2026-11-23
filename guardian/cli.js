@@ -1,8 +1,10 @@
+
 #!/usr/bin/env node
 /**
- * Cookie Guardian — Credit: 乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐
+ * Cookie Guardian — Credit: Siyam Hasan
  */
 'use strict';
+
 const core = require('./core');
 
 const cmd = process.argv[2] || 'help';
@@ -11,7 +13,7 @@ const cfg = core.makeConfig();
 const HELP = `
 Cookie Guardian
 
-  node guardian/cli.js login     হেডফুল ব্রাউজার খুলে আপনি নিজে লগইন করবেন → কুকি সেভ (ডিসপ্লে লাগবে)
+  node guardian/cli.js login     হেডলেস ব্রাউজার খুলে আপনি নিজে লগইন করবেন → কুকি সেভ (ডিসপ্লে লাগবে)
   node guardian/cli.js sync      একবার চেক + দরকারে অটো-লগইন + appstate.json আপডেট
   node guardian/cli.js sync -f   কুকি একই থাকলেও appstate.json নতুন করে লেখে
   node guardian/cli.js watch     প্রতি GUARDIAN_INTERVAL_MIN মিনিটে sync (বটের সাথে আলাদা টার্মিনালে)
