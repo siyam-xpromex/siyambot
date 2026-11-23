@@ -1,78 +1,222 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,24&height=200&section=header&text=Nijhum%20Chat%20Bot&fontSize=54&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Mirai%20%2B%20GoatBot%20Hybrid%20Compatibility%20Guide&descSize=17&descAlignY=60" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,50:7b2ff7,100:ff00cc&height=230&section=header&text=NIJHUM%20CHAT%20BOT&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=POWERED%20BY%20SIYAM%20HASAN&descSize=20&descAlignY=60" width="100%"/>
+</p><h1 align="center">👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑</h1><h3 align="center">🤖 NIJHUM CHAT BOT | MIRAI + GOATBOT HYBRID</h3><p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=19&duration=2500&pause=700&color=00E5FF&center=true&vCenter=true&width=800&lines=Welcome+to+Nijhum+Chat+Bot;Mirai+%2B+GoatBot+Hybrid+System;One+Bot+%E2%80%A2+Two+Command+Systems;Developed+by+Siyam+Hasan"/>
 </p><p align="center">
-  <img src="assets/siyam-logo.svg" alt="Nijhum Chat Bot — Siyam Hasan" width="520"/>
-</p><h1 align="center">🤖+🐐 Nijhum Chat Bot — Hybrid Guide</h1><p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=20&duration=2600&pause=800&color=FFD200&center=true&vCenter=true&width=820&lines=Mirai+%2B+GoatBot+%E2%80%94+One+Bot%2C+Two+Command+Styles;Copy+the+File+%E2%86%92+Restart+%E2%86%92+Done;No+Code+Change+Needed" />
-</p><p align="center">
-  <img src="https://img.shields.io/badge/🤖_MIRAI-CORE-ff4d4d?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🐐_GOATBOT-COMPAT_LAYER-ffaa00?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🔀_HYBRID-MODE-a855f7?style=for-the-badge"/>
+  <a href="https://github.com/siyam-xpromex/siyambot">
+    <img src="https://img.shields.io/badge/GITHUB-REPOSITORY-181717?style=for-the-badge&logo=github"/>
+  </a>
+  <img src="https://img.shields.io/badge/OWNER-SIYAM%20HASAN-00c6ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/BOT-NIJHUM%20CHAT%20BOT-8A2BE2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/NODE.JS-22.x-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/LICENSE-MIT-yellow?style=for-the-badge"/>
 </p>---
 
-এই ফর্কে Mirai আর GoatBot দুই ধরনের কমান্ড/ইভেন্ট কোডই চলে। বটের মূল কাঠামো (লঞ্চার, লগইন, লাইসেন্স) Mirai-র; GoatBot-এর কোড চালানোর জন্য একটি সামঞ্জস্য (compatibility) লেয়ার যোগ করা হয়েছে।
+🌸 About Nijhum Chat Bot
 
-This fork runs both Mirai-style and GoatBot-style commands and events in the same folders. The core (launcher, login, license) is Mirai; a compatibility layer lets GoatBot code run unchanged.
+Nijhum Chat Bot is a hybrid Facebook Messenger bot combining the power of Mirai and GoatBot.
 
-<h2 align="center">🚀 কীভাবে ব্যবহার করবেন / How to use</h2>npm install
-# appstate.json এ কুকি বসান, config.json এ ADMINBOT/DEVELOPER এ আপনার UID দিন
-npm start          # ⚠️ সবসময় npm start / node Siyam.js — node Main.js নয়
+এই বটের মাধ্যমে একই প্রজেক্টে Mirai এবং GoatBot-এর কমান্ড ও ইভেন্ট চালানো যায়। এর মূল কাঠামো Mirai ভিত্তিক এবং GoatBot কমান্ড চালানোর জন্য রয়েছে Compatibility Layer।
 
-আপনি যা চান| কোথায় রাখবেন
-🤖 Mirai কমান্ড| "Script/commands/"
-🐐 GoatBot কমান্ড ("scripts/cmds/*.js" থেকে)| "Script/commands/" (কোনো পরিবর্তন ছাড়াই)
-🤖 Mirai ইভেন্ট| "Script/events/"
-🐐 GoatBot ইভেন্ট ("scripts/events/*.js" থেকে)| "Script/events/" (কোনো পরিবর্তন ছাড়াই)
+👑 Developer Information
 
-«✅ ফাইল কপি করে বট রিস্টার্ট দিলেই হলো।»
-
----
-
-<h2 align="center">✅ কী কী সাপোর্টেড (GoatBot) / What is supported</h2>- 🧩 "config": "name, aliases, role, countDown, category, author, version, shortDescription, longDescription, guide, envConfig, usePrefix" → Mirai-র "hasPermssion, cooldowns, commandCategory, credits, description, usages" এ স্বয়ংক্রিয়ভাবে ম্যাপ হয় (শুধু যা নেই তাই যোগ হয়)।
-- 🎯 Handlers: "onStart", "onChat", "onReply", "onReaction", "onEvent", "onAnyEvent", "onFirstChat", "onLoad"
-- 📦 প্যারামিটার: "api, event, args, message, usersData, threadsData, globalData(stub), role, commandName, prefix, getLang, envCommands, removeCommandNameFromBody, Reply, Reaction"
-- 💬 "message": "reply / send / unsend / reaction / err" (Promise এবং callback দুটোই)
-- 🌍 Globals: "global.GoatBot.onReply / onReaction / commands / aliases / config", "global.db", "global.temp"
-- 🛠️ "global.utils": "getStreamFromURL, getStreamsFromAttachment, downloadFile, getPrefix, getTime, convertTime, formatNumber, randomString, randomNumber, removeHomeDir, splitPage, translate, shortenURL, findUid, log, ..."
-  (Mirai-র নিজের "global.utils" ফাংশন আগের মতোই থাকে।)
-- 🈯 Language: "langs" + "getLang("key", ...vars)" ("%1", "{pn}", "{p}", "{n}" সহ)
-- 📡 Events: GoatBot ইভেন্ট ফাইল ("onStart" + ফাংশন রিটার্ন) — সব "log:*" ইভেন্টে চলে, ফাইল নিজে ফিল্টার করে।
-
-«🔑 Role: Goat "0/1/2" ↔ Mirai "hasPermssion" "0/1/2" (ডেভেলপার = 3, Goat কমান্ডে 2 হিসেবে যায়)।»
+Information| Details
+Developer| Siyam Hasan
+Bot Name| Nijhum Chat Bot
+Platform| Facebook Messenger
+Framework| Mirai + GoatBot
+Runtime| Node.js 22.x
+License| MIT
+GitHub| siyam-xpromex
 
 ---
 
-<h2 align="center">🗄️ ডাটা কোথায় থাকে / Data mapping</h2>Goat API| Mirai-তে যা হয়
-"usersData.get(uid)"| Mirai "Users" + "Currencies" টেবিল ("money", "exp" Currencies থেকে; "data" = Mirai "data" কলাম)
-"threadsData.get(tid)"| Mirai "Threads" টেবিল + লাইভ "getThreadInfo" ("adminIDs" Goat-এর মতো আইডির অ্যারে)
+✨ Main Features
+
+<p align="center">
+  <img src="https://img.shields.io/badge/🤖_MIRAI-CORE-ff4d4d?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/🐐_GOATBOT-COMPATIBILITY-ffaa00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/⚡_HYBRID-MODE-a855f7?style=for-the-badge"/>
+</p>- 🤖 Mirai command support
+- 🐐 GoatBot command compatibility
+- 🎯 Multiple event handlers
+- 💬 Reply and reaction handlers
+- 🌍 Global utility compatibility
+- 🗄️ User and thread data mapping
+- 🔐 Admin and developer permissions
+- ⚙️ Configurable bot settings
+- 🔄 Automatic restart policy support
+- 🚀 Railway deployment support
 
 ---
 
-<h2 align="center">⚠️ পরিচিত সীমাবদ্ধতা / Known limitations</h2>- ❌ GoatBot ড্যাশবোর্ড, MongoDB, "globalData", Google Drive/imgbb আপলোড ("utils.drive", "utils.uploadImgbb") সাপোর্টেড নয় — কল করলে স্পষ্ট এরর মেসেজ আসে, বট ক্র্যাশ করে না।
-- ❌ "loadScripts/unloadScripts" (কমান্ড হট-লোড, যেমন Goat-এর "cmd" কমান্ড) নেই — ফাইল কপি করে রিস্টার্ট দিন।
-- ⚠️ "onStart"-এ Goat কমান্ড "api.getThreadInfo(id)" ইত্যাদি Promise স্টাইলে ডাকলে সেটা আপনার FCA ("mr-juwel-fca") Promise সাপোর্ট করার ওপর নির্ভর করে।
-- 📦 কমান্ড অতিরিক্ত npm প্যাকেজ চাইলে "npm i <package>" দিন (Goat-এর সাধারণ প্যাকেজ — cheerio, lodash, qrcode ইত্যাদি — "package.json"-এ আছে)।
+🎬 Project Animation
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=12,14,18,24&height=120&section=header&text=NIJHUM%20CHAT%20BOT&fontSize=35&fontColor=ffffff&animation=fadeIn" width="90%"/>
+</p><p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=18&duration=2000&pause=500&color=FF00CC&center=true&vCenter=true&width=700&lines=Smart+Messenger+Bot;Powerful+Command+System;Developed+by+Siyam+Hasan"/>
+</p>---
+
+🚀 Installation
+
+1. Clone Repository
+
+git clone https://github.com/siyam-xpromex/siyambot.git
+
+2. Open Project Folder
+
+cd siyambot
+
+3. Install Dependencies
+
+npm install
+
+4. Configure Bot
+
+- "appstate.json" ফাইলে Facebook login appstate বসাও।
+- "config.json" ফাইলে নিজের Admin UID ও Developer UID সেট করো।
+
+5. Start Bot
+
+npm start
+
+<text>⚠️ Important: Launcher হিসেবে "Siyam.js" ব্যবহার করবে। সরাসরি "Main.js" চালাবে না।</text>
 
 ---
 
-<h2 align="center">🧬 ভেতরে কী আছে / Internals</h2>ফাইল| কাজ
-"Siyam.js"| "Main.js" চালানোর সময় "--require includes/compat/preload.js" যোগ করে
-"includes/compat/preload.js"| "Script/commands" ও "Script/events" এর ফাইল require হলে Goat → Mirai রূপান্তর
-"includes/compat/goatRuntime.js"| অ্যাডাপ্টার + "onChat/onReply/onReaction/onEvent" ডিসপ্যাচ + "global.GoatBot"
-"includes/compat/goatApi.js"| "message", "usersData", "threadsData", "getLang"
-"includes/compat/goatUtils.js"| Goat-স্টাইল "global.utils" হেল্পার
-"includes/handle/handle{OnChat,Reply,Reaction,Event}.js"| Goat ডিসপ্যাচ হুক (Mirai লজিক অপরিবর্তিত)
+📂 Command Structure
 
-«🔒 "Main.js" (এনক্রিপ্টেড) একটুও পরিবর্তন করা হয়নি।»
+Type| Directory
+Mirai Commands| "Script/commands/"
+GoatBot Commands| "Script/commands/"
+Mirai Events| "Script/events/"
+GoatBot Events| "Script/events/"
+
+GoatBot কমান্ড ও ইভেন্ট ফাইল Compatibility Layer-এর মাধ্যমে চালানো হয়।
+
+---
+
+🧩 Supported GoatBot Features
+
+Command Configuration
+
+"name", "aliases", "role", "countDown", "category", "author", "version", "shortDescription", "longDescription", "guide", "envConfig", "usePrefix"
+
+Handlers
+
+- "onStart"
+- "onChat"
+- "onReply"
+- "onReaction"
+- "onEvent"
+- "onAnyEvent"
+- "onFirstChat"
+- "onLoad"
+
+Global Support
+
+- "global.GoatBot"
+- "global.db"
+- "global.temp"
+- "global.utils"
+
+Message Methods
+
+- "reply"
+- "send"
+- "unsend"
+- "reaction"
+- "err"
+
+---
+
+🗄️ Data Mapping
+
+GoatBot API| Mirai Database
+"usersData.get(uid)"| Users + Currencies
+"threadsData.get(tid)"| Threads
+"adminIDs"| Thread admin IDs
+"money"| Currencies
+"exp"| Currencies
+
+---
+
+⚠️ Known Limitations
+
+- GoatBot Dashboard সাপোর্টেড নয়।
+- MongoDB এবং "globalData" সম্পূর্ণ সাপোর্টেড নয়।
+- Google Drive ও imgbb upload utilities সাপোর্টেড নয়।
+- "loadScripts/unloadScripts" hot reload নেই।
+- কিছু Promise-based API call FCA-এর Promise support-এর ওপর নির্ভরশীল।
+
+---
+
+🧬 Project Structure
+
+File| Description
+"Siyam.js"| Main Launcher
+"Main.js"| Encrypted Mirai Core
+"includes/compat/preload.js"| Compatibility Preloader
+"includes/compat/goatRuntime.js"| GoatBot Runtime
+"includes/compat/goatApi.js"| GoatBot API Adapter
+"includes/compat/goatUtils.js"| GoatBot Utilities
+"includes/handle/"| Event Handlers
+
+---
+
+☁️ Railway Deployment
+
+এই প্রজেক্ট Railway-তে deploy করার জন্য "npm start" ব্যবহার করে।
+
+npm install
+npm start
+
+Deployment configuration:
+
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "deploy": {
+    "startCommand": "npm start",
+    "restartPolicyType": "ALWAYS"
+  }
+}
+
+---
+
+💎 Developer & Contact
+
+<p align="center">
+  <img src="https://img.shields.io/badge/DEVELOPED%20BY-SIYAM%20HASAN-ff00cc?style=for-the-badge"/>
+</p><p align="center">
+  <a href="https://github.com/siyam-xpromex">
+    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github"/>
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61596102516084">
+    <img src="https://img.shields.io/badge/Facebook-Profile-1877F2?style=for-the-badge&logo=facebook"/>
+  </a>
+  <a href="https://t.me/ri_siyam">
+    <img src="https://img.shields.io/badge/Telegram-Contact-26A5E4?style=for-the-badge&logo=telegram"/>
+  </a>
+  <a href="https://wa.me/8801789138157">
+    <img src="https://img.shields.io/badge/WhatsApp-Contact-25D366?style=for-the-badge&logo=whatsapp"/>
+  </a>
+</p><p align="center">
+  <b>👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑</b>
+  <br/>
+  <b>🌸 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧 𝗕𝗢𝗧 🌸</b>
+  <br/>
+  <i>Made with ❤️ by Siyam Hasan</i>
+</p>---
+
+📜 License
+
+This project is licensed under the MIT License.
+
+Copyright (c) 2026 Siyam Hasan.
 
 ---
 
 <p align="center">
-  <a href="README.md"><img src="https://img.shields.io/badge/⬅_BACK_TO-README-00c6ff?style=for-the-badge"/></a>
-</p><p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,24&height=110&section=footer"/>
-</p>---
-
-Developed by Siyam Hasan
-Nijhum Chat Bot
-GitHub: https://github.com/siyam-xpromex/siyambot
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,50:7b2ff7,100:ff00cc&height=130&section=footer"/>
+</p>
