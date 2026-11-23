@@ -1,0 +1,361 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 512 512"
+     width="512" height="512"
+     role="img"
+     aria-label="Siyam Hasan Telegram Messaging Network">
+
+<title>SIYAM HASAN - TELEGRAM MESSAGE NETWORK</title>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07172e"/>
+    <stop offset=".5" stop-color="#101a42"/>
+    <stop offset="1" stop-color="#030918"/>
+  </linearGradient>
+
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#66f4ff"/>
+    <stop offset=".5" stop-color="#168fff"/>
+    <stop offset="1" stop-color="#5148ff"/>
+  </linearGradient>
+
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#00eaff"/>
+    <stop offset=".5" stop-color="#8ffaff"/>
+    <stop offset="1" stop-color="#278dff"/>
+  </linearGradient>
+
+  <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#e18cff"/>
+    <stop offset="1" stop-color="#7354ff"/>
+  </linearGradient>
+
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#244d7c" stop-opacity=".85"/>
+    <stop offset="1" stop-color="#101a39" stop-opacity=".94"/>
+  </linearGradient>
+
+  <radialGradient id="core">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset=".16" stop-color="#a9ffff"/>
+    <stop offset=".4" stop-color="#00bfff"/>
+    <stop offset="1" stop-color="#3e50ff" stop-opacity="0"/>
+  </radialGradient>
+
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge>
+      <feMergeNode in="b"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <filter id="bigGlow" x="-150%" y="-150%" width="400%" height="400%">
+    <feGaussianBlur stdDeviation="15"/>
+  </filter>
+
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+    <feDropShadow dx="0" dy="7" stdDeviation="8"
+                  flood-color="#000000" flood-opacity=".55"/>
+  </filter>
+
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none"
+          stroke="#7ccfff" stroke-opacity=".08" stroke-width="1"/>
+  </pattern>
+
+  <clipPath id="circleClip">
+    <circle cx="256" cy="250" r="220"/>
+  </clipPath>
+
+  <path id="flowPath" d="M116 235 C165 235 177 235 216 235 S340 235 396 235"/>
+</defs>
+
+<!-- BACKGROUND -->
+<rect width="512" height="512" rx="70" fill="url(#bg)"/>
+<rect width="512" height="512" rx="70" fill="url(#grid)"/>
+
+<g clip-path="url(#circleClip)">
+  <circle cx="256" cy="245" r="205" fill="#087fff" opacity=".10"
+          filter="url(#bigGlow)"/>
+  <circle cx="256" cy="245" r="135" fill="#00eaff" opacity=".09"
+          filter="url(#bigGlow)"/>
+
+  <path d="M-20 360L220 80L300 80L60 360Z"
+        fill="#00dfff" opacity=".035"/>
+  <path d="M260 500L500 230L550 230L310 500Z"
+        fill="#a15bff" opacity=".05"/>
+</g>
+
+<!-- OUTER ORBIT -->
+<circle cx="256" cy="244" r="218" fill="none"
+        stroke="url(#blue)" stroke-width="2" opacity=".7"/>
+
+<circle cx="256" cy="244" r="207" fill="none"
+        stroke="#74eaff" stroke-width="1"
+        stroke-dasharray="3 10" opacity=".55">
+  <animateTransform attributeName="transform"
+                    type="rotate" from="0 256 244"
+                    to="360 256 244" dur="30s"
+                    repeatCount="indefinite"/>
+</circle>
+
+<ellipse cx="256" cy="244" rx="224" ry="92"
+         fill="none" stroke="#8d6dff"
+         stroke-width="1.5" stroke-dasharray="8 12"
+         opacity=".5" transform="rotate(-30 256 244)">
+  <animateTransform attributeName="transform"
+                    additive="sum" type="rotate"
+                    from="0 256 244" to="360 256 244"
+                    dur="35s" repeatCount="indefinite"/>
+</ellipse>
+
+<!-- ORBITING LIGHTS -->
+<g>
+  <circle cx="256" cy="27" r="5" fill="#ffffff" filter="url(#glow)">
+    <animateMotion dur="8s" repeatCount="indefinite">
+      <mpath xlink:href="#flowPath"/>
+    </animateMotion>
+  </circle>
+  <circle cx="256" cy="27" r="4" fill="#a67aff" filter="url(#glow)">
+    <animateMotion dur="8s" begin="-4s" repeatCount="indefinite">
+      <mpath xlink:href="#flowPath"/>
+    </animateMotion>
+  </circle>
+</g>
+
+<!-- INBOX NODE -->
+<g transform="translate(103 230)" filter="url(#shadow)">
+  <circle r="61" fill="#00dfff" opacity=".12" filter="url(#bigGlow)">
+    <animate attributeName="opacity" values=".06;.2;.06"
+             dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="48" fill="url(#glass)"
+          stroke="#41dfff" stroke-width="2" filter="url(#glow)"/>
+
+  <circle r="39" fill="none" stroke="#83eaff"
+          stroke-width="1" stroke-dasharray="4 6">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0" to="360" dur="12s"
+                      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- inbox tray -->
+  <rect x="-23" y="-20" width="46" height="39"
+        rx="7" fill="#143f70" stroke="#a4f7ff" stroke-width="2"/>
+
+  <path d="M-23 -8H-10L-5 1H5L10 -8H23"
+        fill="none" stroke="#ffffff"
+        stroke-width="3" stroke-linejoin="round"/>
+
+  <path d="M-12 -24L0 -12L12 -24"
+        fill="none" stroke="#8ffaff"
+        stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <circle cx="19" cy="-25" r="8" fill="#00f0b4"
+          stroke="#dfffff" stroke-width="2" filter="url(#glow)"/>
+</g>
+
+<text x="103" y="306" text-anchor="middle"
+      font-family="Arial,sans-serif" font-size="13"
+      font-weight="bold" fill="#d8f8ff"
+      letter-spacing="1">INBOX</text>
+
+<text x="103" y="322" text-anchor="middle"
+      font-family="Arial,sans-serif" font-size="9"
+      fill="#7fc9e9" letter-spacing="1.5">MESSAGE IN</text>
+
+<!-- GROUP NODE -->
+<g transform="translate(409 230)" filter="url(#shadow)">
+  <circle r="61" fill="#9862ff" opacity=".13" filter="url(#bigGlow)">
+    <animate attributeName="opacity" values=".07;.22;.07"
+             dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="48" fill="url(#glass)"
+          stroke="#b68aff" stroke-width="2" filter="url(#glow)"/>
+
+  <circle r="39" fill="none" stroke="#d1b5ff"
+          stroke-width="1" stroke-dasharray="4 6">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="360" to="0" dur="13s"
+                      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- group people -->
+  <g fill="#e9e5ff" stroke="#ffffff" stroke-width="1">
+    <circle cx="0" cy="-17" r="10"/>
+    <circle cx="-19" cy="-9" r="8"/>
+    <circle cx="19" cy="-9" r="8"/>
+    <path d="M-17 20Q-16 0 0 0Q16 0 17 20Z"/>
+    <path d="M-35 19Q-33 3 -19 3Q-10 3 -7 12L-9 20Z"/>
+    <path d="M35 19Q33 3 19 3Q10 3 7 12L9 20Z"/>
+  </g>
+</g>
+
+<text x="409" y="306" text-anchor="middle"
+      font-family="Arial,sans-serif" font-size="13"
+      font-weight="bold" fill="#eee2ff"
+      letter-spacing="1">GROUP</text>
+
+<text x="409" y="322" text-anchor="middle"
+      font-family="Arial,sans-serif" font-size="9"
+      fill="#bba4ff" letter-spacing="1.5">MESSAGE OUT</text>
+
+<!-- CONNECTING SERVER LINE -->
+<path d="M151 230H361"
+      fill="none" stroke="#087aff" stroke-width="9"
+      opacity=".12" filter="url(#bigGlow)"/>
+
+<path d="M151 230H361"
+      fill="none" stroke="#4b8fff" stroke-width="2"
+      stroke-dasharray="5 7" opacity=".8"/>
+
+<path d="M151 230H361"
+      fill="none" stroke="url(#cyan)" stroke-width="2.8"
+      stroke-dasharray="12 32" stroke-linecap="round"
+      filter="url(#glow)">
+  <animate attributeName="stroke-dashoffset"
+           values="0;-88" dur="1.2s"
+           repeatCount="indefinite"/>
+</path>
+
+<!-- SERVER CORE -->
+<g transform="translate(256 230)">
+  <circle r="76" fill="url(#core)" opacity=".75"
+          filter="url(#bigGlow)">
+    <animate attributeName="r" values="60;84;60"
+             dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="48" fill="#0a1e43"
+          stroke="url(#cyan)" stroke-width="2.5"
+          filter="url(#glow)"/>
+
+  <circle r="39" fill="none" stroke="#a1faff"
+          stroke-width="1" stroke-dasharray="2 6">
+    <animateTransform attributeName="transform"
+                      type="rotate" from="0" to="360"
+                      dur="9s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- server rack -->
+  <g filter="url(#glow)">
+    <rect x="-19" y="-26" width="38" height="15"
+          rx="4" fill="#1d5c94" stroke="#a1faff"/>
+    <rect x="-19" y="-7" width="38" height="15"
+          rx="4" fill="#1d5c94" stroke="#a1faff"/>
+    <rect x="-19" y="12" width="38" height="15"
+          rx="4" fill="#1d5c94" stroke="#a1faff"/>
+
+    <g fill="#8effe8">
+      <circle cx="-11" cy="-18" r="2.5"/>
+      <circle cx="-11" cy="1" r="2.5"/>
+      <circle cx="-11" cy="20" r="2.5"/>
+    </g>
+
+    <g fill="#ffffff">
+      <rect x="-3" y="-20" width="15" height="3" rx="1.5"/>
+      <rect x="-3" y="-1" width="15" height="3" rx="1.5"/>
+      <rect x="-3" y="18" width="15" height="3" rx="1.5"/>
+    </g>
+  </g>
+</g>
+
+<text x="256" y="300" text-anchor="middle"
+      font-family="Arial,sans-serif" font-size="10"
+      fill="#a6edff" font-weight="bold"
+      letter-spacing="2">MESSAGE SERVER</text>
+
+<!-- MOVING MESSAGE PACKETS -->
+<g filter="url(#glow)">
+  <circle r="6" fill="#ffffff">
+    <animateMotion dur="2s" repeatCount="indefinite">
+      <mpath xlink:href="#flowPath"/>
+    </animateMotion>
+  </circle>
+
+  <circle r="4" fill="#00eaff">
+    <animateMotion dur="2s" begin="-.65s" repeatCount="indefinite">
+      <mpath xlink:href="#flowPath"/>
+    </animateMotion>
+  </circle>
+
+  <circle r="3.5" fill="#c6a0ff">
+    <animateMotion dur="2s" begin="-1.3s" repeatCount="indefinite">
+      <mpath xlink:href="#flowPath"/>
+    </animateMotion>
+  </circle>
+</g>
+
+<!-- SMALL DATA PACKETS -->
+<g fill="#b9ffff" filter="url(#glow)">
+  <rect x="178" y="209" width="10" height="7" rx="2">
+    <animate attributeName="opacity" values="0;1;0"
+             dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="322" y="248" width="8" height="6" rx="2">
+    <animate attributeName="opacity" values="0;1;0"
+             begin=".7s" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+</g>
+
+<!-- MESSAGE FLOW LABEL -->
+<rect x="191" y="151" width="130" height="24"
+      rx="12" fill="#0d2850"
+      stroke="#39dfff" stroke-opacity=".65"/>
+
+<text x="256" y="167" text-anchor="middle"
+      font-family="Arial,sans-serif" font-size="9"
+      fill="#c4faff" letter-spacing="1.3">
+  DATA TRANSMISSION
+</text>
+
+<!-- TELEGRAM PAPER PLANE -->
+<g transform="translate(256 365)" filter="url(#glow)">
+  <circle r="32" fill="#0e3f75"
+          stroke="#56dfff" stroke-width="1.5"/>
+  <path d="M-19 -1L19 -16Q22 -17 21 -13L14 16Q13 20 9 17L0 9L-8 15L-6 5L12 -9L-3 1L-19 -1Z"
+        fill="url(#cyan)"/>
+  <path d="M-6 5L0 9L12 -9"
+        fill="none" stroke="#ffffff"
+        stroke-width="1.5" stroke-linejoin="round"/>
+</g>
+
+<!-- BRAND -->
+<text x="256" y="430" text-anchor="middle"
+      font-family="Arial,sans-serif"
+      font-size="19" font-weight="bold"
+      letter-spacing="4" fill="#e8faff"
+      filter="url(#glow)">SIYAM HASAN</text>
+
+<text x="256" y="450" text-anchor="middle"
+      font-family="Arial,sans-serif"
+      font-size="9" letter-spacing="3"
+      fill="#65c9ff">TELEGRAM MESSAGE NETWORK</text>
+
+<!-- DECORATIVE PARTICLES -->
+<g fill="#a7f9ff" filter="url(#glow)">
+  <circle cx="54" cy="112" r="2">
+    <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="458" cy="108" r="2.5">
+    <animate attributeName="opacity" values="1;.2;1" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="67" cy="350" r="2">
+    <animate attributeName="opacity" values=".2;1;.2" dur="1.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="447" cy="350" r="2">
+    <animate attributeName="opacity" values="1;.2;1" dur="2.1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="256" cy="65" r="2">
+    <animate attributeName="opacity" values=".2;1;.2" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+</g>
+
+</svg>
+      
