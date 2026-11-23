@@ -70,6 +70,10 @@
     <clipPath id="frame">
       <rect x="6" y="6" width="948" height="408" rx="26"/>
     </clipPath>
+
+    <clipPath id="infoClip">
+      <rect x="35" y="374" width="890" height="34"/>
+    </clipPath>
   </defs>
 
   <!-- Background -->
@@ -84,9 +88,10 @@
     <circle cx="480" cy="210" r="220" fill="none" stroke="#b7ff3c" stroke-opacity="0.05"/>
   </g>
 
-  <!-- Main frame -->
+  <!-- Neon frame -->
   <rect x="6" y="6" width="948" height="408" rx="26"
         fill="none" stroke="url(#title)" stroke-width="3" filter="url(#glow)"/>
+
   <rect x="16" y="16" width="928" height="388" rx="20"
         fill="none" stroke="#b7ff3c" stroke-opacity="0.16"
         stroke-width="1" stroke-dasharray="3 7"/>
@@ -102,14 +107,12 @@
   <!-- Left circular cookie profile -->
   <g transform="translate(150 190)">
 
-    <!-- Outer pulsing circular light -->
     <circle r="101" fill="none" stroke="#00ffc8" stroke-width="2"
             filter="url(#pulseGlow)">
       <animate attributeName="r" values="91;103;91" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Second light ring -->
     <circle r="94" fill="none" stroke="#b7ff3c" stroke-width="2"
             stroke-dasharray="5 12" filter="url(#glow)">
       <animateTransform attributeName="transform" type="rotate"
@@ -117,7 +120,6 @@
       <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="1.8s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Rotating dotted ring -->
     <circle r="86" fill="none" stroke="url(#title)" stroke-width="3"
             stroke-dasharray="14 10" filter="url(#pulseGlow)">
       <animateTransform attributeName="transform" type="rotate"
@@ -125,7 +127,6 @@
       <animate attributeName="stroke-width" values="2;5;2" dur="2s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Cookie -->
     <circle r="66" fill="url(#cookie)" stroke="#fff0b8"
             stroke-opacity="0.7" stroke-width="2" filter="url(#glow)"/>
 
@@ -141,7 +142,6 @@
       <circle cx="-8" cy="42" r="5"/>
     </g>
 
-    <!-- Refresh arrows -->
     <g fill="none" stroke="#ffffff" stroke-width="5"
        stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
       <path d="M -88 -20 A 92 92 0 0 1 -30 -88"/>
@@ -151,17 +151,15 @@
     </g>
   </g>
 
-  <!-- Right shield profile with pulsing light -->
+  <!-- Right shield profile -->
   <g transform="translate(810 190)">
 
-    <!-- Pulsing outer circle -->
     <circle r="101" fill="none" stroke="#54eaff" stroke-width="2"
             filter="url(#pulseGlow)">
       <animate attributeName="r" values="91;103;91" dur="2.4s" repeatCount="indefinite"/>
       <animate attributeName="stroke-opacity" values="0.15;1;0.15" dur="2.4s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Rotating light ring -->
     <circle r="93" fill="none" stroke="url(#title)" stroke-width="2"
             stroke-dasharray="7 13" filter="url(#glow)">
       <animateTransform attributeName="transform" type="rotate"
@@ -169,7 +167,6 @@
       <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Shield -->
     <path d="M 0 -84 L 66 -58 L 66 4 C 66 46 36 72 0 88
              C -36 72 -66 46 -66 4 L -66 -58 Z"
           fill="#092a2c" stroke="url(#title)" stroke-width="4"
@@ -177,21 +174,20 @@
       <animate attributeName="stroke-width" values="3;6;3" dur="2s" repeatCount="indefinite"/>
     </path>
 
-    <!-- Key -->
     <circle cx="-14" cy="-12" r="18" fill="none"
             stroke="url(#gold)" stroke-width="8" filter="url(#glow)"/>
+
     <path d="M 0 -12 H 40 M 28 -12 V 4 M 40 -12 V 6"
           fill="none" stroke="url(#gold)" stroke-width="8"
           stroke-linecap="round" filter="url(#glow)"/>
 
-    <!-- Check mark -->
     <path d="M -34 40 L -18 56 L 22 22"
           fill="none" stroke="#b7ff3c" stroke-width="7"
           stroke-linecap="round" stroke-linejoin="round"
           filter="url(#pulseGlow)"/>
   </g>
 
-  <!-- Main title -->
+  <!-- SIYAM Main Logo -->
   <g text-anchor="middle"
      font-family="'Segoe UI','Trebuchet MS',Arial,Helvetica,sans-serif"
      font-weight="900">
@@ -215,7 +211,7 @@
           fill="url(#gold)" filter="url(#pulseGlow)"/>
   </g>
 
-  <!-- Ribbons -->
+  <!-- Feature ribbons -->
   <g font-family="'Segoe UI','Trebuchet MS',Arial,Helvetica,sans-serif"
      font-weight="800" text-anchor="middle">
 
@@ -236,13 +232,124 @@
     </text>
   </g>
 
-  <!-- Bottom credit -->
-  <text x="480" y="396" text-anchor="middle"
-        font-family="'Segoe UI',Arial,sans-serif"
-        font-size="13" letter-spacing="3"
-        fill="#ffffff" fill-opacity="0.72">
-    SIYAM HASAN  •  MIRAI + GOAT  •  COOKIE GUARDIAN
-  </text>
+  <!-- Animated Developer Information -->
+  <g clip-path="url(#infoClip)"
+     text-anchor="middle"
+     font-family="'Segoe UI','Trebuchet MS',Arial,Helvetica,sans-serif"
+     font-size="15"
+     font-weight="900"
+     letter-spacing="2"
+     filter="url(#glow)">
+
+    <!-- 1 Developer -->
+    <g>
+      <text x="480" y="397" fill="#b7ff3c">DEVELOPER : SIYAM HASAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="0s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 2 FCA Developer -->
+    <g>
+      <text x="480" y="397" fill="#54eaff">FCA DEVELOPER : SIYAM HASAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="7s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 3 Bot Owner -->
+    <g>
+      <text x="480" y="397" fill="#ff65d8">BOT OWNER : SIYAM HASAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="14s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 4 Bot Designer -->
+    <g>
+      <text x="480" y="397" fill="#ffe27a">BOT DESIGNER : SIYAM HASAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="21s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="21s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 5 Project Creator -->
+    <g>
+      <text x="480" y="397" fill="#00ffc8">PROJECT CREATOR : SIYAM HASAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="28s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="28s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 6 System Developer -->
+    <g>
+      <text x="480" y="397" fill="#ff9f43">SYSTEM DEVELOPER : SIYAM HASAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="35s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="35s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 7 Messenger Bot -->
+    <g>
+      <text x="480" y="397" fill="#c49bff">MESSENGER BOT DEVELOPER</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="42s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="42s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 8 Hybrid System -->
+    <g>
+      <text x="480" y="397" fill="#9effed">MIRAI + GOAT HYBRID SYSTEM</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="49s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="49s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 9 Auto Cookie -->
+    <g>
+      <text x="480" y="397" fill="#b7ff3c">AUTO COOKIE • AUTO LOGIN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="56s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="56s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 10 Facebook Session -->
+    <g>
+      <text x="480" y="397" fill="#54eaff">FACEBOOK SESSION MANAGER</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="63s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="63s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 11 Cookie Guardian -->
+    <g>
+      <text x="480" y="397" fill="#ff65d8">COOKIE GUARDIAN</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="70s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="70s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 12 Final Signature -->
+    <g>
+      <text x="480" y="397" fill="#ffe27a">ZERO DOWNTIME • POWERED BY SIYAM</text>
+      <animateTransform attributeName="transform" type="translate"
+        values="950 0;-950 0" dur="7s" begin="77s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0"
+        keyTimes="0;0.15;0.8;1" dur="7s" begin="77s" repeatCount="indefinite"/>
+    </g>
+
+  </g>
 
   <!-- Sparkles -->
   <g fill="#ffffff" filter="url(#glow)">
