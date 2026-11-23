@@ -1,4 +1,37 @@
-;
+
+// ══════════════════════════════════════════════
+// Credit : 𝐒𝐈𝐘𝐀𝐌 𝐇𝐀𝐒𝐀𝐍
+// ══════════════════════════════════════════════
+module.exports = function ({ api, models, Users, Threads, Currencies }) {
+    const logger = require("../../utils/log.js");
+    const UNSEND_DELAY = 2000;
+
+    if (!global.__botMsgTime) {
+        global.__botMsgTime = new Map();
+    }
+
+    if (!api.__sendTimePatched) {
+        api.__sendTimePatched = true;
+
+        const origSend = api.sendMessage;
+
+        api.sendMessage = function (...args) {
+            const record = info => {
+                try {
+                    if (info && info.messageID) {
+                        const id = String(info.messageID);
+                        global.__botMsgTime.set(id, Date.now());
+
+                        const timer = setTimeout(() => {
+                            global.__botMsgTime.delete(id);
+                        }, 10 * 60 * 1000);
+
+                        if (timer && timer.unref) timer.unref();
+                    }
+                } catch (e) {}
+            };
+
+            let cbIndex = -1;
 
             for (let i = 1; i < args.length; i++) {
                 if (typeof args[i] === "function") {
@@ -26,7 +59,6 @@
 
     return async function ({ event }) {
         const tag = "[reactkick]";
-
         const { handleReaction, commands } = global.client;
         const { messageID, threadID, reaction, userID } = event;
 
@@ -35,12 +67,10 @@
                 const cfg = global.config || {};
 
                 const adminBot = [
-                    ...new Set(
-                        [
-                            ...(cfg.ADMINBOT || []),
-                            ...(cfg.DEVELOPER || [])
-                        ].map(String)
-                    )
+                    ...new Set([
+                        ...(cfg.ADMINBOT || []),
+                        ...(cfg.DEVELOPER || [])
+                    ].map(String))
                 ];
 
                 const reactor = String(userID || "");
@@ -67,7 +97,6 @@
                 }
 
                 const mid = String(messageID || "");
-
                 let author = String(event.messageSenderID || "");
 
                 if (!author && global.__botMsgs && global.__botMsgs.has(mid)) {
@@ -102,7 +131,6 @@
                         };
 
                         const timer = setTimeout(() => finish(""), 8000);
-
                         if (timer && timer.unref) timer.unref();
 
                         try {
@@ -161,15 +189,21 @@
                         if (err) {
                             console.log(tag, "গ্রুপ থেকে যামু না কি করবে 🤭", err);
                         } else {
-                            console.log(tag, "গ্রুপ থেকে বের হচ্ছি আলবিদা 👋...", threadID);
+                            console.log(
+                                tag,
+                                "গ্রুপ থেকে বের হচ্ছি আলবিদা 👋...",
+                                threadID
+                            );
                         }
                     });
-
                     return;
                 }
 
                 if (adminBot.includes(author)) {
-                    console.log(tag, "🙄: এটা আমার বস 𝐑𝐉_𝐒𝐈𝐘𝐀𝐌 তোরে একটা উষ্টা দেম সর 😾");
+                    console.log(
+                        tag,
+                        "🙄: এটা আমার বস 𝐑𝐉_𝐒𝐈𝐘𝐀𝐌 তোরে একটা উষ্টা দেম সর 😾"
+                    );
                     return;
                 }
 
@@ -191,12 +225,19 @@
 
                 api.removeUserFromGroup(author, threadID, err => {
                     if (err) {
-                        console.log(tag, "আবালকে কিক দেওয়া যায়নি বলে 𝐒𝐈𝐘𝐀𝐌 ভাই", err);
+                        console.log(
+                            tag,
+                            "আবালকে কিক দেওয়া যায়নি বলে 𝐒𝐈𝐘𝐀𝐌 ভাই",
+                            err
+                        );
                     } else {
-                        console.log(tag, "তুই আবাল 😂 এই গ্রুপে থাকার যোগ্য না", author);
+                        console.log(
+                            tag,
+                            "তুই আবাল 😂 এই গ্রুপে থাকার যোগ্য না",
+                            author
+                        );
                     }
                 });
-
             } catch (error) {
                 console.log(tag, "Error:", error);
             }
@@ -211,13 +252,9 @@
             unsendReactions.some(r => String(reaction).includes(r))
         ) {
             const mid = String(messageID || "");
-
             let sentAt = null;
 
-            if (
-                global.__botMsgTime &&
-                global.__botMsgTime.has(mid)
-            ) {
+            if (global.__botMsgTime && global.__botMsgTime.has(mid)) {
                 sentAt = global.__botMsgTime.get(mid);
             } else if (
                 global.__botMsgs &&
@@ -297,7 +334,6 @@
                 handleReaction: handle,
                 getText: getText2
             });
-
         } catch (error) {
             logger(
                 global.getText(
