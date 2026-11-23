@@ -1,5 +1,6 @@
 
 <svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
      width="340" height="120" viewBox="0 0 340 120"
      role="img" aria-label="Siyam Hasan Telegram">
 
@@ -217,8 +218,8 @@
   </text>
 
   <!-- Clickable Telegram destination -->
-  <a href="https://telegram.org/"
-     xlink:href="https://telegram.org/"
+  <a href="https://t.me/ri_siyam"
+     xlink:href="https://t.me/ri_siyam"
      target="_blank">
     <rect x="10" y="11" width="320" height="98"
           rx="31" fill="#ffffff" opacity=".001"/>
