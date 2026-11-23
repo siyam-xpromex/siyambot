@@ -1,7 +1,8 @@
+
 {
   "name": "mirai-goat-mix-mix",
   "version": "3.0.0",
-  "description": "MIRAI + GoatBot hybrid Messenger bot - runs Mirai AND GoatBot commands/events side by side. Based on Mirai (乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐).",
+  "description": "Nijum - MIRAI + GoatBot hybrid Messenger bot - runs Mirai AND GoatBot commands/events side by side. Based on Mirai (𝗦𝗶𝘆𝗮𝗺 𝗛𝗮𝘀𝗮𝗻).",
   "main": "Juwel.js",
   "engines": {
     "node": "22.x",
@@ -18,15 +19,15 @@
   "keywords": [
     "bot",
     "facebook",
-    "juwelproject",
+    "siyamproject",
     "messenger",
     "javascript",
-    "JUWEL",
+    "siyamhasan",
     "mirai",
     "goat",
     "goat mirai mix bot"
   ],
-  "author": "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+  "author": "𝗦𝗶𝘆𝗮𝗺 𝗛𝗮𝘀𝗮𝗻",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/issues"
