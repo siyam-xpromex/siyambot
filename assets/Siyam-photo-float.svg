@@ -1,0 +1,315 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 960 1200"
+     width="960" height="1200"
+     role="img"
+     aria-label="SIYAM HASAN Premium Animated Profile">
+
+<title>SIYAM HASAN — Premium Profile</title>
+
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#061c25"/>
+    <stop offset=".48" stop-color="#071018"/>
+    <stop offset="1" stop-color="#020609"/>
+  </linearGradient>
+
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#eaffff"/>
+    <stop offset=".25" stop-color="#7cf7ed"/>
+    <stop offset=".55" stop-color="#16b9ad"/>
+    <stop offset=".8" stop-color="#d9ffff"/>
+    <stop offset="1" stop-color="#438d91"/>
+  </linearGradient>
+
+  <linearGradient id="nameGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ffffff"/>
+    <stop offset=".35" stop-color="#8ffcf2"/>
+    <stop offset=".7" stop-color="#31d6c4"/>
+    <stop offset="1" stop-color="#eaffff"/>
+    <animate attributeName="x1" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+  </linearGradient>
+
+  <linearGradient id="photoShade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#001b20" stop-opacity=".05"/>
+    <stop offset=".65" stop-color="#001216" stop-opacity=".08"/>
+    <stop offset="1" stop-color="#001014" stop-opacity=".7"/>
+  </linearGradient>
+
+  <radialGradient id="aura">
+    <stop offset="0" stop-color="#25e9d4" stop-opacity=".3"/>
+    <stop offset=".55" stop-color="#0bb7b0" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#0bb7b0" stop-opacity="0"/>
+  </radialGradient>
+
+  <radialGradient id="darkGlow">
+    <stop offset="0" stop-color="#0b9e98" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#0b9e98" stop-opacity="0"/>
+  </radialGradient>
+
+  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="7" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur stdDeviation="18"/>
+  </filter>
+
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="18" result="blur"/>
+    <feOffset dy="12" result="offset"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope=".5"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <clipPath id="photoClip">
+    <rect x="220" y="245" width="520" height="625" rx="42"/>
+  </clipPath>
+
+  <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+    <path d="M48 0H0V48" fill="none" stroke="#8afff4" stroke-opacity=".055" stroke-width="1"/>
+    <circle cx="1" cy="1" r="1.5" fill="#8afff4" opacity=".18"/>
+  </pattern>
+
+  <pattern id="microDots" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="3" r="1" fill="#a5fff8" opacity=".16"/>
+  </pattern>
+</defs>
+
+<!-- BACKGROUND -->
+<rect width="960" height="1200" rx="42" fill="url(#bg)"/>
+<rect width="960" height="1200" rx="42" fill="url(#grid)"/>
+<rect width="960" height="1200" rx="42" fill="url(#microDots)"/>
+
+<circle cx="480" cy="520" r="440" fill="url(#aura)">
+  <animate attributeName="r" values="380;470;380" dur="7s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values=".5;1;.5" dur="5s" repeatCount="indefinite"/>
+</circle>
+
+<circle cx="90" cy="210" r="220" fill="url(#darkGlow)"/>
+<circle cx="880" cy="970" r="260" fill="url(#darkGlow)"/>
+
+<!-- OUTER FRAME -->
+<rect x="18" y="18" width="924" height="1164" rx="38"
+      fill="none" stroke="#5ff9e9" stroke-opacity=".35" stroke-width="2"/>
+
+<rect x="27" y="27" width="906" height="1146" rx="32"
+      fill="none" stroke="#d6fffb" stroke-opacity=".12" stroke-width="1"/>
+
+<rect x="38" y="38" width="884" height="1124" rx="28"
+      fill="none" stroke="url(#metal)" stroke-opacity=".24" stroke-width="1.5"/>
+
+<!-- CORNER LIGHTS -->
+<g fill="#8ffff5" filter="url(#glow)">
+  <circle cx="52" cy="52" r="4">
+    <animate attributeName="opacity" values=".2;1;.2" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="908" cy="52" r="4">
+    <animate attributeName="opacity" values="1;.2;1" dur="1.7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="52" cy="1148" r="4">
+    <animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="908" cy="1148" r="4">
+    <animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/>
+  </circle>
+</g>
+
+<!-- TOP BRAND -->
+<g text-anchor="middle">
+  <text x="480" y="112" font-family="Arial, sans-serif"
+        font-size="19" letter-spacing="8"
+        fill="#8dfcf2" opacity=".85">THE PERSONAL PROFILE</text>
+
+  <path d="M220 139H740" stroke="url(#metal)" stroke-width="1.5" opacity=".6"/>
+  <path d="M390 139H570" stroke="#bafff9" stroke-width="3"
+        filter="url(#glow)">
+    <animate attributeName="opacity" values=".25;1;.25" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+</g>
+
+<!-- ORBIT DECORATION -->
+<g transform="translate(480 550)" fill="none">
+  <ellipse rx="360" ry="420" stroke="#36dcd0" stroke-opacity=".12"
+           stroke-width="2" stroke-dasharray="5 15">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0" to="360" dur="65s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse rx="390" ry="450" stroke="#a5fff8" stroke-opacity=".1"
+           stroke-width="1.5" stroke-dasharray="2 20">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="360" to="0" dur="85s" repeatCount="indefinite"/>
+  </ellipse>
+</g>
+
+<!-- PHOTO AURA -->
+<rect x="195" y="220" width="570" height="675" rx="58"
+      fill="#17cfc0" opacity=".18" filter="url(#softGlow)">
+  <animate attributeName="opacity" values=".1;.28;.1" dur="4s" repeatCount="indefinite"/>
+</rect>
+
+<!-- PHOTO FRAME -->
+<rect x="202" y="227" width="556" height="661" rx="52"
+      fill="#061419" stroke="url(#metal)" stroke-width="4"
+      filter="url(#shadow)"/>
+
+<rect x="211" y="236" width="538" height="643" rx="46"
+      fill="none" stroke="#d5fffa" stroke-opacity=".5" stroke-width="1.5"/>
+
+<!-- USER PHOTO -->
+<g clip-path="url(#photoClip)">
+  <image x="220" y="245" width="520" height="625"
+         xlink:href="https://files.catbox.moe/8r9jdr.jpg"
+         href="https://files.catbox.moe/8r9jdr.jpg"
+         preserveAspectRatio="xMidYMid slice"/>
+  <rect x="220" y="245" width="520" height="625" fill="url(#photoShade)"/>
+  <rect x="220" y="245" width="520" height="625"
+        fill="#20cfc3" opacity=".07"/>
+</g>
+
+<!-- PHOTO SCANNING LIGHT -->
+<rect x="220" y="245" width="520" height="5" rx="3"
+      fill="#c8fff9" opacity=".9" filter="url(#glow)">
+  <animate attributeName="y" values="245;865;245" dur="6s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values=".1;1;.1" dur="6s" repeatCount="indefinite"/>
+</rect>
+
+<!-- PHOTO FRAME ANIMATED OUTLINE -->
+<rect x="202" y="227" width="556" height="661" rx="52"
+      fill="none" stroke="#aafff7" stroke-width="3"
+      stroke-dasharray="90 55 30 55"
+      stroke-linecap="round" filter="url(#glow)">
+  <animate attributeName="stroke-dashoffset" values="0;460" dur="12s" repeatCount="indefinite"/>
+  <animate attributeName="opacity" values=".35;1;.35" dur="3s" repeatCount="indefinite"/>
+</rect>
+
+<!-- FLOATING LIGHT PARTICLES -->
+<g fill="#aafff7" filter="url(#glow)">
+  <circle cx="135" cy="310" r="3">
+    <animate attributeName="cy" values="310;270;310" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="825" cy="380" r="4">
+    <animate attributeName="cy" values="380;335;380" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="760" r="3">
+    <animate attributeName="cy" values="760;720;760" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".1;1;.1" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="840" cy="810" r="3">
+    <animate attributeName="cy" values="810;765;810" dur="4.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="155" cy="540" r="2.5">
+    <animate attributeName="opacity" values=".1;1;.1" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="805" cy="590" r="2.5">
+    <animate attributeName="opacity" values="1;.1;1" dur="2.1s" repeatCount="indefinite"/>
+  </circle>
+</g>
+
+<!-- SIDE LIGHT BARS -->
+<g stroke="#5df5e8" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+  <path d="M105 410V520" opacity=".4">
+    <animate attributeName="opacity" values=".1;.9;.1" dur="2.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M855 650V760" opacity=".4">
+    <animate attributeName="opacity" values=".9;.1;.9" dur="3.2s" repeatCount="indefinite"/>
+  </path>
+</g>
+
+<!-- NAME PLATE -->
+<g text-anchor="middle">
+  <rect x="110" y="930" width="740" height="128" rx="28"
+        fill="#071b20" fill-opacity=".92"
+        stroke="url(#metal)" stroke-width="2"/>
+
+  <rect x="122" y="942" width="716" height="104" rx="20"
+        fill="none" stroke="#b4fff8" stroke-opacity=".15"/>
+
+  <text x="480" y="1000"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="66" font-weight="900"
+        letter-spacing="3"
+        fill="url(#nameGrad)" filter="url(#glow)">SIYAM HASAN</text>
+
+  <path d="M250 1018H710" stroke="#6ff9ed" stroke-width="1.5" opacity=".65">
+    <animate attributeName="stroke-dasharray"
+             values="0 460;460 0;0 460" dur="5s" repeatCount="indefinite"/>
+  </path>
+</g>
+
+<!-- SUBTITLE -->
+<g text-anchor="middle">
+  <text x="480" y="1100"
+        font-family="Arial, sans-serif"
+        font-size="22" font-weight="700"
+        letter-spacing="7" fill="#b8fff8">CREATOR • DEVELOPER</text>
+
+  <text x="480" y="1138"
+        font-family="Arial, sans-serif"
+        font-size="13" letter-spacing="5"
+        fill="#69bdb8" opacity=".85">DREAM  •  CREATE  •  INNOVATE</text>
+</g>
+
+<!-- BOTTOM LIGHT STRIP -->
+<path d="M185 1160H775" stroke="#46dace" stroke-width="2" opacity=".3"/>
+<path d="M420 1160H540" stroke="#d4fffb" stroke-width="4"
+      filter="url(#glow)">
+  <animate attributeName="opacity" values=".1;1;.1" dur="2s" repeatCount="indefinite"/>
+</path>
+
+<!-- ANIMATED SPARKLES -->
+<g fill="#e2fffc" filter="url(#glow)">
+  <path d="M90 170l5 14 14 5-14 5-5 14-5-14-14-5 14-5z">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="0 90 189" to="360 90 189" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M865 180l4 12 12 4-12 4-4 12-4-12-12-4 12-4z">
+    <animateTransform attributeName="transform" type="rotate"
+                      from="360 865 196" to="0 865 196" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;.2;1" dur="2.4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M120 1000l4 10 10 4-10 4-4 10-4-10-10-4 10-4z">
+    <animate attributeName="opacity" values=".1;1;.1" dur="2.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M840 1020l4 10 10 4-10 4-4 10-4-10-10-4 10-4z">
+    <animate attributeName="opacity" values="1;.1;1" dur="2.2s" repeatCount="indefinite"/>
+  </path>
+</g>
+
+<!-- FLOATING ORBITING DOT -->
+<circle cx="480" cy="550" r="5" fill="#c9fffa" filter="url(#glow)">
+  <animateMotion dur="12s" repeatCount="indefinite">
+    <mpath xlink:href="#orbitPath"/>
+  </animateMotion>
+</circle>
+
+<path id="orbitPath"
+      d="M480 120 C820 120 900 400 850 600
+         C800 900 600 1080 480 1080
+         C200 1080 80 800 110 550
+         C130 300 260 120 480 120"
+      fill="none" stroke="none"/>
+
+<!-- FINAL BORDER SHINE -->
+<rect x="18" y="18" width="924" height="1164" rx="38"
+      fill="none" stroke="#d9fffb" stroke-width="1.5"
+      stroke-dasharray="180 900" opacity=".7">
+  <animate attributeName="stroke-dashoffset"
+           values="0;-1080" dur="8s" repeatCount="indefinite"/>
+</rect>
+
+</svg>
