@@ -1,507 +1,235 @@
-<!-- ═══════════════ NEW VIDEO: HOW TO CREATE & RUN MESSENGER BOT ═══════════════ -->
-<p align="center">
-  <a href="https://youtu.be/kNHDYw8GoQg">
-    <img src="assets/bot-create-thumbnail.png" alt="কিভাবে Messenger Bot বানাবেন ও রান দিবেন? GitHub + Railway + Facebook" width="100%"/>
-  </a>
-</p>
 
-<p align="center"><b>▶️ ছবিতে ক্লিক করে YouTube টিউটোরিয়াল দেখুন — কিভাবে Messenger Bot বানাবেন ও রান দিবেন</b><br/>Click the image above to watch the step-by-step tutorial on YouTube.</p>
+<!-- ═════════════════════ SIYAM CHAT BOT ═════════════════════ -->
 
 <p align="center">
-  <a href="https://www.youtube.com/@BdBotTeam"><img alt="BD Bot Tame YouTube Channel" src="https://img.shields.io/badge/YouTube-BD_Bot_Team-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
-</p>
-
----
-
-<!-- ═══════════════ HEADER WAVE ═══════════════ -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,24&height=240&section=header&text=RIYA%20CHAT%20BOT&fontSize=62&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Ultra%20Premium%20Messenger%20Automation%20System&descSize=20&descAlignY=58" width="100%"/>
-</p>
-
-<!-- ═══════════════ LOGO: Mirai + Goat + JUWEL / MR JUWEL BOT ═══════════════ -->
-<p align="center">
-  <img src="assets/juwel-logo.svg" alt="Mirai + Goat — JUWEL — MR JUWEL BOT" width="640"/>
-</p>
-
-<h1 align="center">𝚁𝙸𝚈𝙰</h1>
-<h3 align="center">⚡ Ultra Premium Messenger Automation System</h3>
-
-<!-- HERO ANIMATION -->
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=900&color=00E5FF&center=true&vCenter=true&width=820&lines=%F0%9F%A4%96+Welcome+To+RIYA+CHAT+BOT;%F0%9F%90%90+Mirai+%2B+GoatBot+%E2%80%94+Both+Work+Together;%E2%9A%A1+270%2B+Commands+%7C+No+Prefix+%7C+Inbox+Ready;%F0%9F%9B%A1%EF%B8%8F+Fast+%7C+Smart+%7C+Secure+%7C+Stable" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,24&height=230&section=header&text=SIYAM%20CHAT%20BOT&fontSize=58&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Premium%20Messenger%20Automation%20System&descSize=19&descAlignY=58" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🤖_MIRAI-SUPPORTED-ff4d4d?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🐐_GOATBOT-SUPPORTED-ffaa00?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🔀_HYBRID-MODE-a855f7?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/⚡_NO_PREFIX-READY-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/📥_INBOX-ENABLED-00b2ff?style=for-the-badge"/>
+  <img src="assets/siyam-logo.svg" alt="SIYAM CHAT BOT Logo" width="620"/>
 </p>
 
-> ## 🤖🐐 Mirai-Goat-Mix
-> এই ফর্কে **Mirai** ও **GoatBot** দুই ধরনের কমান্ড/ইভেন্টই চলে — `Script/commands` ও `Script/events` এ যেকোনো একটার কোড রাখলেই কাজ করবে।
+<h1 align="center">𝚂𝙸𝚈𝙰𝙼 𝙷𝙰𝚂𝙰𝙽</h1>
+<h3 align="center">⚡ Premium Messenger Automation System</h3>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=25&duration=2500&pause=900&color=00E5FF&center=true&vCenter=true&width=820&lines=Welcome+To+SIYAM+CHAT+BOT;Mirai+%2B+GoatBot+Hybrid+Engine;Commands+%7C+No+Prefix+%7C+Inbox+Ready;Fast+%7C+Smart+%7C+Stable" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/MIRAI-SUPPORTED-ff4d4d?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/GOATBOT-SUPPORTED-ffaa00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/HYBRID-MODE-a855f7?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/NO_PREFIX-READY-00e676?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/INBOX-ENABLED-00b2ff?style=for-the-badge"/>
+</p>
+
+> **Mirai + GoatBot Hybrid**
 >
-> This fork runs **both Mirai and GoatBot** commands/events — drop either style into `Script/commands` or `Script/events`.
+> এই বট Mirai ও GoatBot—দুই ধরনের command/event সাপোর্ট করার জন্য তৈরি। `Script/commands` এবং `Script/events`-এ সংশ্লিষ্ট কোড রাখুন।
 >
-> 📖 Details: **[GOAT_COMPAT.md](GOAT_COMPAT.md)** · Start with `npm install` then `npm start`.
+> বিস্তারিত: [GOAT_COMPAT.md](GOAT_COMPAT.md)
 
----
-
-<!-- BANNER -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=6&section=header" width="60%"/>
-</p>
-<p align="center">
-  <img src="assets/juwel-photo-float.svg" width="100%" />
-</p>
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=20,11,6&height=6&section=header" width="60%"/>
+  <img src="assets/siyam-photo-float.svg" width="100%" alt="Siyam Chat Bot Banner"/>
 </p>
 
-<!-- VISITOR -->
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=MR-JUWEL-CHAT-BOT2026&label=VISITORS&color=ff00cc&style=for-the-badge" />
+  <img src="https://komarev.com/ghpvc/?username=siyam-xpromex&label=PROFILE%20VISITORS&color=00d9ff&style=for-the-badge"/>
 </p>
 
 ---
 
-<!-- ═══════════════ AUTO COOKIE + AUTO LOGIN ═══════════════ -->
-<p align="center">
-  <img src="assets/auto-cookie-banner.svg" alt="RIYA CHAT BOT — Auto Cookie — Auto Facebook Login" width="85%"/>
-</p>
-
-<h1 align="center">🍪 AUTO COOKIE &amp; AUTO LOGIN</h1>
+<h1 align="center">🍪 AUTO COOKIE & AUTO LOGIN</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=20&duration=2600&pause=800&color=FFD200&center=true&vCenter=true&width=820&lines=%F0%9F%8D%AA+Auto+Cookie+%E2%80%94+Session+Always+Fresh;%F0%9F%94%90+Auto+Facebook+Login+When+Logged+Out;%F0%9F%9B%A1%EF%B8%8F+Cookie+Guardian+%E2%80%94+Zero+Downtime" />
+  <img src="assets/auto-cookie-banner.svg" alt="Auto Cookie and Facebook Login" width="88%"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🍪_AUTO_COOKIE-ENABLED-ffb300?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🔐_AUTO_LOGIN-READY-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🛡️_COOKIE-GUARDIAN-7c4dff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/♻️_AUTO-REFRESH-00b2ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AUTO_COOKIE-ENABLED-ffb300?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AUTO_LOGIN-READY-00e676?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/COOKIE_GUARDIAN-READY-7c4dff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AUTO_REFRESH-READY-00b2ff?style=for-the-badge"/>
 </p>
 
-<table align="center">
-<tr>
-<td align="center" width="25%">
+| Feature | Description |
+|:---|:---|
+| 🍪 **Auto Cookie** | Facebook session cookie সংগ্রহ ও `appstate.json` আপডেট করার ব্যবস্থা। |
+| 🔐 **Auto Login** | কনফিগার করা লগইন তথ্য দিয়ে সেশন পুনরুদ্ধারের ব্যবস্থা। |
+| 🔑 **2FA Support** | Authenticator secret configure করা থাকলে 2FA কোড ব্যবহারের সুবিধা। |
+| ♻️ **Self Recovery** | সেশন সমস্যায় cookie refresh/recovery চালানোর ব্যবস্থা। |
 
-### 🍪 Auto Cookie
-ব্রাউজার থেকে ফেসবুক. কুকি নিজে নিয়ে `appstate.json` সবসময় নতুন রাখে।
-
-</td>
-<td align="center" width="25%">
-
-### 🔐 Auto Login
-আইডি লগআউট হলে ইমেইল/নম্বর ও পাসওয়ার্ড দিয়ে নিজে লগইন করে নতুন কুকি নেয়।
-
-</td>
-<td align="center" width="25%">
-
-### 🔑 2FA Ready
-Authenticator সিক্রেট কী দিলে 2FA কোডও নিজে বসিয়ে দেয়।
-
-</td>
-<td align="center" width="25%">
-
-### ♻️ Self Recovery
-বটের লগে সেশন মরলে সাথে সাথে কুকি রিফ্রেশ, দরকারে বট রিস্টার্ট।
-
-</td>
-</tr>
-</table>
-
-### ⚙️ কীভাবে চালু করবেন
+### চালু করার সেটআপ
 
 | ধাপ | কাজ |
-|:---|:---|
-| 1️⃣ | `guardian/` ফোল্ডারের ৫টা ফাইল রিপোতে থাকতে হবে |
-| 2️⃣ | হোস্টের **Environment Variables**-এ দিন: `FB_EMAIL`, `FB_PASSWORD`, `FB_TOTP_SECRET` *(2FA থাকলে)* |
-| 3️⃣ | হোস্টে একবার চালান: `npm i --no-save playwright && npx playwright install chromium` |
-| 4️⃣ | Start Command দিন: `node guardian/start.js` |
+|:---:|:---|
+| 1 | `guardian/` ফোল্ডারের প্রয়োজনীয় ফাইলগুলো রিপোজিটরিতে রাখুন। |
+| 2 | Hosting Environment Variables-এ `FB_EMAIL`, `FB_PASSWORD` এবং প্রয়োজন হলে `FB_TOTP_SECRET` দিন। |
+| 3 | প্রয়োজনীয় browser dependency ইনস্টল করুন: `npm i --no-save playwright && npx playwright install chromium` |
+| 4 | Guardian ব্যবহারের জন্য Start Command দিন: `node guardian/start.js` |
 
-> ⚠️ **নিরাপত্তা:** পাসওয়ার্ড কখনো `guardian/AUTO_COOKIE.js`-এ লিখে GitHub-এ কমিট করবেন না। হোস্টের Variables-এ দিন।
->
-> 🧠 ফেসবুক ক্যাপচা বা পরিচয় যাচাই চাইলে অটো-লগইন থেমে যায়, তখন নিজে যাচাই শেষ করতে হবে।
+> **Security:** `FB_PASSWORD`, `FB_TOTP_SECRET` বা session cookie কখনো GitHub-এ প্রকাশ করবেন না। Environment Variables ব্যবহার করুন। Facebook CAPTCHA বা identity verification চাইলে নিজে verification সম্পন্ন করতে হবে।
 
 ---
-
-<!-- ═══════════════ RENDER AUTO KEEP-ALIVE ═══════════════ -->
-<p align="center">
-  <img src="assets/render-keepalive-banner.svg" alt="RIYA CHAT BOT — Render Auto Keep-Alive — No UptimeRobot Needed" width="85%"/>
-</p>
 
 <h1 align="center">🌐 RENDER AUTO KEEP-ALIVE</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=20&duration=2600&pause=800&color=00FFA3&center=true&vCenter=true&width=820&lines=%E2%9C%85+Just+Deploy+On+Render+%E2%80%94+Bot+Never+Sleeps;%F0%9F%9A%AB+No+UptimeRobot+Needed;%F0%9F%94%81+Bot+Pings+Itself+Every+4+Minutes;%E2%9A%A1+One+File+%E2%80%94+Zero+Extra+Setup" />
+  <img src="assets/render-keepalive-banner.svg" alt="Render Auto Keep Alive" width="88%"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🌐_RENDER-24%2F7_ONLINE-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🚫_UPTIMEROBOT-NOT_NEEDED-ff4d6d?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🔁_SELF-PING-00b2ff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/⚙️_SETUP-1_MINUTE-ffd200?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RENDER-KEEP--ALIVE-00e676?style=for-the-badge&logo=render&logoColor=white"/>
+  <img src="https://img.shields.io/badge/UPTIMEROBOT-NOT_REQUIRED-ff4d6d?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SELF--PING-ENABLED-00b2ff?style=for-the-badge"/>
 </p>
 
-Render-এর ফ্রি প্ল্যানে ১৫ মিনিট কেউ ঢুকলে সার্ভিস ঘুমিয়ে যায় — আগে তাই **UptimeRobot-এ Render-এর লিংক অ্যাড** করতে হতো। এখন আর লাগবে না! বট নিজেই নিজের লিংকে নিয়মিত পিং পাঠিয়ে সারাক্ষণ জেগে থাকে।
+Render deployment-এ `RENDER_EXTERNAL_URL` পাওয়া গেলে Keep-Alive script সেটি ব্যবহার করে নির্দিষ্ট বিরতিতে নিজের service-এ request পাঠাতে পারে। এতে আলাদা UptimeRobot monitor configure করার প্রয়োজন নাও হতে পারে। Hosting provider-এর sleep policy ও plan অনুযায়ী uptime পরিবর্তিত হতে পারে।
 
-<table align="center">
-<tr>
-<td align="center" width="25%">
-
-### 🔗 Auto Link
-Render নিজে যে লিংক দেয় (`RENDER_EXTERNAL_URL`) বট সেটা নিজেই খুঁজে নেয় — লিংক কপি-পেস্ট করতে হয় না।
-
-</td>
-<td align="center" width="25%">
-
-### 🔁 Self Ping
-প্রতি **৪ মিনিটে** নিজের লিংকে রিকুয়েস্ট পাঠায়, তাই ১৫ মিনিটের স্লিপ কখনো আসে না।
-
-</td>
-<td align="center" width="25%">
-
-### 🚫 No UptimeRobot
-আলাদা কোনো ওয়েবসাইট বা মনিটরে লিংক অ্যাড করার ঝামেলা নেই।
-
-</td>
-<td align="center" width="25%">
-
-### 🛡️ Safe Fallback
-লোকাল / Railway / Heroku-তে চালালে নিজে বন্ধ থাকে, বট আগের মতোই চলে।
-
-</td>
-</tr>
-</table>
-
-### ⚙️ Render-এ কীভাবে চালু করবেন
+### Render-এ চালানোর ধাপ
 
 | ধাপ | কাজ |
-|:---|:---|
-| 1️⃣ | `JuwelKeepalive.js` ফাইলটা রিপোতে `Juwel.js`-এর পাশে থাকতে হবে |
-| 2️⃣ | Render → আপনার সার্ভিস → **Settings** → **Build & Deploy** |
-| 3️⃣ | **Start Command** এ লিখুন: `node JuwelKeepalive.js` |
-| 4️⃣ | **Save Changes** → **Manual Deploy → Deploy latest commit** |
-| 5️⃣ | লগে `[KEEPALIVE] ... (200)` দেখলেই কাজ হচ্ছে ✅ — UptimeRobot-এ আর কিছু করতে হবে না |
+|:---:|:---|
+| 1 | `JuwelKeepalive.js` ফাইলটি `Juwel.js`-এর পাশে রাখুন। |
+| 2 | Render Dashboard → Service → **Settings** → **Build & Deploy** খুলুন। |
+| 3 | Start Command দিন: `node JuwelKeepalive.js` |
+| 4 | Save করে **Manual Deploy → Deploy latest commit** দিন। |
+| 5 | Logs-এ `[KEEPALIVE]` status দেখুন। |
 
-> 🍪 **Auto Cookie (Guardian) ও চালাতে চাইলে:** Start Command একই থাকবে (`node JuwelKeepalive.js`), শুধু Render-এর **Environment Variables**-এ `USE_GUARDIAN` = `1` দিন। তাহলে Keep-Alive + Auto Cookie দুটোই একসাথে চলবে।
->
-> ℹ️ Render ফ্রি প্ল্যানে মাসে ৭৫০ ঘণ্টা পাওয়া যায় — একটা বট ২৪/৭ চালানোর জন্য এটাই যথেষ্ট, তাই একই অ্যাকাউন্টে একটার বেশি সার্ভিস চালাবেন না।
+Auto Cookie Guardian-ও একই সঙ্গে চালাতে হলে Guardian configuration অনুযায়ী Environment Variables-এ `USE_GUARDIAN=1` দিন।
 
 <details>
-<summary><b>🔧 Environment Variables (ঐচ্ছিক)</b></summary>
+<summary><b>Environment Variables</b></summary>
 
 | Variable | কাজ |
 |:---|:---|
-| `KEEPALIVE_URL` | অটো লিংক না পেলে নিজের Render লিংক দিন |
-| `KEEPALIVE_INTERVAL_MS` | পিংয়ের সময় (ডিফল্ট `240000` = ৪ মিনিট) |
-| `USE_GUARDIAN` | `1` দিলে Auto Cookie Guardian-সহ চালু হয় |
+| `KEEPALIVE_URL` | প্রয়োজনে নিজের service URL |
+| `KEEPALIVE_INTERVAL_MS` | Ping interval; default `240000` ms |
+| `USE_GUARDIAN` | `1` দিলে Guardian integration চালু |
 
 </details>
 
 ---
 
-<!-- ═══════════════ TELEGRAM START/STOP NOTICE ═══════════════ -->
-<p align="center">
-  <img src="assets/telegram-alert-banner.svg" alt="RIYA — Bot Start / Stop Notice on Telegram" width="85%"/>
-</p>
-
 <h1 align="center">📡 TELEGRAM START / STOP NOTICE</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/🟢_BOT_START-NOTICE-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🔴_BOT_STOP-NOTICE-ff4d4d?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/🔒_ID_LOCK-ALERT-7c4dff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/✈️_TELEGRAM-READY-26A5E4?style=for-the-badge"/>
+  <img src="assets/telegram-alert-banner.svg" alt="Telegram Start Stop Alerts" width="88%"/>
 </p>
 
-<p align="center"><b>RIYA</b> — বট চালু/বন্ধ হলে, ফেসবুক আইডি লক বা লগআউট হলে সাথে সাথে আপনার <b>Telegram</b>-এ নোটিশ যায়।</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/BOT_START-NOTICE-00e676?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/BOT_STOP-NOTICE-ff4d4d?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SESSION-ALERT-7c4dff?style=for-the-badge"/>
+</p>
 
-| নোটিশ | কখন যায় |
+বট চালু/বন্ধ হওয়া এবং session-related alert Telegram-এ পাঠানোর notification system।
+
+| Notice | কখন পাঠানো হয় |
 |:---|:---|
-| 🟢 **STARTED** | বট লগইন করে চালু হলে |
-| 🔴 **STOPPED** | বট বন্ধ/ক্র্যাশ হলে (কারণ ও কতক্ষণ চালু ছিল সহ) |
-| 🚨 **ALERT** | আইডি লক/সেশন সমস্যা ধরা পড়লে |
-| ✅ **BACK ONLINE** | সমস্যা মিটে বট ঠিকভাবে চললে |
+| 🟢 **STARTED** | বট চালু হলে |
+| 🔴 **STOPPED** | বট বন্ধ হলে বা crash শনাক্ত হলে |
+| 🚨 **ALERT** | session বা login সমস্যা শনাক্ত হলে |
+| ✅ **BACK ONLINE** | বট আবার চালু হলে |
 
-### ⚙️ কীভাবে চালু করবেন
-
-| ধাপ | কাজ |
-|:---|:---|
-| 1️⃣ | Telegram-এ **@BotFather** থেকে বট বানিয়ে **Token** নিন |
-| 2️⃣ | সেই বটকে একবার `/start` দিন এবং আপনার **Chat ID** নিন |
-| 3️⃣ | `config.json`-এর `JUWEL_ALERT` অংশে `TG_TOKEN` ও `TG_CHAT` বসান *(অথবা হোস্টের Variables-এ `JUWEL_TG_TOKEN`, `JUWEL_TG_CHAT`)* |
-| 4️⃣ | বট চালু করে `juwelalert test` দিন — Telegram-এ টেস্ট নোটিশ আসবে |
-
-> ⚠️ **নিরাপত্তা:** Telegram Token কখনো পাবলিক GitHub-এ কমিট করবেন না। হোস্টের **Environment Variables** ব্যবহার করুন।
-
----
-
-<h1 align="center">📞 ABOUT · CONTACT · ADMIN &amp; SUPPORT GROUP</h1>
-
-<p align="center">
-  কোনো সাহায্য লাগলে নিচের বাটনে চাপ দিন — সোজা অ্যাডমিনের আইডিতে চলে যাবেন।<br/>
-  বিশেষ প্রয়োজন ছাড়া অ্যাডমিনকে বিরক্ত করবেন না। ধন্যবাদ! 🙏
-</p>
-
-<p align="center">
-  <a href="https://wa.me/8801943488192?text=Assalamualaikum%20Admin%20Need%20Help%20Please"><img src="assets/whatsapp.svg" alt="WhatsApp" width="240"/></a>
-  <a href="https://t.me/mrjuwel2025"><img src="assets/telegram.svg" alt="Telegram" width="240"/></a>
-  <a href="https://fb.com/mrjuwel777"><img src="assets/facebook.svg" alt="Facebook" width="240"/></a>
-</p>
-<p align="center">
-  <a href="mailto:mrjuwel315@gmail.com"><img src="assets/gmail.svg" alt="Gmail" width="240"/></a>
-  <a href="https://www.youtube.com/@BdBotTame"><img src="assets/youtube.svg" alt="YouTube" width="240"/></a>
-  <a href="https://m.me/j/bUq30eov7FMa149R/?send_source=gc%3Acopy_invite_link_t"><img src="assets/messenger-group.svg" alt="Messenger Support Group" width="300"/></a>
-</p>
-
----
-
-
-<h1 align="center">🚀 PROJECT STATUS</h1>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/VERSION-4.0-00c6ff?style=for-the-badge&logo=semver&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PLATFORM-MESSENGER-0084ff?style=for-the-badge&logo=messenger&logoColor=white"/>
-  <img src="https://img.shields.io/badge/STATUS-ACTIVE-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/UPTIME-24%2F7-00e676?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/RENDER-KEEP--ALIVE-00ffa3?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/LICENSE-MIT-ffd200?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/NODE.JS-%E2%89%A522-68a063?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-</p>
-
-<table align="center">
-<tr>
-<td align="center"><h2>260+</h2><b>Commands</b></td>
-<td align="center"><h2>15+</h2><b>No-Prefix Triggers</b></td>
-<td align="center"><h2>10+</h2><b>Event Handlers</b></td>
-<td align="center"><h2>25+</h2><b>Banner / Frame Makers</b></td>
-<td align="center"><h2>10+</h2><b>AI Tools</b></td>
-</tr>
-</table>
-
----
-
-<h1 align="center">📌 ABOUT BOT</h1>
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=800&color=FF4D4D&center=true&vCenter=true&width=700&lines=Automation+System;Group+%26+Inbox+Control;Smart+AI+Features;Hybrid+Mirai+%2B+Goat+Engine" />
-</p>
-
-<h3 align="center">
-  <b>RIYA CHAT BOT</b> একটি advanced Messenger automation system যা<br/>
-  group এবং inbox <b>smartভাবে control</b> করে। 🎯
-</h3>
+Telegram BotFather থেকে Bot Token নিয়ে `config.json`-এর alert configuration অথবা hosting Environment Variables-এ `JUWEL_TG_TOKEN` ও `JUWEL_TG_CHAT` configure করুন। Token কখনো public repository-তে রাখবেন না।
 
 ---
 
 <h1 align="center">✨ FEATURES</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=800&color=00FF88&center=true&vCenter=true&width=820&lines=Auto+Reply+System;Quiz+%26+Games;Economy+System;Admin+Tools;Media+Downloader;No+Prefix+Auto+Triggers;Inbox+%2B+Group+Control;AI+Image+%26+Photo+Tools" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2000&pause=800&color=00FF88&center=true&vCenter=true&width=820&lines=Auto+Reply+System;Quiz+%26+Games;Economy+System;Admin+Tools;Media+Downloader;No+Prefix+Triggers;Inbox+%2B+Group+Control;AI+Image+Tools" />
 </p>
 
-<table align="center">
-<tr>
-<td align="center" width="33%">
-
-### 🤖 Auto Reply
-Auto-response system + AI auto-teach chat with typing effect।
-
-</td>
-<td align="center" width="33%">
-
-### 🎮 Quiz & Games
-Bangla quiz, casino, Bầu Cua — Messenger-এই, কোনো ইনস্টলেশন ছাড়াই!
-
-</td>
-<td align="center" width="33%">
-
-### 💰 Economy
-Daily coins + streak bonus, Rank card, EXP/Level সিস্টেম।
-
-</td>
-</tr>
-<tr>
-<td align="center">
-
-### 👥 Group Management
-Add/kick/lock/tag/rename/emoji/image — সব এক জায়গায়।
-
-</td>
-<td align="center">
-
-### 📥 Media Downloader
-YouTube, Facebook, TikTok সহ **HD ভিডিও ও অডিও** ডাউনলোড।
-
-</td>
-<td align="center">
-
-### ⚡ Fast Response
-হাই-স্পিড রেসপন্স ইঞ্জিন + Auto reconnect।
-
-</td>
-</tr>
-<tr>
-<td align="center">
-
-### 🖼️ Photo Editing
-4K upscale, AI edit, art style — আলাদা অ্যাপ লাগবে না।
-
-</td>
-<td align="center">
-
-### 🎨 Image Generation
-Text-to-image: Flux, Pollinations ও GPT-gen।
-
-</td>
-<td align="center">
-
-### 😂 Fun Commands
-Slap, hug, pet, jail, meme template — **শত শত** ফান কমান্ড!
-
-</td>
-</tr>
-<tr>
-<td align="center">
-
-### ⚡ No Prefix
-`/` ছাড়াই শব্দ/ইমোজি লিখলেই বট রেসপন্স করে।
-
-</td>
-<td align="center">
-
-### 📥 Inbox Support
-ইনবক্সেও কমান্ড কাজ করে + অ্যাডমিন ইনবক্স ফরওয়ার্ড।
-
-</td>
-<td align="center">
-
-### 🛡️ Security Shield
-Anti-flood, anti-spam ban, anti-out, anti-join, Guardian।
-
-</td>
-</tr>
-<tr>
-<td align="center">
-
-### 🔀 Hybrid Engine
-Mirai + GoatBot কমান্ড/ইভেন্ট একসাথে।
-
-</td>
-<td align="center">
-
-### 🕌 Islamic Pack
-Ramadan auto-time, সূরা, Islamic video।
-
-</td>
-<td align="center">
-
-### 🌐 24/7 Uptime
-Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্ষণ অনলাইন।
-
-</td>
-</tr>
-</table>
-
-### 🔥 Quick Highlights
-
-**• Auto Chat** — Enjoy automatic and seamless conversations through natural language processing.<br/>
-**• Photo Editing** — Edit professional quality photos using our advanced commands, no additional apps needed.<br/>
-**• Image Generation** — Create unique images using our cutting-edge text-to-image technology.<br/>
-**• Video Downloader** — Download HD videos from YouTube, Facebook, TikTok and other platforms.<br/>
-**• Interactive Games** — Play fun games directly in messenger, no installation hassle!<br/>
-**• Fun Commands** — Surprise your friends with hundreds of fun commands!
+| Feature | Description |
+|:---|:---|
+| 🤖 **Auto Reply** | Auto-response ও AI chat feature |
+| 🎮 **Quiz & Games** | বাংলা Quiz, Casino, Bầu Cua |
+| 💰 **Economy** | Daily coins, streak, rank ও EXP/Level |
+| 👥 **Group Management** | Add, kick, lock, tag, rename, emoji ও image control |
+| 📥 **Media Downloader** | YouTube, Facebook, TikTok media downloader commands |
+| ⚡ **Fast Response** | দ্রুত response ও reconnect support |
+| 🖼️ **Photo Editing** | AI edit, upscale ও art tools |
+| 🎨 **Image Generation** | Flux, Pollinations ও GPT-gen tools |
+| 😂 **Fun Commands** | Meme, slap, hug, pet ও অন্যান্য fun commands |
+| ⚡ **No Prefix** | নির্দিষ্ট trigger-এ prefix ছাড়াই response |
+| 📥 **Inbox Support** | Inbox ও group—দুই জায়গায় command support |
+| 🛡️ **Security** | Anti-flood, anti-spam, anti-join ও protection tools |
+| 🔀 **Hybrid Engine** | Mirai + GoatBot command/event compatibility |
+| 🕌 **Islamic Pack** | Ramadan auto-time, Sura ও Islamic commands |
+| 🌐 **Keep-Alive** | Render self-ping integration |
 
 ---
 
 <h1 align="center">⚡ NO PREFIX SYSTEM</h1>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2200&pause=800&color=FFD200&center=true&vCenter=true&width=820&lines=Type+a+word+%E2%80%94+bot+replies+instantly;No+%2F+needed;Emoji+triggers+%F0%9F%91%80+%F0%9F%98%85;Auto+voice+%2B+auto+reaction+%2B+auto+reply" />
-</p>
+প্রিফিক্স (`/`) ছাড়াই নির্দিষ্ট trigger লিখলে সংশ্লিষ্ট feature কাজ করে।
 
-প্রিফিক্স (`/`) ছাড়াই এই কমান্ডগুলো নিজে থেকে কাজ করে — শুধু মেসেজে ট্রিগার লিখলেই হবে।
-
-| Trigger / Command | কাজ |
+| Trigger | কাজ |
 |:---:|:---|
-| `jwl` | "জুয়েল" লিখলে ☠️ রিয়েক্ট দেয় |
-| `autoreplybot` | নির্দিষ্ট ট্রিগার শব্দে অটো-রিপ্লাই |
-| `autovoice` | অটো ভয়েস রিপ্লাই |
-| `baby` | AI auto-teach চ্যাট + typing effect |
-| `Gan` | প্রিফিক্স ছাড়াই র‍্যান্ডম গান |
-| `umma` · `night` · `women` | ফান অটো-রেসপন্স |
-| `👀` · `😅` | ইমোজি দিলে টেক্সট + ভিডিও রিপ্লাই |
-| `salam` | সালামের অটো রিপ্লাই |
-| `hi` | হাই স্টিকার রিপ্লাই |
-| `bot` | "Bot" বললে র‍্যান্ডম ফান রিপ্লাই |
-| `fixspam` | স্প্যামার অটো-ডিটেক্ট ও ব্যান |
-| `autoseen` | টাইমারসহ অটো সিন |
-| `autodl` | লিংক দিলে অটো ডাউনলোড |
-| `shortcut` | কাস্টম শর্টকাট রিপ্লাই |
-| `prefix` | প্রিফিক্স, ওনার ইনফো ও স্ট্যাটস দেখায় |
+| `jwl` | নির্দিষ্ট reaction |
+| `autoreplybot` | Auto reply |
+| `autovoice` | Auto voice reply |
+| `baby` | AI auto-teach chat |
+| `Gan` | Random song |
+| `umma` · `night` · `women` | Fun auto-response |
+| `👀` · `😅` | Emoji response |
+| `salam` | সালামের reply |
+| `hi` | Sticker reply |
+| `bot` | Random fun reply |
+| `fixspam` | Spam detection |
+| `autoseen` | Auto seen |
+| `autodl` | Link-based auto download |
+| `shortcut` | Custom shortcut reply |
+| `prefix` | Prefix ও bot information |
 
 ---
 
 <h1 align="center">📥 INBOX SUPPORT</h1>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2200&pause=800&color=00B2FF&center=true&vCenter=true&width=820&lines=Works+in+Groups+AND+Inbox;allowInbox+%3A+true;Admin+inbox+forward;Send+messages+to+groups" />
-</p>
-
-- ✅ `allowInbox: true` — বট ইনবক্সেও কমান্ড রিসিভ করে
-- 📨 **Anti-Gali** সিস্টেম — গালি ডিটেক্ট হলে Bot Admin-কে **ইনবক্সে ফরওয়ার্ড** করে
-- 📣 `notice` — সব গ্রুপে একসাথে নোটিশ (টেক্সট / ছবি / ভিডিও / অডিও / ফাইল)
-- 💬 `sendsms` · `outall` — নির্দিষ্ট বা সব গ্রুপে মেসেজ পাঠান
-- 🤝 `acp` · `listfriend` · `friends` — ফ্রেন্ড রিকোয়েস্ট ও ফ্রেন্ড লিস্ট ম্যানেজ
-- ⏳ `pending` · `join` — পেন্ডিং গ্রুপ রিকোয়েস্ট ও গ্রুপে জয়েন ম্যানেজ
+- `allowInbox: true` থাকলে inbox-এ command ব্যবহার করা যায়।
+- `notice` দিয়ে একাধিক group-এ notice পাঠানো যায়।
+- `sendsms` ও `outall` দিয়ে নির্দিষ্ট group-এ message পাঠানো যায়।
+- `acp`, `listfriend`, `friends` দিয়ে friend request ও friend list পরিচালনা করা যায়।
+- `pending` ও `join` দিয়ে pending group request পরিচালনা করা যায়।
 
 ---
 
 <h1 align="center">🐾 ANIMAL POWER SYSTEM</h1>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=800&color=FFAA00&center=true&vCenter=true&width=700&lines=Lion+Mode+Activated;Wolf+Speed+System;Eagle+Vision+Bot;Tiger+Performance+Engine;Dragon+Ultra+AI+Power;Scorpion+Security+Shield" />
-</p>
-
-<h2 align="center">🐾 ANIMAL MODES</h2>
-
 | Mode | Power |
 |:---:|:---|
-| 🦁 **Lion Mode** | 👑 Admin Power Control |
-| 🐺 **Wolf Mode** | ⚡ Fast Auto Reply |
-| 🦅 **Eagle Mode** | 👁️ Smart Detection System |
-| 🐯 **Tiger Mode** | 🚀 High Speed Execution |
-| 🐉 **Dragon Mode** | 🔥 Ultra AI Power |
-| 🦂 **Scorpion Mode** | 🛡️ Security Shield |
+| 🦁 **Lion** | Admin power control |
+| 🐺 **Wolf** | Fast auto reply |
+| 🦅 **Eagle** | Smart detection |
+| 🐯 **Tiger** | High-speed execution |
+| 🐉 **Dragon** | AI power |
+| 🦂 **Scorpion** | Security shield |
 
 ---
 
 <h1 align="center">🛡️ PROTECTION & EVENTS</h1>
 
-গ্রুপ সুরক্ষার জন্য বটে যা যা ইভেন্ট ও প্রোটেকশন আছে:
-
-| Event / System | কাজ |
+| System | কাজ |
 |:---|:---|
-| 🧱 **antiflood** | মেসেজ-ফ্লাড (স্প্যাম) প্রোটেকশন চালু/বন্ধ |
-| 🚫 **spamban** | বারবার স্প্যাম করলে অটো ব্যান |
-| 🤖 **botautoban** | অন্য বট শনাক্ত করে অটো ব্যান (অ্যাডমিন সুরক্ষাসহ) |
-| 🗣️ **antigali** | বাংলা Anti-Gali সিস্টেম |
-| 🔞 **anti18** | 18+ শব্দ ডিটেক্ট করে ওয়ার্নিং ইমেজ |
-| 🚪 **antiout** | কেউ লিভ নিলে ফান লিমিটসহ আটকানো |
-| 🚷 **antijoin** | নতুন মেম্বার জয়েন কন্ট্রোল |
-| 🔒 **antiProtect / protect** | গ্রুপের নাম, ছবি, নিকনেম, ইমোজি, থিম লক |
-| 👑 **guardian** | Owner Protection System (অ্যাডমিন/নাম পরিবর্তনে সুরক্ষা) |
-| ⛔ **blacklistuser** | ব্ল্যাকলিস্ট ইউজার অটো কিক (JSON + 20 slot) |
-| 🚪 **bossleave** | বস কিক হলে বট গ্রুপ ছেড়ে দেয় |
-| 🎉 **joinNoti** | Ultra Join System + VIP + Daily Report + 10 Frame Auto |
-| 👋 **leave** | কে কিক করল তার নামসহ ফ্রেম + কুলডাউন |
-| 🎨 **adminUpdate** | গ্রুপ আপডেটে ২০+ র‍্যান্ডম স্টাইলিশ থিম |
-| 🔐 **lock / textoff** | গ্রুপ লক — শুধু অ্যাডমিন চ্যাট করতে পারবে |
-| 💎 **vip** | VIP মোড ও VIP ইউজার ম্যানেজ |
+| `antiflood` | Message flood protection |
+| `spamban` | Repeated spam control |
+| `botautoban` | অন্য bot detection ও autoban |
+| `antigali` | বাংলা Anti-Gali |
+| `anti18` | 18+ শব্দ detection |
+| `antiout` | Member leave control |
+| `antijoin` | New member join control |
+| `antiProtect` / `protect` | Group settings protection |
+| `guardian` | Owner protection |
+| `blacklistuser` | Blacklist user control |
+| `bossleave` | নির্দিষ্ট kick event handling |
+| `joinNoti` | Join notification |
+| `leave` | Leave notification |
+| `adminUpdate` | Group update notification |
+| `lock` / `textoff` | Group chat lock |
+| `vip` | VIP user management |
 
 ---
 
@@ -514,10 +242,10 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
   <img src="https://img.shields.io/badge/ALL-%2Fhelpall-00e676?style=for-the-badge"/>
 </p>
 
-> 💡 সব কমান্ডের তালিকা দেখতে বটে লিখুন `/help` · `/helpall` · `/menu` — গ্রুপভিত্তিক প্রিফিক্স বদলাতে `/setprefix`।
+বটের command list দেখতে `/help`, `/helpall` অথবা `/menu` ব্যবহার করুন।
 
 <details>
-<summary><b>🛠️ SYSTEM & ADMIN</b> — ক্লিক করে দেখুন</summary>
+<summary><b>🛠️ SYSTEM & ADMIN</b></summary>
 
 `help` · `helpall` · `menu` · `system` · `uptime` · `upt` · `status` · `restart` · `offbot` · `load` · `config` · `settings` · `setbot` · `adminonly` · `adminupdate` · `self` · `0admin` · `listbox` · `allbox` · `thread` · `pending` · `join` · `vip` · `file` · `give` · `install` · `console` · `setprofile` · `setexp` · `delmsg` · `unsend` · `theme` · `notice` · `sendsms` · `outall` · `out`
 
@@ -526,7 +254,7 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 <details>
 <summary><b>👥 GROUP & BOX CHAT</b></summary>
 
-`group` · `groupname` · `groupimage` · `groupemoji` · `setemoji` · `setname` · `newbox` · `boxinfo` · `boxadmin` · `listadmin` · `adduser` · `kick` · `kickall` · `ban` · `lock` · `protect` · `tag` · `mention` · `tid` · `rules` · `setjoin` · `setprefix` · `birthday` · `bday` · `top` · `textoff` · `supportgc`
+`group` · `groupname` · `groupimage` · `groupemoji` · `setemoji` · `setname` · `newbox` · `boxinfo` · `boxadmin` · `listadmin` · `adduser` · `kick` · `kickall` · `ban` · `lock` · `protect` · `tag` · `mention` · `tid` · `rules` · `setjoin` · `setprefix` · `birthday` · `bday` · `top` · `textoff`
 
 </details>
 
@@ -552,7 +280,7 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 </details>
 
 <details>
-<summary><b>🎴 BANNER & FRAME MAKERS</b> (Avatar Canvas)</summary>
+<summary><b>🎴 BANNER & FRAME MAKERS</b></summary>
 
 `couple` · `love` · `love1` · `crush` · `crush1` · `bf` · `gf` · `besti` · `bestu` · `bestfriend` · `bro` · `kiss` · `hug` · `hug2` · `married` · `pair` · `pairing` · `bonk` · `sala` · `chipa` · `toilet` · `rip1` · `fbcover` · `fbpost` · `post` · `family`
 
@@ -568,14 +296,14 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 <details>
 <summary><b>🎮 GAMES & ECONOMY</b></summary>
 
-`quiz` (বাংলা কুইজ) · `casino` · `bc` (Bầu Cua) · `daily` (ডেইলি কয়েন + streak) · `rank` (র‍্যাঙ্ক কার্ড)
+`quiz` · `casino` · `bc` · `daily` · `rank`
 
 </details>
 
 <details>
 <summary><b>🧰 UTILITIES & TOOLS</b></summary>
 
-`uid` · `profile` · `ckuser` · `ckbot` · `numinfo` · `age` · `weather` · `ss` (website screenshot) · `qr` · `font` · `wallpaper` · `google` · `search` · `pic` · `github` · `ar` · `bn` · `en` (translate) · `text` · `scan` · `autoseen`
+`uid` · `profile` · `ckuser` · `ckbot` · `numinfo` · `age` · `weather` · `ss` · `qr` · `font` · `wallpaper` · `google` · `search` · `pic` · `github` · `ar` · `bn` · `en` · `text` · `scan` · `autoseen`
 
 </details>
 
@@ -593,55 +321,52 @@ Render-এ Self Keep-Alive — UptimeRobot ছাড়াই সারাক্
 
 </details>
 
-<p align="center">
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/blob/main/LICENSE"><img src="https://img.shields.io/github/license/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="License"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/issues"><img src="https://img.shields.io/github/issues/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="GitHub issues"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/network/members"><img src="https://img.shields.io/github/forks/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="GitHub forks"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/stargazers"><img src="https://img.shields.io/github/stars/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="GitHub stars"/></a>
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL/commits/main"><img src="https://img.shields.io/github/last-commit/GOAT-MIRAI-MIX/MR-JUWEL?style=for-the-badge" alt="Last commit"/></a>
-</p>
-
 ---
 
 <h1 align="center">⚙️ CONFIG HIGHLIGHTS</h1>
 
 | Option | মান | কাজ |
 |:---|:---:|:---|
-| `PREFIX` / `usePrefix` | `/` · `true` | কমান্ড প্রিফিক্স |
-| `allowInbox` | `true` | ইনবক্সে বট ব্যবহার |
-| `autoSent` | `true` | অটো মেসেজ সেন্ড |
-| `autoCreateDB` | `true` | নতুন গ্রুপ/ইউজারের ডাটাবেস অটো তৈরি |
-| `autoClean` | `true` | অটো ক্লিন |
-| `reactUnsend` | ❌ | এই রিয়েক্টে বটের মেসেজ আনসেন্ড |
-| `Login.autoRetryLogin` | `true` (max 100) | লগইন ফেইল হলে অটো রিট্রাই |
-| `FCAOption.autoReconnect` | `true` | কানেকশন ড্রপ হলে অটো রিকানেক্ট |
-| `DATABASE` | SQLite | `data.sqlite` — কোনো আলাদা DB সার্ভার লাগে না |
-| `ADMINBOT` / `DEVELOPER` | UID array | বট অ্যাডমিন ও ডেভেলপার |
+| `PREFIX` / `usePrefix` | `/` / `true` | Command prefix |
+| `allowInbox` | `true` | Inbox command support |
+| `autoSent` | `true` | Auto message send |
+| `autoCreateDB` | `true` | Group/user database creation |
+| `autoClean` | `true` | Auto clean |
+| `reactUnsend` | Configurable | নির্দিষ্ট reaction-এ bot message unsend |
+| `Login.autoRetryLogin` | `true` | Login retry |
+| `FCAOption.autoReconnect` | `true` | Connection reconnect |
+| `DATABASE` | SQLite | `data.sqlite` |
+| `ADMINBOT` / `DEVELOPER` | UID array | Admin ও developer UID |
 
-> 🔐 **নিরাপত্তা:** `appstate.json`, `PASSWORD`, `OTPKEY` কখনো পাবলিক রিপোতে কমিট করবেন না।
+> `appstate.json`, password, OTP secret এবং API token private রাখুন। Public repository-তে commit করবেন না।
 
 ---
 
 <h1 align="center">📊 GITHUB STATS</h1>
 
 <p align="center">
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=GOAT-MIRAI-MIX&repo=MR-JUWEL&theme=tokyonight&hide_border=true"/>
+  <a href="https://github.com/siyam-xpromex/siyambot">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=siyam-xpromex&repo=siyambot&theme=tokyonight&hide_border=true"/>
   </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/siyam-xpromex/siyambot"><img src="https://img.shields.io/github/stars/siyam-xpromex/siyambot?style=for-the-badge" alt="Stars"/></a>
+  <a href="https://github.com/siyam-xpromex/siyambot/network/members"><img src="https://img.shields.io/github/forks/siyam-xpromex/siyambot?style=for-the-badge" alt="Forks"/></a>
+  <a href="https://github.com/siyam-xpromex/siyambot/issues"><img src="https://img.shields.io/github/issues/siyam-xpromex/siyambot?style=for-the-badge" alt="Issues"/></a>
 </p>
 
 ---
 
-<h1 align="center">⚡ LIVE DEPLOY</h1>
+<h1 align="center">🚀 LIVE DEPLOY</h1>
 
 <p align="center">
-  <a href="https://heroku.com/deploy?template=https://github.com/GOAT-MIRAI-MIX/MR-JUWEL"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku"/></a>
   <a href="https://render.com"><img src="https://img.shields.io/badge/Deploy%20On-Render-4353ff?style=for-the-badge&logo=render&logoColor=white" alt="Render"/></a>
   <a href="https://railway.app"><img src="https://img.shields.io/badge/Deploy%20On-Railway-a855f7?style=for-the-badge&logo=railway&logoColor=white" alt="Railway"/></a>
 </p>
 
 <details>
-<summary><b>❖ DEPLOY_WORKFLOWS ❖</b> — GitHub Actions (<code>.github/workflows/main.yml</code> · Node 22)</summary>
+<summary><b>GitHub Actions Workflow</b> — optional scheduled run</summary>
 
 ```yaml
 name: Run Bot
@@ -649,7 +374,7 @@ name: Run Bot
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"   # প্রতি ৬ ঘণ্টায় বট নিজে আবার চালু হবে
+    - cron: "0 */6 * * *"
 
 concurrency:
   group: run-bot
@@ -658,8 +383,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 350   # GitHub এক জবে সর্বোচ্চ ৬ ঘণ্টা দেয়
-
+    timeout-minutes: 350
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -680,85 +404,66 @@ jobs:
 
 ---
 
-<h1 align="center">🚀 HOW TO RUN THIS CHAT BOT</h1>
-
-### Steps to Run the Bot
-
-**Start Command** — বটের ফোল্ডারে গিয়ে:
+<h1 align="center">🚀 HOW TO RUN</h1>
 
 ```bash
-git clone https://github.com/GOAT-MIRAI-MIX/MR-JUWEL.git
-cd MR-JUWEL
+git clone https://github.com/siyam-xpromex/siyambot.git
+cd siyambot
 npm install
-node Juwel.js        # অথবা: npm start
+npm start
 ```
 
-**Render-এ** (UptimeRobot ছাড়া সারাক্ষণ অনলাইন):
+Render Keep-Alive ব্যবহার করলে hosting Start Command হিসেবে:
 
 ```bash
 node JuwelKeepalive.js
 ```
 
-> ⚠️ সবসময় `npm start` / `node Juwel.js` / `node JuwelKeepalive.js` — `node Main.js` নয়।
-> `appstate.json` এ কুকি বসান, `config.json` এ `ADMINBOT` / `DEVELOPER` এ আপনার UID দিন।
+আপনার repository-তে যে entry file ও `package.json` start script configured আছে, সেটির সঙ্গে Start Command মিলিয়ে নিন।
 
 ---
 
-<h1 align="center">🧰 HOW TO USE THESE PLATFORMS</h1>
+<h1 align="center">🧰 PLATFORM LINKS</h1>
 
-| Platform | কী করে |
-|:---:|:---|
-| <img src="https://img.icons8.com/color/48/000000/replit.png"/><br/>**Replit** | অনলাইন কোডিং এনভায়রনমেন্ট — সেটআপ ছাড়াই ব্রাউজারে কোড লিখুন, রান ও টেস্ট করুন। ফ্রি অ্যাকাউন্টে নতুন "Repl" খুলে JavaScript, Python, C++ সহ অনেক ভাষায় কোড করা যায়। দ্রুত প্রোটোটাইপ, শেখা ও রিয়েল-টাইম কোলাবরেশনের জন্য দারুণ; পাবলিক URL-এ সিম্পল ওয়েব অ্যাপও হোস্ট করা যায়। |
-| <img src="https://img.icons8.com/fluency/48/000000/cloud.png"/><br/>**Render** | ক্লাউড হোস্টিং — সার্ভার ম্যানেজ না করেই ওয়েবসাইট, API ও অ্যাপ ডিপ্লয়। লোকালি বা Replit-এ বানিয়ে কোড পুশ করলেই কন্টিনিউয়াস ডিপ্লয়মেন্ট। Auto SSL, custom domain ও background worker সাপোর্ট করে। |
-| <img src="https://img.icons8.com/fluency/48/000000/github.png"/><br/>**GitHub** | Git-ভিত্তিক ভার্সন কন্ট্রোল ও কোলাবরেশন প্ল্যাটফর্ম। রিপোজিটরিতে কোড সংরক্ষণ, পরিবর্তন ট্র্যাক, pull request ও issue দিয়ে টিমওয়ার্ক, README/wiki ডকুমেন্টেশন এবং CI/CD অটোমেশন। |
+| Platform | Link |
+|:---|:---|
+| GitHub | [siyam-xpromex/siyambot](https://github.com/siyam-xpromex/siyambot) |
+| Render | [render.com](https://render.com) |
+| Railway | [railway.app](https://railway.app) |
 
 ---
 
-<h1 align="center">👤 ABOUT ADMIN</h1>
+<h1 align="center">👤 DEVELOPER & SUPPORT</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&duration=2500&pause=700&color=FF00CC&center=true&vCenter=true&width=640&lines=JUWEL;Sigma+Boy+%F0%9F%98%8E;Attitude+King+%F0%9F%91%91" alt="Admin"/>
+  <img src="https://img.shields.io/badge/DEVELOPER-SIYAM%20HASAN-00d9ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/BOT-SIYAM%20CHAT%20BOT-a855f7?style=for-the-badge"/>
 </p>
 
-```text
-╔════════════════════════════════════════════╗
-║      ✦  A D M I N   P R O F I L E  ✦       ║
-╠════════════════════════════════════════════╣
-║ ❖ NAME         ➤  Juwel                    ║
-║ ❖ BOT NAME     ➤  RIYA                     ║
-║ ❖ BIRTHDAY     ➤  24 April                 ║
-║ ❖ AGE          ➤  22 Years                 ║
-║ ❖ HEIGHT       ➤  5.5 ft                   ║
-║ ❖ ADDRESS      ➤  Rangpur City             ║
-║ ❖ WORK         ➤  Construction             ║
-║ ❖ RELATIONSHIP ➤  Single                   ║
-║ ❖ STYLE        ➤  Sigma Boy                ║
-║ ❖ ATTITUDE     ➤  King                     ║
-║ ❖ INTEREST     ➤  Free Fire Lover          ║
-║ ❖              ➤  Hacking Lover            ║
-╠════════════════════════════════════════════╣
-║          Stay Sigma  •  Stay King          ║
-╚════════════════════════════════════════════╝
-```
+<p align="center">
+  <a href="https://wa.me/8801789138157"><img src="assets/whatsapp.svg" alt="WhatsApp Developer" width="210"/></a>
+  <a href="https://t.me/ri_siyam"><img src="assets/telegram.svg" alt="Developer Telegram" width="210"/></a>
+  <a href="https://www.facebook.com/profile.php?id=61596102516084"><img src="assets/facebook.svg" alt="Facebook" width="210"/></a>
+</p>
+
+<h2 align="center">💬 SUPPORT GROUPS</h2>
+
+<p align="center">
+  <a href="https://chat.whatsapp.com/IbxqvkgbySJ10XsL7geN8B?s=cl&p=a&iam=2"><img src="https://img.shields.io/badge/WhatsApp-Support%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+  <a href="https://t.me/siyam_esb"><img src="https://img.shields.io/badge/Telegram-Support%20Group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+</p>
 
 ---
 
 <p align="center">
-  <img src="assets/thank-you.svg" alt="Thank You For Using My Fork" width="100%"/>
+  <img src="assets/thank-you.svg" alt="Thank you for using Siyam Chat Bot" width="100%"/>
 </p>
 
-<h2 align="center">💖 আমার ফর্ক ব্যবহার করার জন্য অনেক ধন্যবাদ! 💖</h2>
-
+<h2 align="center">💙 SIYAM CHAT BOT ব্যবহার করার জন্য ধন্যবাদ!</h2>
 
 <p align="center">
-  ⭐ <b>Please don't forget to give a star after forking! It really helps!</b>
+  <a href="https://github.com/siyam-xpromex/siyambot"><img src="https://img.shields.io/badge/GitHub-Visit%20Repository-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
 </p>
-
-<p align="center">
-  <a href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL"><img src="https://img.icons8.com/fluency/48/000000/github.png" alt="GitHub"></a>
-</p>
-
-<p align="center"><b>I hope you enjoy my fork! Thank you for supporting the cyber chat bot community! 🫶</b></p>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,18,24&height=120&section=footer" width="100%"/>
