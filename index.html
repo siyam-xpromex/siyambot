@@ -1,845 +1,752 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080817">
+<title>SIYAM HASAN | NIJHUM CHAT BOT</title>
 
-  <title>MR JUWEL - PERSONAL PROFILE</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+:root {
+  --blue: #00d9ff;
+  --red: #ff1744;
+  --purple: #a855f7;
+  --white: #ffffff;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  min-height: 100vh;
+  padding: 25px 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(0,217,255,.16), transparent 30%),
+    radial-gradient(circle at 90% 30%, rgba(255,23,68,.15), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(168,85,247,.15), transparent 40%),
+    #080817;
+  overflow-x: hidden;
+}
 
-    body {
-      min-height: 100vh;
-      padding: 25px 15px;
-      font-family: "Montserrat", sans-serif;
-      color: #fff;
-      background:
-        radial-gradient(circle at top left, rgba(139, 92, 246, .35), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(59, 130, 246, .25), transparent 35%),
-        linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(white .7px, transparent .7px);
+  background-size: 35px 35px;
+  opacity: .12;
+  z-index: -1;
+}
 
-    .container {
-      width: 100%;
-      max-width: 450px;
-      margin: auto;
-      padding: 25px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 28px;
-      background: rgba(255,255,255,.08);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: 0 25px 70px rgba(0,0,0,.35);
-    }
+.container {
+  width: 100%;
+  max-width: 470px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 28px;
+  background: rgba(18,18,40,.78);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 35px rgba(0,217,255,.08),
+    0 0 55px rgba(255,23,68,.07),
+    0 25px 80px rgba(0,0,0,.5);
+  position: relative;
+  overflow: hidden;
+}
 
-    /* PROFILE */
-    .profile {
-      text-align: center;
-    }
+.container::before {
+  content: "";
+  position: absolute;
+  width: 180%;
+  height: 2px;
+  top: 0;
+  left: -40%;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--red), transparent);
+  animation: borderMove 5s linear infinite;
+}
 
-    .profile-photo {
-      width: 125px;
-      height: 125px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid rgba(255,255,255,.9);
-      box-shadow: 0 10px 35px rgba(0,0,0,.35);
-      margin-bottom: 15px;
-    }
+@keyframes borderMove {
+  0% { transform: translateX(-40%); }
+  100% { transform: translateX(40%); }
+}
 
-    .profile h1 {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: .5px;
-    }
+/* PROFILE */
 
-    .tagline {
-      margin-top: 7px;
-      color: #d8d5ff;
-      font-size: 13px;
-    }
+.profile {
+  text-align: center;
+  padding: 15px 0 25px;
+}
 
-    /* COMMON CARD */
-    .card {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-    }
+.photo-wrap {
+  width: 155px;
+  height: 155px;
+  margin: 0 auto 22px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
 
-    .card-title {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 15px;
-      font-size: 15px;
-      font-weight: 700;
-    }
+.photo-wrap::before,
+.photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: photoGlow 2.5s linear infinite;
+}
 
-    /* INFO */
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      font-size: 13px;
-    }
+.photo-wrap::before {
+  border-top-color: var(--blue);
+  border-right-color: var(--blue);
+  box-shadow: 0 0 15px var(--blue), inset 0 0 12px rgba(0,217,255,.3);
+}
 
-    .info-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+.photo-wrap::after {
+  inset: -13px;
+  border-bottom-color: var(--red);
+  border-left-color: var(--red);
+  animation-direction: reverse;
+  box-shadow: 0 0 18px var(--red), inset 0 0 12px rgba(255,23,68,.25);
+}
 
-    .info-label {
-      color: #bdb9dc;
-    }
+@keyframes photoGlow {
+  to { transform: rotate(360deg); }
+}
 
-    .info-value {
-      text-align: right;
-      font-weight: 600;
-    }
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow:
+    0 0 12px var(--blue),
+    0 0 25px rgba(0,217,255,.6),
+    0 0 35px rgba(255,23,68,.35);
+  position: relative;
+  z-index: 2;
+}
 
-    /* ABOUT */
-    .about-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.5;
-    }
+.profile h1 {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(0,217,255,.55);
+}
 
-    .about-list li {
-      padding: 10px 13px;
-      border-radius: 12px;
-      background: rgba(0,0,0,.15);
-    }
+.tagline {
+  margin-top: 9px;
+  font-size: 12px;
+  color: #c6c5e8;
+  letter-spacing: 1px;
+}
 
-    /* SKILLS */
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+.owner-badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 9px 17px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+  border: 1px solid rgba(0,217,255,.5);
+  background: linear-gradient(90deg, rgba(0,217,255,.15), rgba(255,23,68,.15));
+  box-shadow: 0 0 15px rgba(0,217,255,.2);
+}
 
-    .skill-tag {
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      background: linear-gradient(135deg, rgba(99,102,241,.35), rgba(139,92,246,.35));
-      border: 1px solid rgba(255,255,255,.15);
-    }
+/* SECTION */
 
-    /* PROJECT */
-    .project-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 13px 15px;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 14px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.08);
-      transition: .25s ease;
-    }
+.card {
+  margin-top: 19px;
+  padding: 19px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,.18);
+  transition: .3s ease;
+}
 
-    .project-btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.13);
-    }
+.card:hover {
+  border-color: rgba(0,217,255,.4);
+  box-shadow: 0 0 22px rgba(0,217,255,.09);
+}
 
-    .project-name {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13px;
-      font-weight: 600;
-    }
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 17px;
+  color: white;
+}
 
-    .project-btn > i {
-      color: #aaa;
-      font-size: 11px;
-    }
+.card-title i {
+  color: var(--blue);
+  text-shadow: 0 0 10px var(--blue);
+}
 
-    /* STATUS */
-    .status-card {
-      position: relative;
-      overflow: hidden;
-    }
+/* ABOUT */
 
-    .status-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 15px;
-    }
+.about-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .status-title {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 15px;
-      font-weight: 700;
-    }
+.about-list li {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,.2);
+  border-left: 3px solid var(--blue);
+  font-size: 12px;
+  font-weight: 600;
+}
 
-    .live-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 20px;
-      background: rgba(34,197,94,.15);
-      color: #4ade80;
-      font-size: 10px;
-      font-weight: 700;
-    }
+/* INFO */
 
-    .live-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 10px #4ade80;
-    }
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  font-size: 12px;
+}
 
-    .status-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+.info-row:last-child {
+  border-bottom: none;
+}
 
-    .status-item {
-      padding: 13px;
-      border-radius: 15px;
-      background: rgba(0,0,0,.15);
-    }
+.info-label {
+  color: #aaa9ca;
+}
 
-    .status-label {
-      display: block;
-      margin-bottom: 6px;
-      color: #aaa6c8;
-      font-size: 10px;
-    }
+.info-value {
+  text-align: right;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
 
-    .status-value {
-      font-size: 13px;
-      font-weight: 700;
-    }
+/* SKILLS */
 
-    .online {
-      color: #4ade80;
-    }
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
 
-    .offline {
-      color: #fb7185;
-    }
+.skill-tag {
+  padding: 9px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(0,217,255,.09);
+  border: 1px solid rgba(0,217,255,.3);
+  box-shadow: 0 0 10px rgba(0,217,255,.08);
+}
 
-    .checking {
-      color: #facc15;
-    }
+/* BUTTONS */
 
-    .last-check {
-      margin-top: 13px;
-      text-align: center;
-      color: #aaa6c8;
-      font-size: 10px;
-    }
+.neon-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+  margin-top: 11px;
+  text-decoration: none;
+  color: white;
+  border-radius: 14px;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.13);
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    /* CONTACT */
-    .contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.neon-btn:first-of-type {
+  margin-top: 0;
+}
 
-    .contact-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 13px 15px;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 14px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.08);
-      transition: .25s ease;
-    }
+.neon-btn .left {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
 
-    .contact-btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.13);
-    }
+.neon-btn .left i {
+  width: 23px;
+  text-align: center;
+  font-size: 19px;
+}
 
-    .contact-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13px;
-      font-weight: 600;
-    }
+.neon-btn .arrow {
+  color: #aaa;
+  font-size: 11px;
+}
 
-    .contact-left i {
-      width: 20px;
-      text-align: center;
-    }
+.neon-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,217,255,.28), transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width .4s ease, height .4s ease;
+}
 
-    .whatsapp i { color: #25D366; }
-    .facebook i { color: #1877F2; }
-    .messenger i { color: #00B2FF; }
-    .github i { color: #fff; }
-    .email i { color: #f87171; }
-    .call i { color: #4ade80; }
+.neon-btn:hover::before,
+.neon-btn:active::before {
+  width: 450px;
+  height: 450px;
+}
 
-    .contact-btn > i {
-      color: #aaa;
-      font-size: 11px;
-    }
+.neon-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  box-shadow: 0 0 15px rgba(0,217,255,.2), inset 0 0 12px rgba(0,217,255,.06);
+}
 
-    /* STATUS PAGE BUTTON */
-    .status-page-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      width: 100%;
-      margin-top: 15px;
-      padding: 13px;
-      border-radius: 14px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      transition: .25s ease;
-    }
+.neon-btn:active {
+  transform: scale(.96);
+  box-shadow: 0 0 25px var(--blue);
+}
 
-    .status-page-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(99,102,241,.3);
-    }
+/* BRAND COLORS */
 
-    /* FOOTER */
-    footer {
-      margin-top: 22px;
-      padding-top: 18px;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: #aaa6c8;
-      font-size: 10px;
-      line-height: 1.7;
-    }
+.whatsapp:hover { border-color: #25D366; box-shadow: 0 0 18px rgba(37,211,102,.3); }
+.whatsapp .left i { color: #25D366; }
 
-    footer strong {
-      color: #fff;
-    }
+.email:hover { border-color: #ff6b81; box-shadow: 0 0 18px rgba(255,107,129,.3); }
+.email .left i { color: #ff6b81; }
 
-    /* MOBILE */
-    @media (max-width: 400px) {
-      .container {
-        padding: 20px;
-      }
+.facebook:hover { border-color: #1877F2; box-shadow: 0 0 18px rgba(24,119,242,.3); }
+.facebook .left i { color: #1877F2; }
 
-      .profile h1 {
-        font-size: 23px;
-      }
+.messenger:hover { border-color: #00B2FF; box-shadow: 0 0 18px rgba(0,178,255,.3); }
+.messenger .left i { color: #00B2FF; }
 
-      .status-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.telegram:hover { border-color: #29B6F6; box-shadow: 0 0 18px rgba(41,182,246,.3); }
+.telegram .left i { color: #29B6F6; }
+
+.github:hover { border-color: white; box-shadow: 0 0 18px rgba(255,255,255,.2); }
+.github .left i { color: white; }
+
+.group-wa:hover { border-color: #25D366; box-shadow: 0 0 18px rgba(37,211,102,.3); }
+.group-wa .left i { color: #25D366; }
+
+.group-tg:hover { border-color: #29B6F6; box-shadow: 0 0 18px rgba(41,182,246,.3); }
+.group-tg .left i { color: #29B6F6; }
+
+/* STATUS */
+
+.status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #4ade80;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: rgba(34,197,94,.12);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4ade80;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .25; }
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.status-item {
+  padding: 13px;
+  border-radius: 13px;
+  background: rgba(0,0,0,.2);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.status-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #aaa9ca;
+  font-size: 9px;
+}
+
+.status-value {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.online { color: #4ade80; }
+.offline { color: #fb7185; }
+.checking { color: #facc15; }
+
+.last-check {
+  text-align: center;
+  color: #aaa9ca;
+  font-size: 10px;
+  margin-top: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  text-align: center;
+  color: #aaa9ca;
+  font-size: 10px;
+  line-height: 2;
+}
+
+footer strong {
+  color: white;
+  font-size: 13px;
+  text-shadow: 0 0 12px var(--blue);
+}
+
+.footer-brand {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+/* MOBILE */
+
+@media (max-width: 400px) {
+  .container { padding: 18px; }
+  .profile h1 { font-size: 23px; }
+  .status-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <main class="container">
+<main class="container">
 
-    <!-- PROFILE -->
-    <section class="profile">
-
+  <section class="profile">
+    <div class="photo-wrap">
       <img
-        src="https://i.imgur.com/PbhPfTk.jpeg"
+        src="https://i.imgur.com/qoQKTvF.jpeg"
         class="profile-photo"
-        alt="MR JUWEL">
+        alt="Siyam Hasan">
+    </div>
 
-      <h1>MR JUWEL</h1>
+    <h1>SIYAM HASAN</h1>
+    <p class="tagline">STUDENT • CHATBOT DEVELOPER</p>
+    <div class="owner-badge">👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑</div>
+  </section>
 
-      <p class="tagline">
-        Student • Chatbot Developer
-      </p>
+  <section class="card">
+    <div class="card-title">
+      <i class="fa-solid fa-circle-info"></i>
+      ABOUT ME
+    </div>
 
-    </section>
+    <ul class="about-list">
+      <li>👑 Welcome to Siyam Hasan's Profile</li>
+      <li>📸 Photo Editing Lover</li>
+      <li>💻 Chatbot Developer</li>
+      <li>🎵 Music Lover</li>
+      <li>🤝 Respect Everyone</li>
+      <li>🌸 Stay Happy and Keep Smiling</li>
+    </ul>
+  </section>
 
+  <section class="card">
+    <div class="card-title">
+      <i class="fa-solid fa-user"></i>
+      PERSONAL INFORMATION
+    </div>
 
-    <!-- ABOUT ME -->
-    <section class="card">
+    <div class="info-row">
+      <span class="info-label">Name</span>
+      <span class="info-value">Siyam Hasan</span>
+    </div>
 
-      <div class="card-title">
-        <i class="fa-solid fa-circle-info"></i>
-        About Me
+    <div class="info-row">
+      <span class="info-label">Profession</span>
+      <span class="info-value">Chatbot Developer</span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">Country</span>
+      <span class="info-value">Bangladesh</span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">WhatsApp</span>
+      <span class="info-value">01789138157</span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">Email</span>
+      <span class="info-value">mdsiyam5687tyiu@gmail.com</span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">Bot Name</span>
+      <span class="info-value">Nijhum Chat Bot</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <i class="fa-solid fa-code"></i>
+      MY SKILLS
+    </div>
+
+    <div class="skill-list">
+      <span class="skill-tag">Messenger Bot</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">Node.js</span>
+      <span class="skill-tag">Bot Development</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <i class="fa-solid fa-address-book"></i>
+      CONTACT ME
+    </div>
+
+    <a class="neon-btn whatsapp" href="https://wa.me/8801789138157" target="_blank" rel="noopener noreferrer">
+      <span class="left">
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+
+    <a class="neon-btn email" href="mailto:mdsiyam5687tyiu@gmail.com">
+      <span class="left">
+        <i class="fa-solid fa-envelope"></i>
+        Gmail
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+
+    <a class="neon-btn facebook" href="https://www.facebook.com/profile.php?id=61596102516084" target="_blank" rel="noopener noreferrer">
+      <span class="left">
+        <i class="fa-brands fa-facebook"></i>
+        Facebook
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+
+    <a class="neon-btn messenger" href="https://m.me/61596102516084" target="_blank" rel="noopener noreferrer">
+      <span class="left">
+        <i class="fa-brands fa-facebook-messenger"></i>
+        Messenger
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+
+    <a class="neon-btn telegram" href="https://t.me/ri_siyam" target="_blank" rel="noopener noreferrer">
+      <span class="left">
+        <i class="fa-brands fa-telegram"></i>
+        Telegram
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+  </section>
+
+  <section class="card">
+    <div class="card-title">
+      <i class="fa-solid fa-users"></i>
+      JOIN OUR COMMUNITY
+    </div>
+
+    <a class="neon-btn group-wa" href="https://chat.whatsapp.com/IbxqvkgbySJ10XsL7geN8B?s=cl&p=a&iam=2" target="_blank" rel="noopener noreferrer">
+      <span class="left">
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp Group
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+
+    <a class="neon-btn group-tg" href="https://t.me/siyam_esb" target="_blank" rel="noopener noreferrer">
+      <span class="left">
+        <i class="fa-brands fa-telegram"></i>
+        Telegram Group
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+    </a>
+  </section>
+
+  <section class="card">
+    <div class="status-header">
+      <div class="card-title" style="margin:0">
+        <i class="fa-solid fa-server"></i>
+        SYSTEM STATUS
       </div>
 
-      <ul class="about-list">
-        <li>🎸 V.I.P. Account ©</li>
-        <li>📸 Photo Editing King 😇</li>
-        <li>😎 Music Star 🎵</li>
-        <li>😘 Love Mom Dad</li>
-        <li>🙂 Girl Respect ❣️</li>
-        <li>👉 Single 💓</li>
-      </ul>
+      <span class="live-badge">
+        <span class="live-dot"></span>
+        LIVE
+      </span>
+    </div>
 
-    </section>
-
-
-    <!-- PERSONAL INFORMATION -->
-    <section class="card">
-
-      <div class="card-title">
-        <i class="fa-solid fa-user"></i>
-        Personal Information
+    <div class="status-grid">
+      <div class="status-item">
+        <span class="status-label">BOT STATUS</span>
+        <span id="botStatus" class="status-value checking">CHECKING...</span>
       </div>
 
-      <div class="info-row">
-        <span class="info-label">Name</span>
-        <span class="info-value">MR JUWEL</span>
+      <div class="status-item">
+        <span class="status-label">WEBSITE STATUS</span>
+        <span id="websiteStatus" class="status-value checking">CHECKING...</span>
       </div>
 
-      <div class="info-row">
-        <span class="info-label">Date of Birth</span>
-        <span class="info-value">24 April 2004</span>
+      <div class="status-item">
+        <span class="status-label">UPTIME</span>
+        <span id="uptime" class="status-value">--</span>
       </div>
 
-      <div class="info-row">
-        <span class="info-label">Age</span>
-        <span class="info-value" id="age">--</span>
+      <div class="status-item">
+        <span class="status-label">RESPONSE TIME</span>
+        <span id="responseTime" class="status-value">--</span>
       </div>
-
-      <div class="info-row">
-        <span class="info-label">Education</span>
-        <span class="info-value">HSC</span>
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Gender</span>
-        <span class="info-value">Male</span>
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Relation</span>
-        <span class="info-value">Single</span>
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Religion</span>
-        <span class="info-value">Islam</span>
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Mobile</span>
-        <span class="info-value">01943488192</span>
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Email</span>
-        <span class="info-value">mrjuwel315@gmail.com</span>
-      </div>
-
-      <div class="info-row">
-        <span class="info-label">Address</span>
-        <span class="info-value">Rangpur City, BD</span>
-      </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-    <section class="card">
-
-      <div class="card-title">
-        <i class="fa-solid fa-code"></i>
-        Skills
-      </div>
-
-      <div class="skill-list">
-        <span class="skill-tag">Message Chat Bot</span>
-      </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="card">
-
-      <div class="card-title">
-        <i class="fa-solid fa-folder-open"></i>
-        Projects
-      </div>
-
-      <a
-        href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL.git"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="project-btn">
-
-        <span class="project-name">
-          <i class="fa-brands fa-github"></i>
-          MR JUWEL
-        </span>
-
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-      </a>
-
-    </section>
-
-
-    <!-- SYSTEM STATUS -->
-    <section class="card status-card">
-
-      <div class="status-header">
-
-        <div class="status-title">
-          <i class="fa-solid fa-server"></i>
-          System Status
-        </div>
-
-        <span class="live-badge">
-          <span class="live-dot"></span>
-          LIVE
-        </span>
-
-      </div>
-
-      <div class="status-grid">
-
-        <div class="status-item">
-          <span class="status-label">BOT STATUS</span>
-          <span id="botStatus" class="status-value checking">
-            CHECKING...
-          </span>
-        </div>
-
-        <div class="status-item">
-          <span class="status-label">WEBSITE</span>
-          <span id="websiteStatus" class="status-value checking">
-            CHECKING...
-          </span>
-        </div>
-
-        <div class="status-item">
-          <span class="status-label">UPTIME</span>
-          <span id="uptime" class="status-value">
-            --
-          </span>
-        </div>
-
-        <div class="status-item">
-          <span class="status-label">RESPONSE</span>
-          <span id="responseTime" class="status-value">
-            --
-          </span>
-        </div>
-
-      </div>
-
-      <div id="lastCheck" class="last-check">
-        Checking system...
-      </div>
-
-      <!-- UptimeRobot Public Status Page -->
-      <a
-        href="YOUR_UPTIMEROBOT_STATUS_PAGE"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="status-page-btn">
-
-        <i class="fa-solid fa-chart-line"></i>
-        View Full System Status
-
-      </a>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="card">
-
-      <div class="card-title">
-        <i class="fa-solid fa-address-book"></i>
-        Contact Me
-      </div>
-
-      <div class="contact-list">
-
-        <a
-          href="https://wa.me/8801943488192"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-btn whatsapp">
-
-          <span class="contact-left">
-            <i class="fa-brands fa-whatsapp"></i>
-            WhatsApp
-          </span>
-
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-        <a
-          href="tel:+8801943488192"
-          class="contact-btn call">
-
-          <span class="contact-left">
-            <i class="fa-solid fa-phone"></i>
-            Call
-          </span>
-
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-        <a
-          href="email:mrjuwel315@gmail.com"
-          class="contact-btn email">
-
-          <span class="contact-left">
-            <i class="fa-solid fa-envelope"></i>
-            Email
-          </span>
-
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-        <a
-          href="https://www.fb.com/61595381866217"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-btn facebook">
-
-          <span class="contact-left">
-            <i class="fa-brands fa-facebook"></i>
-            Facebook
-          </span>
-
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-        <a
-          href="https://m.me/61595381866217"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-btn messenger">
-
-          <span class="contact-left">
-            <i class="fa-brands fa-facebook-messenger"></i>
-            Messenger
-          </span>
-
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-        <a
-          href="https://github.com/GOAT-MIRAI-MIX/MR-JUWEL.git"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-btn github">
-
-          <span class="contact-left">
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </span>
-
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-      <strong>MR JUWEL</strong><br>
-
-      Personal Profile • System Status
-
-      <br>
-
-      © <span id="year"></span> All Rights Reserved.
-
-    </footer>
-
-  </main>
-
-
-  <script>
-
-    /*
-     * ==========================================
-     * SYSTEM STATUS API
-     * ==========================================
-     *
-     * Backend endpoint example:
-     *
-     * GET /api/status
-     *
-     * Expected JSON:
-     *
-     * {
-     *   "bot": "online",
-     *   "website": "online",
-     *   "uptime": "99.99%",
-     *   "responseTime": "245 ms"
-     * }
-     *
-     * IMPORTANT:
-     * UptimeRobot API KEY কখনো এই HTML-এর মধ্যে রাখবে না।
-     */
-
-    const STATUS_API = "/api/status";
-
-
-    function setStatus(elementId, status) {
-
-      const element = document.getElementById(elementId);
-
-      if (!element) return;
-
-      if (status === "online") {
-
-        element.textContent = "● ONLINE";
-        element.className = "status-value online";
-
-      } else if (status === "offline") {
-
-        element.textContent = "● OFFLINE";
-        element.className = "status-value offline";
-
-      } else {
-
-        element.textContent = "CHECKING...";
-        element.className = "status-value checking";
-
-      }
-    }
-
-
-    async function loadSystemStatus() {
-
-      try {
-
-        const response = await fetch(
-          STATUS_API + "?t=" + Date.now(),
-          {
-            method: "GET",
-            cache: "no-store"
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error("Status API unavailable");
-        }
-
-        const data = await response.json();
-
-
-        setStatus(
-          "botStatus",
-          data.bot || "unknown"
-        );
-
-
-        setStatus(
-          "websiteStatus",
-          data.website || "unknown"
-        );
-
-
-        document.getElementById("uptime").textContent =
-          data.uptime || "--";
-
-
-        document.getElementById("responseTime").textContent =
-          data.responseTime || "--";
-
-
-        document.getElementById("lastCheck").textContent =
-          "Last checked: Just now";
-
-
-      } catch (error) {
-
-        setStatus("botStatus", "offline");
-        setStatus("websiteStatus", "offline");
-
-        document.getElementById("uptime").textContent = "--";
-        document.getElementById("responseTime").textContent = "--";
-
-        document.getElementById("lastCheck").textContent =
-          "Status temporarily unavailable";
-
-      }
-
-    }
-
-
-    /* Initial check */
-    loadSystemStatus();
-
-
-    /* Auto refresh every 60 seconds */
-    setInterval(
-      loadSystemStatus,
-      60 * 1000
+    </div>
+
+    <div id="lastCheck" class="last-check">Checking system...</div>
+  </section>
+
+  <footer>
+    <strong>» 👑 𝐒𝐈𝐘𝐀𝐌-𝐇𝐀𝐒𝐀𝐍 👑</strong>
+    <br>
+    PERSONAL PROFILE • CONTACT • SYSTEM STATUS
+    <br>
+    <span class="footer-brand">🧚‍♀️ 𝗡𝗜𝗝𝗛𝗨𝗠 𝗖𝗛𝗔𝗧𝗕𝗢𝗧</span>
+    <br>
+    © <span id="year"></span> All Rights Reserved.
+  </footer>
+
+</main>
+
+<script>
+const STATUS_API = "/api/status";
+
+function setStatus(elementId, status) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
+
+  if (status === "online") {
+    element.textContent = "● ONLINE";
+    element.className = "status-value online";
+  } else if (status === "offline") {
+    element.textContent = "● OFFLINE";
+    element.className = "status-value offline";
+  } else {
+    element.textContent = "CHECKING...";
+    element.className = "status-value checking";
+  }
+}
+
+async function loadSystemStatus() {
+  try {
+    const response = await fetch(
+      STATUS_API + "?t=" + Date.now(),
+      { method: "GET", cache: "no-store" }
     );
 
+    if (!response.ok) throw new Error("Status API unavailable");
 
-    /* Dynamic year */
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    const data = await response.json();
 
+    setStatus("botStatus", data.bot || "unknown");
+    setStatus("websiteStatus", data.website || "unknown");
 
-    /* Auto age from date of birth (24 April 2004) */
-    (function () {
-      const dob = new Date(2004, 3, 24);
-      const today = new Date();
-      let age = today.getFullYear() - dob.getFullYear();
-      const m = today.getMonth() - dob.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-        age--;
-      }
-      document.getElementById("age").textContent = age + " Years";
-    })();
+    document.getElementById("uptime").textContent =
+      data.uptime || "--";
 
-  </script>
+    document.getElementById("responseTime").textContent =
+      data.responseTime || "--";
+
+    document.getElementById("lastCheck").textContent =
+      "Last checked: " + new Date().toLocaleTimeString();
+
+  } catch (error) {
+    setStatus("botStatus", "offline");
+    setStatus("websiteStatus", "offline");
+
+    document.getElementById("uptime").textContent = "--";
+    document.getElementById("responseTime").textContent = "--";
+    document.getElementById("lastCheck").textContent =
+      "Status temporarily unavailable";
+  }
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+loadSystemStatus();
+setInterval(loadSystemStatus, 60000);
+
+/* Interactive button lighting */
+document.querySelectorAll(".neon-btn").forEach(button => {
+  button.addEventListener("pointerdown", event => {
+    const rect = button.getBoundingClientRect();
+    button.style.setProperty("--x", (event.clientX - rect.left) + "px");
+    button.style.setProperty("--y", (event.clientY - rect.top) + "px");
+  });
+});
+</script>
 
 </body>
-        </html>
+</html>
